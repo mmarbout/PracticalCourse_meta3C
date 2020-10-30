@@ -12,7 +12,7 @@ Avant de procéder à l'analyse ou à l'exploitation d'un ensemble de données d
 
 se placer sur le bureau de la Machine virtuelle
 
-> cd 
+> cd ~/Bureau/
 
 créer un répertoire 
 

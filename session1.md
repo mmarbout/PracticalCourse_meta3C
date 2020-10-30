@@ -40,5 +40,65 @@ visualiser vos données fastq
 
 > zcat  fastq/sampleX_3C_rev.fastq.gz  |  head
 
+1- Contrôle qualité des reads (fichier FastQ)
+
+fastQC est un programme qui prend comme entrée un fichier FastQ et exécute une série de tests pour générer un rapport complet sur la qualité des reads et des bases à différentes positions. Le programme s’exécute en ligne de commande avec les options suivantes :
+
+o	-t : nombre de processeurs accordé au programme
+
+o	-o : répertoire de sortie
+
+o	--nogroup : option permettant d’avoir des graphiques pour chaque base et non par groupe de 5
+
+créer un répertoire de sortie des rapports de qualité des lectures
+
+> mkdir  -p  fastq/rapport_qualite/
+
+créer un répertoire de sortie des fichiers log
+
+> mkdir  -p  log_files/
+
+lancer le programme FastQC
+
+> fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_SG_for.fastq.gz  >  log_files/fastqc_raw_SG_for.log 2>&1
+
+> fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_3C_for.fastq.gz  >  log_files/fastqc_raw_3C_for.log 2>&1  
+
+Vous trouverez les données générées par fastQC dans le dossier [fastq/rapport_qualite/sampleX_raw_SG_for_fastqc]. Afin d'avoir accès à différentes statistiques concernant vos reads, ouvrir le fichier [fastqc_report.html] (par double clic). Ne prenez pas en compte la partie "Kmer content" qui est sujette à controverse notamment en ce qui concerne des reads issues d'un métagénome.
+
+•	Cutadapt : détection et retrait des séquences d’adaptateurs
+
+cutadapt est un programme permettant de rechercher des séquences d’adaptateurs à l'intérieur des reads brutes afin de les retirer car elles peuvent provoquer des problèmes au moment de l'assemblage. Il permet également de filtrer les reads afin de retirer du jeu de données ceux de mauvaise qualité et/ou trop petits. Le programme s’exécute en ligne de commande avec les options suivantes :
+
+o	-a file : fichier contenant les séquences des adaptateurs forward
+
+o	-A file : fichier contenant les séquences des adaptateurs reverse
+
+o	-o : fichier de sortie FastQ forward
+
+o	-p : fichier de sortie FastQ reverse
+
+o	-q : option permettant de définir une qualité minimale
+
+o	-m : option permettant de définir une longueur minimale des reads
+
+NB : Dans le dossier [fasta/] sur l'espace GAIA vous trouverez le fichier contenant les séquences des adaptateurs que nous utilisons au laboratoire.
+
+supprimer les séquences des adaptateurs
+
+> cutadapt  -q 20  -m  45  -a  file:fasta/adaptateur.fasta  -A  file:fasta/adaptateur.fasta  -o  fastq/sampleX_filtre_SG_for.fastq.gz  -p  fastq/sampleX_filtre_SG_rev.fastq.gz  fastq/sampleX_SG_for.fastq.gz  fastq/sampleX_SG_rev.fastq.gz  >  log_files/cutadapt_SG.log  2>&1
+
+refaire l’analyse FastQC
+
+> fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_filtre_SG_for.fastq.gz  >  log_files/fastqc_filter_SG_for.log 2>&1  
+
+Refaire la même chose pour les reads 3C.
+
+Vous avez maintenant un jeux de données permettant de poursuivre l'analyse.
+
+
+
+
+
 
 

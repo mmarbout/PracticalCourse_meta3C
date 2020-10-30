@@ -30,8 +30,12 @@ copier les fichiers fastq (copier celui correspondant à votre "echantillon")
 visualiser vos données fastq 
 
 > zcat  fastq/sampleX_SG_for.fastq.gz  |  head
+
 > zcat  fastq/sampleX_SG_rev.fastq.gz  |  head
+
 > zcat  fastq/sampleX_SG_for.fastq.gz  |  head
+
 > zcat  fastq/sampleX_3C_rev.fastq.gz  |  head
+
 
 

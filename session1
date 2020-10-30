@@ -8,17 +8,17 @@ sampleX_3C_rev.fastq.gz
 Avant de procéder à l'analyse ou à l'exploitation d'un ensemble de données de séquençage, il est impératif de réaliser des contrôles de qualité des séquences brutes et d'appliquer des filtres si nécessaires. Cette opération permettra de s'assurer qu'il n'y a pas de problèmes cachés dans vos données initiales et de travailler avec des séquences de bonne qualité.
 se placer dans le répertoire de travail du TP : toutes les lignes de commande que vous verrez s'exécuteront depuis cet emplacement
 
-> cd  /home/XX/TP_Meta3C/  ligne  de  commande 
+>cd  /home/XX/TP_Meta3C/
 
 explorer l’aborescence
 
-> ls –l  ligne  de  commande
+>ls –l  ligne  de  commande
 
 visualiser vos données fastq 
 
-> zcat  fastq/sampleX_SG_for.fastq.gz  |  head
-> zcat  fastq/sampleX_SG_rev.fastq.gz  |  head
-> zcat  fastq/sampleX_SG_for.fastq.gz  |  head
-> zcat  fastq/sampleX_3C_rev.fastq.gz  |  head
+>zcat  fastq/sampleX_SG_for.fastq.gz  |  head
+>zcat  fastq/sampleX_SG_rev.fastq.gz  |  head
+>zcat  fastq/sampleX_SG_for.fastq.gz  |  head
+>zcat  fastq/sampleX_3C_rev.fastq.gz  |  head
 
 

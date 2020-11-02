@@ -32,18 +32,18 @@ NB2: n'oubliez pas de répondre aux questions posées et de faire les exercices 
 
 Planning des sessions 
 
--	1 – Contrôle qualité et traitement des séquences issues du séquençage
+-	1 – Contrôle qualité et traitement des séquences issues du séquençage (jour 1)
 
--	2 – Annotation taxonomique des reads issus d’un métagénome
+-	2 – Annotation taxonomique des reads issus d’un métagénome (jour 1)
 
--	3 – Assemblage d’un métagénome
+-	3 – Assemblage d’un métagénome (jour 1)
 
--	4 – Analyse d’un assemblage
+-	4 – Analyse d’un assemblage (jour 2)
 
--	5 – Annotation d’un assemblage
+-	5 – Annotation d’un assemblage (jour 2)
 
--	6 – Binning des contigs par exploitations des interactions inter-contigs
+-	6 – Binning des contigs par exploitations des interactions inter-contigs (jour 3)
 
--	7 – Analyse et validation des bins obtenus 
+-	7 – Analyse et validation des bins obtenus (jour 4)
 
--	8 – Travail personnel : « à la recherche du CrAss phage »
+-	8 – Travail personnel : « à la recherche du CrAss phage » (jour 5)

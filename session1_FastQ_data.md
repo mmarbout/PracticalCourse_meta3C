@@ -1,5 +1,4 @@
-Session 1
-Contrôle qualité et traitement des séquences brutes issues du séquençage
+Session 1: Contrôle qualité et traitement des séquences brutes issues du séquençage
 
 Vous allez travailler avec 4 fichiers de sorties de séquençage : les reads en sens (forward) et en anti-sens (reverse) pour chaque banque construites (ShotGun et 3C). Vos fichiers sont nommés ainsi et se trouve sur l'espace GAIA:
 
@@ -56,11 +55,11 @@ Qi6 : Quelles différences observez-vous entre les Reads SG et les Reads 3C ?
 
 fastQC est un programme qui prend comme entrée un fichier FastQ et exécute une série de tests pour générer un rapport complet sur la qualité des reads et des bases à différentes positions. Le programme s’exécute en ligne de commande avec les options suivantes :
 
-o	-t : nombre de processeurs accordé au programme
+o 	-t : nombre de processeurs accordé au programme
 
-o	-o : répertoire de sortie
+o 	-o : répertoire de sortie
 
-o	--nogroup : option permettant d’avoir des graphiques pour chaque base et non par groupe de 5
+o 	--nogroup : option permettant d’avoir des graphiques pour chaque base et non par groupe de 5
 
 créer un répertoire de sortie des rapports de qualité des lectures
 
@@ -84,17 +83,17 @@ Qi7 : En analysant le rapport de qualité Quelle est l’enzyme que vous avez ut
 
 cutadapt est un programme permettant de rechercher des séquences d’adaptateurs à l'intérieur des reads brutes afin de les retirer car elles peuvent provoquer des problèmes au moment de l'assemblage. Il permet également de filtrer les reads afin de retirer du jeu de données ceux de mauvaise qualité et/ou trop petits. Le programme s’exécute en ligne de commande avec les options suivantes :
 
-o	-a file : fichier contenant les séquences des adaptateurs forward
+o	 -a file : fichier contenant les séquences des adaptateurs forward
 
-o	-A file : fichier contenant les séquences des adaptateurs reverse
+o 	-A file : fichier contenant les séquences des adaptateurs reverse
 
-o	-o : fichier de sortie FastQ forward
+o 	-o : fichier de sortie FastQ forward
 
-o	-p : fichier de sortie FastQ reverse
+o 	-p : fichier de sortie FastQ reverse
 
-o	-q : option permettant de définir une qualité minimale
+o 	-q : option permettant de définir une qualité minimale
 
-o	-m : option permettant de définir une longueur minimale des reads
+o 	-m : option permettant de définir une longueur minimale des reads
 
 NB : Dans le dossier [fasta/] sur l'espace GAIA vous trouverez le fichier contenant les séquences des adaptateurs que nous utilisons au laboratoire.
 

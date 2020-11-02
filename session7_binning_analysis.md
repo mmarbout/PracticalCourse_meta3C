@@ -1,12 +1,21 @@
 session 7 : Analyse et validation des bins obtenus
 
 Différentes approches permettent de valider les bins obtenus. Nous allons essayer de passer en revue différentes méthodes permettant de valider notre binning.
+
 •	Marqueurs taxonomiques
-Différents programmes existent afin de valider les bins obtenus après partitionnement d'un métagénome. Dans notre cas nous utiliserons checkM. La validation des bins avec ce programme consiste à rechercher un set de gènes bactériens (via des modèles HMM), essentiels et présents en une seule copie dans plus de 97% des génomes bactériens connus. L’absence/présence et la multiplicité de ces marqueurs permettent ainsi d’évaluer : 
+
+Différents programmes existent afin de valider les bins obtenus après partitionnement d'un métagénome. Dans notre cas nous utiliserons checkM. La validation des bins avec ce programme consiste à rechercher un set de gènes bactériens (via des modèles HMM), essentiels et présents en une seule copie dans plus de 97% des génomes bactériens connus.
+
+L’absence/présence et la multiplicité de ces marqueurs permettent ainsi d’évaluer : 
+
 i - la complétude (mesure reliée au nombre de marqueurs au sein d'un bin par rapport au nombre attendu.
+
 ii - la contamination (mesure reliée au nombre de marqueurs en plusieurs copies).
+
 iii - l'hétérogénéité de souches (mesure reliée au nombre de marqueurs en plusieurs copies mais dont la séquence est proche).
+
 Ce sont des calculs lourds qui ont été lancés sur le cluster de calcul de l'Institut Pasteur. Vous trouverez les résultats dans le dossier [checkM_output] qui contient différentes informations sur les bins identifiés.
+
 Nous considèrerons un génome complet quand :
 
 o	sa complétude se situe au-delà de 90%

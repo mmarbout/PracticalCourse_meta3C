@@ -32,6 +32,8 @@ NB2: n'oubliez pas de répondre aux questions posées et de faire les exercices 
 
 Votre cahier de TP informatique comptera dans la note finale !!!
 
+Vous pourrez être interrogé sur les réponses aux questions aux cours du TP...
+
 Planning des sessions 
 
 -	1 – Contrôle qualité et traitement des séquences issues du séquençage (jour 1)

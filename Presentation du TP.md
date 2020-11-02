@@ -8,9 +8,9 @@ Nous avons réalisé différentes banques génomiques (shotgun et 3C) à partir 
 
 Vous allez choisir un numéro de banque entre 1 et 10 et poursuivre l'ensemble du TP avec les banques correspondantes.
 
-banque 1 à 5 = echantillon 9010
+- banque 1 à 5 = échantillon 9010
 
-banque 6 à 10 = echantillon 10015
+- banque 6 à 10 = échantillon 10015
 
 Le TP s'organisera de la manière suivante:
 

@@ -1,4 +1,4 @@
-4 – Analyse d’un assemblage
+Session 4 : Analyse d’un assemblage
 
 Différents logiciels permettent d'analyser les résultats d'assemblage. Nous utiliserons le programme quast qui permet d'obtenir différentes statistiques d'assemblage. Il s’utilise en ligne de commande :
 
@@ -16,8 +16,18 @@ lancer les statistiques d'assemblage
 
 Afin d'avoir accès aux statistiques, ouvrir le fichier [report.html] (double clic).
 
+Qi12 : Quelles sont les données fournies par Quast ?
+
+Qi13 : Donnez une définition du N50 ?
+
+Qi14 : Quelle est la valeur théorique du N100 ?
+
+
 Il est également possible de regrouper l’ensemble des données afin d'effectuer un assemblage global de l’expérience. Cet assemblage a été réalisé sur le cluster de calcul de l'Institut Pasteur car le nombre de reads est assez important et, par conséquent, les temps de calcul également. 
+
 Copier l’assemblage global correspondant à votre échantillon (9010 ou 10015) dans votre répertoire /assemblage et refaites l’analyse Quast de votre échantillon.
+
+> scp /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2020-2021/TP_Meta3C/assembly/assemblage_XX_500.fa  
 
 lancer les statistiques d'assemblage
 

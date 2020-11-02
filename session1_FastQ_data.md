@@ -1,3 +1,6 @@
+Session 1
+Contrôle qualité et traitement des séquences brutes issues du séquençage
+
 Vous allez travailler avec 4 fichiers de sorties de séquençage : les reads en sens (forward) et en anti-sens (reverse) pour chaque banque construites (ShotGun et 3C). Vos fichiers sont nommés ainsi et se trouve sur l'espace GAIA:
 
 sampleX_SG_for.fastq.gz
@@ -28,7 +31,7 @@ créer un répertoire pour y déposer les fichiers fastq
 
 copier les fichiers fastq (copier celui correspondant à votre "echantillon")
 
-> scp 
+> scp /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2020-2021/TP_Meta3C/fastq/sampleX_* fastq/
 
 visualiser vos données fastq 
 
@@ -39,6 +42,15 @@ visualiser vos données fastq
 > zcat  fastq/sampleX_SG_for.fastq.gz  |  head
 
 > zcat  fastq/sampleX_3C_rev.fastq.gz  |  head
+
+
+Qi1 : Combien de lignes un read occupe-t-il ?
+Qi2 : A quoi correspond chaque ligne ?
+Qi3 : Combien de reads forward et reverse avez-vous dans vos jeux de données ?
+Qi4 : Quelle est la longueur des reads (SG et 3C) ?
+Qi5 : Quels "Tags" sont associés à vos librairies ?
+Qi6 : Quelles différences observez-vous entre les Reads SG et les Reads 3C ?
+
 
 1- Contrôle qualité des reads (fichier FastQ)
 
@@ -66,6 +78,8 @@ lancer le programme FastQC
 
 Vous trouverez les données générées par fastQC dans le dossier [fastq/rapport_qualite/sampleX_raw_SG_for_fastqc]. Afin d'avoir accès à différentes statistiques concernant vos reads, ouvrir le fichier [fastqc_report.html] (par double clic). Ne prenez pas en compte la partie "Kmer content" qui est sujette à controverse notamment en ce qui concerne des reads issues d'un métagénome.
 
+Qi7 : En analysant le rapport de qualité Quelle est l’enzyme que vous avez utilisée pour faire votre banque 3C ?
+
 •	Cutadapt : détection et retrait des séquences d’adaptateurs
 
 cutadapt est un programme permettant de rechercher des séquences d’adaptateurs à l'intérieur des reads brutes afin de les retirer car elles peuvent provoquer des problèmes au moment de l'assemblage. Il permet également de filtrer les reads afin de retirer du jeu de données ceux de mauvaise qualité et/ou trop petits. Le programme s’exécute en ligne de commande avec les options suivantes :
@@ -90,7 +104,9 @@ supprimer les séquences des adaptateurs
 
 refaire l’analyse FastQC
 
-> fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_filtre_SG_for.fastq.gz  >  log_files/fastqc_filter_SG_for.log 2>&1  
+> fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_filtre_SG_for.fastq.gz  >  log_files/fastqc_filter_SG_for.log 2>&1
+
+Qi8 : Combien de reads avez-vous gardé après cette étape de filtration ? En quoi votre jeu de données est-il différent ?
 
 Refaire la même chose pour les reads 3C.
 

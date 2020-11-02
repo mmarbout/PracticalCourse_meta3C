@@ -31,7 +31,7 @@ Il est également possible de générer des « density plot » pour chaque bin a
 
 lancement du script : 
 
-> bash scripts/bin_analysis.sh  targeted_bin  XX/Figure/  XX/output/contig_data.txt  
+> bash scripts/bin_analysis.sh  targeted_bin  XX/Figure/  XX/output/contig_data.txt 
 
 •	Matrices d’interactions
 

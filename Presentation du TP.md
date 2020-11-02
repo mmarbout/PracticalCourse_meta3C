@@ -4,7 +4,7 @@ Ce TP a pour objectif de vous apprendre à analyser des séquences issues d'éch
 Nous allons partir des fichiers FastQ "brutes" en sortie directe du séquenceur et les analyser.
 L'objectif est de décrire et d'analyser la composition du microbiote intestinal d'un donneur sain.
 
-Nous avons réalisé différentes banques génomiques (shotgun) et 3C à partir de 2 échantillons de selles de donneurs sains (patient 9010 et 10015).
+Nous avons réalisé différentes banques génomiques (shotgun et 3C) à partir de 2 échantillons de selles de donneurs sains (patient 9010 et 10015).
 
 Vous allez choisir un numéro de banque entre 1 et 10 et poursuivre l'ensemble du TP avec les banques correspondantes.
 

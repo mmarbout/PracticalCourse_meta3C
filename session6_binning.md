@@ -81,7 +81,7 @@ usage du script : bash scripts/louvain_data_treatment.sh  [repertoire de sortie]
 
 lancement du script : 
 
-> bash scripts/louvain_data_treatment.sh  XX/output/  XX/binning/output_louvain.txt  XX/data_contigs/idx_contig_length_hit_cov_GC_XX.txt  
+> bash scripts/louvain_data_treatment.sh  XX/output/  XX/binning/output_louvain.txt  XX/data_contigs/idx_contig_length_hit_cov_GC_XX.txt
 
 Qi25 : Combien de bins détectez-vous ?
 

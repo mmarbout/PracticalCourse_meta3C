@@ -44,10 +44,15 @@ visualiser vos données fastq
 
 
 Qi1 : Combien de lignes un read occupe-t-il ?
+
 Qi2 : A quoi correspond chaque ligne ?
+
 Qi3 : Combien de reads forward et reverse avez-vous dans vos jeux de données ?
+
 Qi4 : Quelle est la longueur des reads (SG et 3C) ?
+
 Qi5 : Quels "Tags" sont associés à vos librairies ?
+
 Qi6 : Quelles différences observez-vous entre les Reads SG et les Reads 3C ?
 
 

@@ -90,7 +90,7 @@ Vous trouverez les données générées par fastQC dans le dossier [fastq/rappor
 
 faire la même chose pour les reads reverse
 
-on aurait également pu écrire une petite boucle pour faire tout cela
+on aurait également pu écrire une petite boucle pour faire tout cela (il y a un léger bugg avec github ici)
 
 > for sens in for rev
 

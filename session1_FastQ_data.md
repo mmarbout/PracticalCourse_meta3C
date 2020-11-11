@@ -130,6 +130,8 @@ supprimer les séquences des adaptateurs
 
 > cutadapt  -q 20  -m  45  -a  file:fasta/adaptateur.fasta  -A  file:fasta/adaptateur.fasta  -o  fastq/sampleX_filtre_SG_for.fastq.gz  -p  fastq/sampleX_filtre_SG_rev.fastq.gz  fastq/sampleX_SG_for.fastq.gz  fastq/sampleX_SG_rev.fastq.gz  >  log_files/cutadapt_SG.log  2>&1
 
+Petite pause peut être ? c'est un poil long ...
+
 refaire l’analyse FastQC
 
 > fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_filtre_SG_for.fastq.gz  >  log_files/fastqc_filter_SG_for.log 2>&1

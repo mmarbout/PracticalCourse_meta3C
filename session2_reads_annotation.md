@@ -9,11 +9,15 @@ créer un répertoire de sortie des fichiers d’alignement
 
 > mkdir  -p  alignement/
 
+nous allons avoir également besoin d'une base de données pour le programme MetaPhlan
+
+> scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/db/ ~/Bureau/install/metaphlan2/
+
 alignement des reads par Bowtie2 contre la base de données MetaPhlan
 
-> bowtie2  --sam-no-hd  --sam-no-sq  --very-sensitive-local  --no-unal  -p 4  -x software/metaphlan2/db_bowtie/mpa_v20_m200 -U fastq/sampleX_filtre_SG_for.fastq.gz  -S alignement/sampleX_filtre_SG_for.sam  >  log_files/bowtie_SG.log  2>&1
+> bowtie2  --sam-no-hd  --sam-no-sq  --very-sensitive-local  --no-unal  -p 4  -x ~/Bureau/install/metaphlan2/db/mpa_v20_m200 -U fastq/sampleX_filtre_SG_for.fastq.gz  -S alignement/sampleX_filtre_SG_for.sam  >  log_files/bowtie_SG.log  2>&1
 
-> bowtie2  --sam-no-hd  --sam-no-sq  --very-sensitive-local  --no-unal  -p 4  -x software/metaphlan2/db_bowtie/mpa_v20_m200  -U fastq/sampleX_filtre_3C_for.fastq.gz  -S alignement/sampleX_filtre_3C_for.sam  >  log_files/bowtie_3C.log  2>&1
+> bowtie2  --sam-no-hd  --sam-no-sq  --very-sensitive-local  --no-unal  -p 4  -x ~/Bureau/install/metaphlan2/db/mpa_v20_m200  -U fastq/sampleX_filtre_3C_for.fastq.gz  -S alignement/sampleX_filtre_3C_for.sam  >  log_files/bowtie_3C.log  2>&1
 
 Qi9 : Quel est le taux de mapping de vos reads sur la base de données Metaphlan ? cela vous parait il normal ?
 
@@ -21,11 +25,11 @@ MetaPhlan est un outil informatique écrit en python permettant de définir la c
 
 traitement des données par MetaPhlan
 
-> python  software/metaphlan2/metaphlan2.py  alignement/sampleX_filtre_SG_for.sam  --input_type sam  --mpa_pkl  software/metaphlan2/db_bowtie/mpa_v20_m200.pkl  >  log_files/MetaPhlan_SG.log  2>&1
+> python  ~/Bureau/install/metaphlan2/metaphlan2.py  alignement/sampleX_filtre_SG_for.sam  --input_type sam  --mpa_pkl  ~/Bureau/install/metaphlan2/db/mpa_v20_m200.pkl  >  log_files/MetaPhlan_SG.log  2>&1
 
-> python software/metaphlan2/metaphlan2.py  alignement/sampleX_filtre_3C_for.sam  --input_type sam  --mpa_pkl  software/metaphlan2/db_bowtie/mpa_v20_m200.pkl  >  log_files/MetaPhlan_3C.log  2>&1
+> python ~/Bureau/install/metaphlan2/metaphlan2.py  alignement/sampleX_filtre_3C_for.sam  --input_type sam  --mpa_pkl  ~/Bureau/install/metaphlan2/db/mpa_v20_m200.pkl  >  log_files/MetaPhlan_3C.log  2>&1
 
-Qi10 : Quelle est la distribution taxonomique de vos jeux de données au niveau du phylum ? de l’ordre ? de la classe ? [Réaliser un graphique pour illustrer votre résultats – camembert ou histogramme par exemple]
+Qi10 : Quelle est la distribution taxonomique de vos jeux de données au niveau du phylum ? de l’ordre ? de la classe ? [Réaliser un graphique pour illustrer votre résultats – camembert ou histogramme avec R par exemple]
 
 Qi11 : Observez-vous une différence entre vos différentes librairies (SG VS 3C) ?
 

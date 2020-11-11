@@ -16,21 +16,25 @@ se placer sur le bureau de la Machine virtuelle
 
 > cd ~/Bureau/
 
-créer un répertoire 
+créer un répertoire (l'option -p permet de créer des répertoires dans des répertoires n'existant pas et évite les messages d'erreurs ... c'est parfois utile et c'est un réflexe chez moi))
 
-> mkdir TP_Meta3C 
+> mkdir -p TP_Meta3C 
 
-toutes les lignes de commande que vous verrez s'exécuteront depuis cet emplacement
+rentrer dans le repertoire
 
 > cd  TP_Meta3C/
 
+toutes les lignes de commande que vous verrez s'exécuteront depuis cet emplacement désormais !!!!
+
 créer un répertoire pour y déposer les fichiers fastq
 
-> mkdir fastq/
+> mkdir -p fastq/
+ 
+choisissez au hasard parmi les 10 échantillons et copier les fichiers fastq correspondants (n'oubliez pas de changer le X !!!)
 
-copier les fichiers fastq (copier celui correspondant à votre "echantillon")
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/fastq/sampleX_* fastq/
 
-> scp /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2020-2021/TP_Meta3C/fastq/sampleX_* fastq/
+entrez votre mot de passe
 
 visualiser vos données fastq 
 
@@ -76,11 +80,27 @@ créer un répertoire de sortie des fichiers log
 
 lancer le programme FastQC
 
-> fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_SG_for.fastq.gz  >  log_files/fastqc_raw_SG_for.log 2>&1
+> ~/Bureau/install/FastQC/fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_SG_for.fastq.gz  >  log_files/fastqc_raw_SG_for.log 2>&1
 
-> fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_3C_for.fastq.gz  >  log_files/fastqc_raw_3C_for.log 2>&1  
+> ~/Bureau/install/FastQC/fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_3C_for.fastq.gz  >  log_files/fastqc_raw_3C_for.log 2>&1
 
 Vous trouverez les données générées par fastQC dans le dossier [fastq/rapport_qualite/sampleX_raw_SG_for_fastqc]. Afin d'avoir accès à différentes statistiques concernant vos reads, ouvrir le fichier [fastqc_report.html] (par double clic). Ne prenez pas en compte la partie "Kmer content" qui est sujette à controverse notamment en ce qui concerne des reads issues d'un métagénome.
+
+faire la même chose pour les reads reverse
+
+on aurait également pu écrire une petite boucle pour faire tout cela
+
+> for sens in for rev
+
+> do 
+
+> for type in SG 3C
+
+> do
+
+> ~/Bureau/install/FastQC/fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_"$type"_"$sens".fastq.gz  >  log_files/fastqc_raw_"$type"_"$sens".log 2>&1
+
+> done
 
 Qi7 : En analysant le rapport de qualité Quelle est l’enzyme que vous avez utilisée pour faire votre banque 3C ?
 

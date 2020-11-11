@@ -18,7 +18,7 @@ se placer sur le bureau de la Machine virtuelle
 
 créer un répertoire (l'option -p permet de créer des répertoires dans des répertoires n'existant pas et évite les messages d'erreurs ... c'est parfois utile et c'est un réflexe chez moi))
 
-> mkdir -p TP_Meta3C 
+> mkdir -p TP_Meta3C/
 
 rentrer dans le repertoire
 
@@ -34,7 +34,9 @@ choisissez au hasard parmi les 10 échantillons et copier les fichiers fastq cor
 
 > scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/fastq/sampleX_* fastq/
 
-entrez votre mot de passe
+pour cette séance vous aurez également besoin d'un fichier fasta contenant les séquences des adaptateurs illumina. Copier l'ensemble du dossier fasta sur GAIA qui contient d'autre fichiers dont nous aurons besoin par la suite.
+
+> scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/fasta/ ./
 
 visualiser vos données fastq 
 
@@ -102,6 +104,8 @@ on aurait également pu écrire une petite boucle pour faire tout cela
 
 > done
 
+> done
+
 Qi7 : En analysant le rapport de qualité Quelle est l’enzyme que vous avez utilisée pour faire votre banque 3C ?
 
 •	Cutadapt : détection et retrait des séquences d’adaptateurs
@@ -133,6 +137,10 @@ refaire l’analyse FastQC
 Qi8 : Combien de reads avez-vous gardé après cette étape de filtration ? En quoi votre jeu de données est-il différent ?
 
 Refaire la même chose pour les reads 3C.
+
+idem on aurait pu faire une petite boucle ;)
+
+Si vous n'avez gardé aucun reads 3C ... savez vous pourquoi ? et comment corriger cela ?
 
 Vous avez maintenant un jeux de données permettant de poursuivre l'analyse.
 

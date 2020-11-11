@@ -6,19 +6,21 @@ Dans le cas de la métagénomique, la différence majeure est que les échantill
 
 Le but de cette partie est d’obtenir un assemblage de notre métagénome, un jeu de contigs à partir de petites lectures d’ADN. Un contig est une séquence génomique continue et ordonnée générée par l'assemblage de lectures d'ADN (lectures = reads). Les assembleurs actuels sont majoritairement basés sur des graphes de Bruijn qui modélisent la relation entre des sous-chaines exactes, extraites des fragments de séquençage. Ces assembleurs reposent sur l'identification de chevauchements exacts et sont donc particulièrement sensibles à la présence d'erreurs de séquençage.
 
-Pour l’assemblage nous utilisons le programme megahit (il en existe beaucoup d'autres, chacun avec ses spécificités. Megahit présente l’avantage d’être peu gourmand en ressources de calcul). Il s’utilise en ligne de commande avec les options suivantes :
+Pour l’assemblage nous utilisons le programme megahit (il en existe beaucoup d'autres, chacun avec ses spécificités. Megahit présente l’avantage d’être peu gourmand en ressources de calcul). ATTENTION: Megahit ne veut pas que le repertoire de sortie existe déjà !!!
+
+Il s’utilise en ligne de commande avec les options suivantes :
 
 o	 -1 : reads forward
 
 o	 -2 : reads reverse
 
-o	 -o : répertoire de sortie créé par megahit
+o	 -o : répertoire de sortie (créé par megahit !!!)
 
-créer un répertoire « assemblage »
+créer un répertoire « assemblage » . onutilisera ce repertoire pour y stocker d'autres données
 
 > mkdir  -p  assemblage/
 
 lancer l’assemblage
 
-> software/megahit/./megahit  -1  fastq/sampleX_filtre_SG_for.fastq  -2  fastq/sampleX_filtre_SG_rev.fastq  -o  assemblage/sample/  >  log_files/megahit_sampleX_log  2>&1
+> software/megahit/megahit  -1  fastq/sampleX_filtre_SG_for.fastq  -2  fastq/sampleX_filtre_SG_rev.fastq  -o  assemblage/sampleX/  >  log_files/megahit_sampleX_log  2>&1
 

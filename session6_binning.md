@@ -12,15 +12,19 @@ usage du script : bash network_generation.sh  [repertoire de sortie]  [fichier d
 
 Les données générées par ce script se trouve sur GAIA. Copier le dossier correspondant à votre échantillon dans votre dossier et décompresser le. Ce dossier contient différents répertoires contenants chacun différents fichiers.
 
-> scp /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2020-2021/TP_Meta3C/XX ./
+> mkdir -p network/
 
-explorer le répertoire de sortie (9010 ou 10015)
+> scp /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2020-2021/TP_Meta3C/network/XX_* network/
 
-> ls  -l  XX/
+vous aurez aussi besoin d'un fichier contenant les données des contigs
+
+> mkdir -p data_contigs/
+
+> scp /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2020-2021/TP_Meta3C/data_contigs/
 
 explorer le répertoire network
 
-> ls  -l  XX/network/
+> ls  -l  network/
 
 fichier=XX_network.txt (col1: contig1 (nœud1) / col2: contig2 (noeud / col3: score)
 
@@ -52,24 +56,24 @@ Une modularité est une mesure de la qualité d'une partition des sommets (les n
 
 création d’un répertoire de sortie
 
-> mkdir  -p  XX/binning/
+> mkdir  -p  binning/
 
 conversion d'un fichier texte en fichier binaire utilisable par l’algorithme de Louvain
 
-> convert_net  -i  XX/network/XX_network_norm.txt  -o  XX/binning/net.bin  -w  XX/binning/net.weights
+> convert_net  -i  network/XX_network_norm.txt  -o  binning/net.bin  -w  binning/net.weights
 
 calcul des communautés et rendu d'un arbre hiérarchique
 
-> louvain XX/binning/net.bin  -l  -1  -w XX/binning/net.weights  >  XX/binning/net.tree
+> louvain binning/net.bin  -l  -1  -w binning/net.weights  >  binning/net.tree
 
 calcul des informations concernant l'arbre hiérarchique (nb de niveau et nb de communautés par niveau)
 
-> hierarchy  XX/binning/net.tree  >  XX/binning/level_louvain.txt
+> hierarchy  binning/net.tree  >  binning/level_louvain.txt
 
 rendu de l'appartenance d'un nœud à une communauté pour un niveau hiérarchique donné
 NB : nous travaillons toujours avec le dernier niveau. C'est à vous de le déterminer en fonction du fichier "level_louvain.txt"    ?  
 
-> hierarchy  XX/binning/net.tree  -l  ?  >  XX/binning/output_louvain.txt
+> hierarchy  binning/net.tree  -l  ?  >  binning/output_louvain.txt
 
 Le fichier obtenu comprend dans la colonne 1 l'indice du contig et dans la colonne 2 l'indice de la communauté. 
 A partir de ce fichier et du fichier contenant les données des contigs (taille, couverture, contenu en GC), on peut générer tout un ensemble de données sur les communautés ou « bins » déterminés par l’algorithme de louvain. Pour cela, nous allons utiliser le script louvain_data_treatment écrit en bash et qui permet de recouper les différentes informations et de générer divers fichiers :
@@ -81,7 +85,7 @@ usage du script : bash scripts/louvain_data_treatment.sh  [repertoire de sortie]
 
 lancement du script : 
 
-> bash scripts/louvain_data_treatment.sh  XX/output/  XX/binning/output_louvain.txt  XX/data_contigs/idx_contig_length_hit_cov_GC_XX.txt
+> bash scripts/louvain_data_treatment.sh  output/  binning/output_louvain.txt  data_contigs/idx_contig_length_hit_cov_GC_XX.txt
 
 Qi25 : Combien de bins détectez-vous ?
 
@@ -107,13 +111,13 @@ nous allons réaliser une boucle afin de réaliser 100 itérations de Louvain
 
 > do
 
-> louvain  XX/binning/net.bin  -l  -1  -w XX/binning/net.weights  >  XX/binning/net.tree 
+> louvain  binning/net.bin  -l  -1  -w binning/net.weights  >  binning/net.tree 
 
-> hierarchy  XX/binning/net.tree  >  XX/binning/level_louvain.txt 
+> hierarchy  binning/net.tree  >  binning/level_louvain.txt 
 
-> level=$(tail  -1  XX/binning/level_louvain.txt | awk ‘{print $2}’)
+> level=$(tail  -1  binning/level_louvain.txt | awk ‘{print $2}’)
 
-> hierarchy  XX/binning/net.tree  -l  "$level"  >  XX/binning/louvain_"$iteration".txt
+> hierarchy  binning/net.tree  -l  "$level"  >  binning/louvain_"$iteration".txt
 
 > done 
 
@@ -124,15 +128,15 @@ for iteration in $(seq 1 100)
 
 do 
 
-cat  XX/binning/louvain_"$iteration".txt  |  awk  ‘{print $1}’  >  temp/contig_idx.txt 
+cat  binning/louvain_"$iteration".txt  |  awk  ‘{print $1}’  >  temp/contig_idx.txt 
 
-cat  XX/binning/louvain_"$iteration".txt  |  awk  ‘{print $2";"}’  >  temp/bin_idx_"$iteration".txt
+cat  binning/louvain_"$iteration".txt  |  awk  ‘{print $2";"}’  >  temp/bin_idx_"$iteration".txt
 
 done 
 
 paste  temp/bin_idx_*  | sed ‘s/\t//g’  >  temp/temp1.txt 
 
-paste  temp/contig_idx.txt  temp/temp1.txt  |  awk  ‘{print $1,$2}’  > XX/binning/output_louvain_100it.txt
+paste  temp/contig_idx.txt  temp/temp1.txt  |  awk  ‘{print $1,$2}’  > binning/output_louvain_100it.txt
 
 
 
@@ -140,9 +144,6 @@ Qi30 : en utilisant les scripts utilisés aujourd’hui refaites la même analys
 
 
 Il est également possible d’analyser l’évolutions des différentes communautés en fonction du nombre d’itérations de Louvain (1, 5, 10, 20, 50, 100). A l’aide de vos connaissances, des scripts déjà utilisés et des données fournies, réaliser une analyse de l'évolution des groupes de contigs en fonction du nombre d'itérations de l'algorithme de Louvain (cf polycopié du TP)
- 
- 
-
 
 Qi31 : Comment évolue votre binning au cours des différentes itérations ? Combien d’itérations de louvain faudrait-il faire (justifier ce choix) ?
 

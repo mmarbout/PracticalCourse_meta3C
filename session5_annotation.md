@@ -91,7 +91,7 @@ Par exemple, l'un des avantages de la technique de Meta3C est de pouvoir obtenir
 
 Rechercher dans votre fichier "annotations/VIRSorter_sampleX.csv" le plus gros contig annoté comme circulaire de votre assemblage
 
-> cat annotations/VIRSorter_sampleX.csv | grep "circu" | awk -F "," '{print $1}' | sed 's/VIRSorter_//' | sed 's/-circular//' | sed 's/_/ /g' | sort -k 4,4 -g -r | awk '{print $1"_"$2"_"$3"_"$4}' | head -1 
+> cat annotations/VIRSorter_XX.csv | grep "circu" | awk -F "," '{print $1}' | sed 's/VIRSorter_//' | sed 's/-circular//' | sed 's/_/ /g' | sort -k 4,4 -g -r | awk '{print $1"_"$2"_"$3"_"$4}' | head -1 
 
 Une fois que vous connaissez ce contig, lancer le script contig_matrix_generation.sh qui prend 4 arguments en entrée [1-contig_target; 2-alignment_file; 3-output_directory]
 
@@ -101,7 +101,7 @@ vous trouverez le fichier alignement sur GAIA
 
 > scp /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/alignment/XX_alignment.txt alignment/
 
-> bash scripts/contig_matrix_generation.sh NODE_XX_length_XX alignment/sample_alignment.txt figure_sample/
+> bash scripts/contig_matrix_generation.sh NODE_XX_length_XX alignment/XX_alignment.txt figure_sample/
 
 vous pourrez alors visualiser votre matrice et voir le signal circulaire dans le fichier d'ouput
 

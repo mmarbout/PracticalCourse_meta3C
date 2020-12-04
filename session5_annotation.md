@@ -86,3 +86,15 @@ Recherches de phages : VIRSorter, VIBRANT …
 Recherches de plasmides : PlasmidFinder, Plasflow …
 
 Vous trouverez dans le dossier annotations/ les fichiers de sorties de 2 programmes spécifiques (VIRSorter et PlasFlow). Jetez y un oeil, vous pourrez en avoir besoin dans la suite du TP ...
+
+Par exemple, l'un des avantages de la technique de Meta3C est de pouvoir obtenir des matrices d'interactions de chaque contig de l'assemblage et donc d'étudier sa topologie. 
+
+Rechercher dans votre fichier "annotations/PlasFlow/Sample_plasflow.tsv" le plus gros contig annoté comme plasmide de votre assemblage
+
+> cat annotations/PlasFlow/sample_plasflow.tsv | grep "plasmid" | sort -k 4,4 -g -r | head -1 
+
+Une fois que vous connaissez ce contig, lancer le script contig_matrix_generation.sh qui prend 4 arguments en entrée [1-contig_target; 2-contig_data_file; 3-alignment_file; 4-output_directory]
+
+> bash scripts/contig_matrix_generation.sh NODE_XX_length_XX output/contig_data.txt alignment/sample_alignment.txt figure_sample/
+
+

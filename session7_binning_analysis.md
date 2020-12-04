@@ -29,46 +29,38 @@ Qi33 : A quoi peut être due la présence de bins contaminés ?
 
 Qi34 : Avez-vous une idée de la manière d'améliorer le processus de binning ?
 
-Vous trouverez différents fichiers correspondant au binning final sur l’espace GAIA/
-Étudiez l’évolution de vos bins (taille, complétion, contamination) au cours du processus de binning (exemple ci-dessous)
+
+Vous trouverez différents fichiers correspondant au binning final sur l’espace GAIA/ dans le dossier data_contigs/
+
+Étudiez l’évolution de vos bins (taille, complétion, contamination) au cours du processus de binning (exemple dans le polycopié)
 
 •	Couverture et contenu en GC
 
-Une autre façon de vérifier la qualité de nos bins est de regarder l’homogénéité de leur couverture et de leur contenu en GC. A l’aide du fichier contig_data.txt , générez les figures selon les modèles suivants :
- 
-exemple de graphiques à reproduire
+Une autre façon de vérifier la qualité de nos bins est de regarder l’homogénéité de leur couverture et de leur contenu en GC. A l’aide du fichier contig_data.txt , générez différent boxplot des bin > 300 Kb (GC, coverage) (cf polycopié)
 
 Il est également possible de générer des « density plot » pour chaque bin afin de vérifier leur homogénéité.
 
-lancement du script : 
+lancement du script bin_analysis.sh qui prends 3 arguments en entrée [1-targeted_bin; 2-output_directory; 3-contig_data_file]
 
-> bash scripts/bin_analysis.sh  targeted_bin  XX/Figure/  XX/output/contig_data.txt 
+> bash scripts/bin_analysis.sh  targeted_bin  figure/  output/contig_data.txt 
 
 •	Matrices d’interactions
 
 A partir de n'importe quel réseau ou fichier d’alignement, il est possible de générer une matrice qui est une méthode de visualisation de graphe.
 
- 
-Matrices d’interactions de contigs avant (gauche) et après partitionnement par l’algorithme de Louvain (droite).
-
 Pour cela, nous allons utiliser le script bins_matrix_generation.sh écrit en bash et qui permet de recouper les différentes informations et de générer une matrice non réordonnée et une matrice réordonnée des contigs de l’assemblage :
 
-usage du script : bash matrix_generation.sh  [fichier de sortie des données de louvain]  [dossier de l’alignement]  [dossier d’output]  [taille des pixels x 5Kb]
+usage du script : bash matrix_generation.sh  [fichier de sortie des données de louvain]  [fichier de l’alignement]  [dossier d’output]  [taille des pixels x 5Kb]
 
 lancement du script :
 
-> bash bins_matrix_generation.sh  XX/binning_output/contig_data.txt  XX/alignement/XX_alignement.txt  XX/figure/  20
-
-NB : il est également possible de générer des matrices d’interactions de chaque contig. Cela peut s’avérer très utile dans certains cas…
-
-lancement du script : 
-
-> bash contig_matrix_generation.sh  targeted_contig  XX/binning_output/contig_data.txt  XX/alignement/XX_alignement.txt  XX/figure/  1 
+> bash bins_matrix_generation.sh  output/contig_data.txt  alignment/XX_alignment.txt  figure/  20
 
 •	Arbres phylogénétiques
 
 CheckM offre également la possibilité d’étudier le placement des bins étudiés dans « l’arbre de la vie ».
 
 https://itol.embl.de/
-Vous trouverez un dossier tree/ dans le dossier correspondant à votre échantillon, il contient les différents fichiers permettant de générer les arbres phylogénétiques des bins correspondants à votre échantillon.
+
+Vous trouverez un dossier tree/ dans le dossier correspondant à votre échantillon, il contient les différents fichiers permettant de générer les arbres phylogénétiques des bins correspondants à votre échantillon.Vous y trouverez également différent fichiers permettant d'annoter votre arbre.
 

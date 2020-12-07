@@ -39,7 +39,7 @@ traitement des données par MetaPhlan
 
 > python software/metaphlan2/metaphlan2.py  alignement/sampleX_filtre_3C_for.sam  --input_type sam  --mpa_pkl  software/metaphlan2/db_bowtie/mpa_v20_m200.pkl  >  log_files/MetaPhlan_3C.log  2>&1
 
-Qi10 : Quelle est la distribution taxonomique de vos jeux de données au niveau du phylum ? de l’ordre ? de la classe ? [Réaliser un graphique pour illustrer votre résultats – camembert ou histogramme avec R par exemple] 
+Qi10 : Quelle est la distribution taxonomique de vos jeux de données au niveau du phylum ? de la classe ? de l’ordre ? [Réaliser un graphique pour illustrer votre résultats – camembert ou histogramme avec R par exemple] 
 
 ATTENTION !! ne prenez pas en compte les abondances < 1%
 

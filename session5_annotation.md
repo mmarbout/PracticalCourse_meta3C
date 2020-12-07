@@ -20,11 +20,13 @@ o	 -i : fichier d'input
 
 créer un répertoire de sortie
 
-> mkdir  -p  annotations/sampleX/
+> mkdir  -p  annotations/XX_500/
 
 lancer la recherche de phases ouvertes de lecture
 
-> prodigal  -p  meta  -a  annotations/sampleX/sampleX_prot.fa  -o  annotations/sampleX/sampleX.gene  -d  annotations/sampleX/sampleX_gene.fa    -i  assemblage/assemblage_XX_500.fa  >  log_files/prodigal.log  2>&1
+> prodigal -p meta -a annotations/XX_500/XX_prot.fa -o annotations/XX_500/XX.gene -d annotations/XX_500/XX_gene.fa -i  assemblage/assemblage_XX_500.fa  >  log_files/prodigal.log  2>&1
+
+Vous avez le droit à une bonne pause de 20 min le temps que Prodigal fin isse son travail !!!
 
 En vous servant des fichiers obtenus et de vos connaissances Unix (et du mémo fourni), répondez aux questions suivantes :
 
@@ -46,15 +48,15 @@ Concernant les bases de données de blast (protéiques ou nucléiques), elles pe
 
 créer un répertoire de sortie pour les bases de données
 
-> mkdir  -p  database/
+> mkdir -p database/
 
 création de la base de données
 
-> makeblastdb  -in fasta/ARmeta-polypeptides.fa  -input_type fasta  -dbtype prot  -out database/ARmeta  >  log_files/blastdb.log  2>&1
+> makeblastdb -in fasta/ARmeta-polypeptides.fa -input_type fasta -dbtype prot -out database/ARmeta > log_files/blastdb.log  2>&1
 
 faire le blast
 
-> blastp  -db database/ARmeta  -query annotations/sampleX/sampleX_prot.fa  -evalue 0.0001  -outfmt 6  -out annotations/sampleX/blast_ARmeta.txt  >  log_files/blast_ARmeta.log  2>&1
+> blastp -db database/ARmeta -query annotations/XX_500/XX_prot.fa -evalue 0.0001 -num-threads 4 -outfmt 6 -out annotations/XX_500/blast_ARmeta.txt >  log_files/blast_ARmeta.log  2>&1
 
 •	Recherche d'homologie par "hidden Markov model" (HMM)
 
@@ -66,6 +68,10 @@ Pour le seuil de la recherche de motif, nous avons les deux options suivantes :
 o	 -E : au niveau de la protéine entière
 
 o 	--domE : au niveau des domaines protéiques
+
+copier les modèles HMM qui sont sur l'espace GAIA
+
+> scp votrelogin@tars.pasteur.fr:/
 
 lancer la détection de motifs
 

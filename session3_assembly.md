@@ -22,5 +22,5 @@ créer un répertoire « assemblage » . onutilisera ce repertoire pour y stocke
 
 lancer l’assemblage
 
-> software/megahit/megahit  -1  fastq/sampleX_filtre_SG_for.fastq.gz  -2  fastq/sampleX_filtre_SG_rev.fastq.gz  -o  assemblage/sampleX/  >  log_files/megahit_sampleX_log  2>&1
+> ~/Bureau/install/megahit/megahit  -1  fastq/sampleX_filtre_SG_for.fastq.gz  -2  fastq/sampleX_filtre_SG_rev.fastq.gz  -o  assemblage/sampleX/  >  log_files/megahit_sampleX_log  2>&1
 

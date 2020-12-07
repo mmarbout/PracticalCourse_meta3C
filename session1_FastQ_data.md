@@ -32,7 +32,7 @@ créer un répertoire pour y déposer les fichiers fastq
  
 choisissez au hasard parmi les 10 échantillons et copier les fichiers fastq correspondants (n'oubliez pas de changer le X !!!)
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/fastq/sampleX_* fastq/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/FastQ/sampleX_* fastq/
 
 pour cette séance vous aurez également besoin d'un fichier fasta contenant les séquences des adaptateurs illumina. Copier l'ensemble du dossier fasta sur GAIA qui contient d'autre fichiers dont nous aurons besoin par la suite.
 

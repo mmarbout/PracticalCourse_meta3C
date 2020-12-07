@@ -61,7 +61,11 @@ faire le blast
 •	Recherche d'homologie par "hidden Markov model" (HMM)
 
 Un modèle de Markov caché (HMM) est un modèle statistique qui permet de modéliser une séquence cible mais en autorisant un certain degré de variabilité. Les modèles de Markov cachés sont massivement utilisés notamment en reconnaissance de formes, en intelligence artificielle, en traitement automatique du langage naturel et également pour la détection de motifs protéiques. Différents modèles sont disponibles notamment sur la base de données "Pfam" (Protein family).
-Nous allons travailler avec le logiciel hmmer qui s'utilise en ligne de commande, les modèles se trouvent dans [database/]. 
+Nous allons travailler avec le logiciel hmmer qui s'utilise en ligne de commande, les modèles se trouvent dans [database/] sur l'espace GAIA. 
+
+copier les modèles HMM qui sont sur l'espace GAIA
+
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/database/*.hmm database/
 
 Pour le seuil de la recherche de motif, nous avons les deux options suivantes :
 
@@ -69,17 +73,13 @@ o	 -E : au niveau de la protéine entière
 
 o 	--domE : au niveau des domaines protéiques
 
-copier les modèles HMM qui sont sur l'espace GAIA
-
-> scp votrelogin@tars.pasteur.fr:/
-
 lancer la détection de motifs
 
-> hmmsearch  -E  0.0001  --domE  0.0001  database/Resfams.hmm  annotations/sampleX_prot.fa  >  annotations/sampleX/HMM_resfam.out
+> hmmsearch  -E  0.0001  --domE  0.0001  database/Resfams.hmm  annotations/XX_prot.fa  >  annotations/XX_500/HMM_resfam.out
 
 récupérer les séquences d'intérêt
 
-> grep  'NODE'  annotations/sampleX/HMM_resfam.out  |  grep  'e-'  |  awk  '{print  $9}'  >  annotations/sampleX/resfam_prot.txt
+> grep  'NODE'  annotations/XX_500/HMM_resfam.out  |  grep  'e-'  |  awk  '{print  $9}'  >  annotations/XX_500/resfam_prot.txt
 
 Qi20 : Combien de gènes de type AMR retrouvez-vous dans votre échantillon selon l’outil utilisé ? Quel est le nombre de gènes AMR spécifiquement détecté par chaque outil ?
 
@@ -93,6 +93,14 @@ Recherches de plasmides : PlasmidFinder, Plasflow …
 
 Vous trouverez dans le dossier annotations/ les fichiers de sorties de 2 programmes spécifiques (VIRSorter et PlasFlow). Jetez y un oeil, vous pourrez en avoir besoin dans la suite du TP ...
 
+copier les fichiers correspodnants sur GAIA
+
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/"*" annotations/
+
+copier également le dossier scipts qui nous servira par la suite 
+
+> scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/scripts ./
+
 Par exemple, l'un des avantages de la technique de Meta3C est de pouvoir obtenir des matrices d'interactions de chaque contig de l'assemblage et donc d'étudier sa topologie. VirSorter, par exemple, indique si le contig détecté comme phage est circulaire.
 
 Rechercher dans votre fichier "annotations/VIRSorter_sampleX.csv" le plus gros contig annoté comme circulaire de votre assemblage
@@ -105,7 +113,7 @@ vous trouverez le fichier alignement sur GAIA
 
 > mkdir -p alignment/
 
-> scp /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/alignment/XX_alignment.txt alignment/
+> scp votrelogin@tars.pasteur:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/alignment/XX_alignment.txt alignment/
 
 > bash scripts/contig_matrix_generation.sh NODE_XX_length_XX alignment/XX_alignment.txt figure_sample/
 

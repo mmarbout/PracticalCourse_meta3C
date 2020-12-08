@@ -117,6 +117,18 @@ vous trouverez le fichier alignement sur GAIA
 
 > scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/alignement/XX_alignment.txt alignement/
 
+Mais avant de pouvoir utiliser ce script ... il va falloir installer quelques programmes et librairies !!
+
+1- des librairies python via la commande pip
+
+> sudo python3 -mpip install matplotlib Tk hicstuff
+
+taper votre mot de passe de la session (CoursGeno1$)
+
+2- un package nécessaire via la commande apt-get
+
+> sudo apt-get install python3.6-tk
+
 > bash scripts/contig_matrix_generation.sh NODE_XX_length_XX alignement/XX_alignment.txt figure/
 
 vous pourrez alors visualiser votre matrice et voir le signal circulaire dans le fichier d'ouput

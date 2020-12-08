@@ -109,7 +109,7 @@ Rechercher dans votre fichier "annotations/VIRSorter_sampleX.csv" le plus gros c
 
 > cat annotations/VIRSorter_XX.csv | grep "circu" | awk -F "," '{print $1}' | sed 's/VIRSorter_//' | sed 's/-circular//' | sed 's/length_/length /g' | sort -k 2,2 -g -r | awk '{print $1"_"$2}' | head -1 
 
-Une fois que vous connaissez ce contig, lancer le script contig_matrix_generation.sh qui prend 4 arguments en entrée [1-contig_target; 2-alignment_file; 3-output_directory]
+Une fois que vous connaissez ce contig, lancer le script contig_matrix_generation.sh qui prend 3 arguments en entrée [1-contig_target; 2-alignment_file; 3-output_directory]
 
 vous trouverez le fichier alignement sur GAIA
 
@@ -117,7 +117,7 @@ vous trouverez le fichier alignement sur GAIA
 
 > scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/alignement/XX_alignment.txt alignement/
 
-> bash scripts/contig_matrix_generation.sh NODE_XX_length_XX alignment/XX_alignment.txt figure_sample/
+> bash scripts/contig_matrix_generation.sh NODE_XX_length_XX alignement/XX_alignment.txt figure/
 
 vous pourrez alors visualiser votre matrice et voir le signal circulaire dans le fichier d'ouput
 

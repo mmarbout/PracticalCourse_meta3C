@@ -131,7 +131,7 @@ taper votre mot de passe de la session (CoursGeno1$)
 
 2- un package nécessaire via la commande apt-get
 
-> sudo apt-get install python3.6-tk
+> sudo apt-get install python3.5-tk
 
 maintenant ... vous pouvez lancer le script !!!
 

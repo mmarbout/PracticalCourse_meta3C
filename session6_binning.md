@@ -132,15 +132,15 @@ Etape 2 : génération d’un output de Louvain
 
 > do 
 
-> cat  binning/louvain_"$iteration".txt  |  awk  ‘{print $1}’  >  temp/contig_idx.txt 
+> cat  binning/louvain_"$iteration".txt  |  awk  '{print $1}'  >  temp/contig_idx.txt 
 
-> cat  binning/louvain_"$iteration".txt  |  awk  ‘{print $2";"}’  >  temp/bin_idx_"$iteration".txt
+> cat  binning/louvain_"$iteration".txt  |  awk  '{print $2";"}'  >  temp/bin_idx_"$iteration".txt
 
 > done 
 
-> paste  temp/bin_idx_*  | sed ‘s/\t//g’  >  temp/temp1.txt 
+> paste  temp/bin_idx_*  | sed 's/\t//g'  >  temp/temp1.txt 
 
-> paste  temp/contig_idx.txt  temp/temp1.txt  |  awk  ‘{print $1,$2}’  > binning/output_louvain_100it.txt
+> paste  temp/contig_idx.txt  temp/temp1.txt  |  awk  '{print $1,$2}'  > binning/output_louvain_100it.txt
 
 
 

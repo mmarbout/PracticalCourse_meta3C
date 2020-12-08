@@ -93,9 +93,11 @@ Recherches de plasmides : PlasmidFinder, Plasflow …
 
 Vous trouverez dans le dossier annotations/ les fichiers de sorties de 2 programmes spécifiques (VIRSorter et PlasFlow). Jetez y un oeil, vous pourrez en avoir besoin dans la suite du TP ...
 
-copier les fichiers correspodnants sur GAIA
+copier les fichiers correspondants sur GAIA
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/"*" annotations/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/PlasFlow/XX_plasflow.txt annotations/
+
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/VirSorter/VIRSorter_XX.csv annotations/
 
 copier également le dossier scipts qui nous servira par la suite 
 

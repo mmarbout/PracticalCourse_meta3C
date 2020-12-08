@@ -29,8 +29,12 @@ Copier l’assemblage global correspondant à votre échantillon (9010 ou 10015)
 
 > scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/assemblage/assemblage_XX_500.fa assemblage/  
 
+créer un répertoire de sortie 
+
+> mkdir  -p  assemblage/rapport_assemblage/sampleXX
+
 lancer les statistiques d'assemblage
 
-> ~/Bureau/install/quast-5.0.1/quast.py  assemblage/assemblage_XX_500.fa  -o  assemblage/rapport_assemblage/  >  log_files/quast_XX.log  2>&1
+> ~/Bureau/install/quast-5.0.1/quast.py  assemblage/assemblage_XX_500.fa  -o  assemblage/rapport_assemblage/sampleXX  >  log_files/quast_XX.log  2>&1
 
 Désormais vous allez travailler sur l’assemblage global correspondant à votre échantillon (9010 ou 10015).

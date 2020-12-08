@@ -4,7 +4,7 @@ L'annotation d'un métagénome a deux objectifs principaux : i - caractériser l
 
 vous avez récupéré votre assemblage qui contient des contigs renommés et sous cette forme:
 
-NODE_XX_length_XX (length correspondant à la longueur du contig !!)
+NODE_XX_length_YY (length correspondant à la longueur du contig !!)
 
 •	Recherche des phases ouvertes de lecture
 

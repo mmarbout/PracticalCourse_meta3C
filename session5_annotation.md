@@ -105,9 +105,9 @@ copier également le dossier scipts qui nous servira par la suite
 
 Par exemple, l'un des avantages de la technique de Meta3C est de pouvoir obtenir des matrices d'interactions de chaque contig de l'assemblage et donc d'étudier sa topologie. VirSorter, par exemple, indique si le contig détecté comme phage est circulaire.
 
-Rechercher dans votre fichier "annotations/VIRSorter_sampleX.csv" le plus gros contig annoté comme circulaire de votre assemblage (attention !!! ici il y a un sérieux problème avec github !!! il faut faire un : sed 's/_/ /g' en lieu et place du 3ème sed 
+Rechercher dans votre fichier "annotations/VIRSorter_sampleX.csv" le plus gros contig annoté comme circulaire de votre assemblage 
 
-> cat annotations/VIRSorter_XX.csv | grep "circu" | awk -F "," '{print $1}' | sed 's/VIRSorter_//' | sed 's/-circular//' | sed 's/_/ /g' | sort -k 4,4 -g -r | awk '{print $1"_"$2"_"$3"_"$4}' | head -1 
+> cat annotations/VIRSorter_XX.csv | grep "circu" | awk -F "," '{print $1}' | sed 's/VIRSorter_//' | sed 's/-circular//' | awk -F "_" '{print $1,$2,$3,$4}' | sort -k 4,4 -g -r | awk '{print $1"_"$2"_"$3"_"$4}' | head -1 
 
 Une fois que vous connaissez ce contig, lancer le script contig_matrix_generation.sh qui prend 4 arguments en entrée [1-contig_target; 2-alignment_file; 3-output_directory]
 

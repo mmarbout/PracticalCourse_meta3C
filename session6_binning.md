@@ -14,13 +14,13 @@ Les données générées par ce script se trouve sur GAIA. Copier le dossier cor
 
 > mkdir -p network/
 
-> scp votrelogin@tars.pasteur:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/network/XX_* network/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/network/XX_* network/
 
 vous aurez aussi besoin d'un fichier contenant les données des contigs
 
 > mkdir -p data_contigs/
 
-> scp votrelogin@tars.pasteur:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/idx_contig_length_cov_GC_XX.txt data_contigs/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/idx_contig_length_cov_GC_XX.txt data_contigs/
 
 explorer le répertoire network
 
@@ -95,7 +95,7 @@ Qi26 : Combien de contigs ne sont associés à aucun autre (ou combien de commun
 
 Qi27 : Combien de bin contiennent plus de 10 Kb, 100 Kb, 500 Kb et 1 Mb de séquences ?
 
-Qi28 : Détectez-vous le même nombre de communautés que les autres binômes ? Ces communautés sont-elles de la même taille ?
+Qi28 : Notez bien ces chiffres et refaites tourner l'algorithme avec les mêmes lignes de commandes (pas grave si vous écrasez les fichiers existants !!) Détectez-vous le même nombre de communautés que précédemment ? Ces communautés sont-elles de la même taille ?
 
 Qi29 : Qu'en déduisez-vous ?
 
@@ -126,19 +126,19 @@ nous allons réaliser une boucle afin de réaliser 100 itérations de Louvain
 Etape 2 : génération d’un output de Louvain
 
 
-for iteration in $(seq 1 100) 
+> for iteration in $(seq 1 100) 
 
-do 
+> do 
 
-cat  binning/louvain_"$iteration".txt  |  awk  ‘{print $1}’  >  temp/contig_idx.txt 
+> cat  binning/louvain_"$iteration".txt  |  awk  ‘{print $1}’  >  temp/contig_idx.txt 
 
-cat  binning/louvain_"$iteration".txt  |  awk  ‘{print $2";"}’  >  temp/bin_idx_"$iteration".txt
+> cat  binning/louvain_"$iteration".txt  |  awk  ‘{print $2";"}’  >  temp/bin_idx_"$iteration".txt
 
-done 
+> done 
 
-paste  temp/bin_idx_*  | sed ‘s/\t//g’  >  temp/temp1.txt 
+> paste  temp/bin_idx_*  | sed ‘s/\t//g’  >  temp/temp1.txt 
 
-paste  temp/contig_idx.txt  temp/temp1.txt  |  awk  ‘{print $1,$2}’  > binning/output_louvain_100it.txt
+> paste  temp/contig_idx.txt  temp/temp1.txt  |  awk  ‘{print $1,$2}’  > binning/output_louvain_100it.txt
 
 
 

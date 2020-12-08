@@ -2,7 +2,7 @@ Session 5 : Annotation d'un assemblage
 
 L'annotation d'un métagénome a deux objectifs principaux : i - caractériser les différents organismes (annotation taxonomique); ii - caractériser les différentes fonctions (annotation fonctionnelle), présentes dans l'échantillon. L’annotation peut se faire soit au niveau des séquences d'ADN obtenues (cf séance 2), soit au niveau des séquences protéiques putatives. L'utilisation des séquences d'ADN est plus précise mais plus difficile car les séquences d'ADN sont plus divergentes que les séquences protéiques. La première étape va donc consister à caractériser les ORFs putatives présentes dans notre assemblage.
 
-vous avez récupérer votre assemblage qui contient des contigs renommés et sous cette forme:
+vous avez récupéré votre assemblage qui contient des contigs renommés et sous cette forme:
 
 NODE_XX_length_XX (length correspondant à la longueur du contig !!)
 

@@ -135,7 +135,7 @@ taper votre mot de passe de la session (CoursGeno1$)
 
 maintenant ... vous pouvez lancer le script !!!
 
-> bash scripts/contig_matrix_generation.sh NODE_XX_length_XX alignement/XX_alignment.txt figure/
+> bash scripts/contig_matrix_generation.sh NODE_XX_length_YY alignement/XX_alignment.txt figure/
 
 vous pourrez alors visualiser votre matrice et voir le signal circulaire dans le fichier d'ouput
 

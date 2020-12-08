@@ -56,7 +56,7 @@ création de la base de données
 
 faire le blast
 
-> blastp -db database/ARmeta -query annotations/XX_500/XX_prot.fa -evalue 0.0001 -num-threads 4 -outfmt 6 -out annotations/XX_500/blast_ARmeta.txt >  log_files/blast_ARmeta.log  2>&1
+> blastp -db database/ARmeta -query annotations/XX_500/XX_prot.fa -evalue 0.0001 -num_threads 4 -outfmt 6 -out annotations/XX_500/blast_ARmeta.txt >  log_files/blast_ARmeta.log  2>&1
 
 •	Recherche d'homologie par "hidden Markov model" (HMM)
 

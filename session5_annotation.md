@@ -113,9 +113,9 @@ Une fois que vous connaissez ce contig, lancer le script contig_matrix_generatio
 
 vous trouverez le fichier alignement sur GAIA
 
-> mkdir -p alignment/
+> mkdir -p alignement/
 
-> scp votrelogin@tars.pasteur:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/alignement/XX_alignment.txt alignment/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/alignement/XX_alignment.txt alignement/
 
 > bash scripts/contig_matrix_generation.sh NODE_XX_length_XX alignment/XX_alignment.txt figure_sample/
 

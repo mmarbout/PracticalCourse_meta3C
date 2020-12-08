@@ -14,13 +14,13 @@ Les données générées par ce script se trouve sur GAIA. Copier le dossier cor
 
 > mkdir -p network/
 
-> scp /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2020-2021/TP_Meta3C/network/XX_* network/
+> scp votrelogin@tars.pasteur:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/network/XX_* network/
 
 vous aurez aussi besoin d'un fichier contenant les données des contigs
 
 > mkdir -p data_contigs/
 
-> scp /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2020-2021/TP_Meta3C/data_contigs/
+> scp votrelogin@tars.pasteur:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/idx_contig_length_cov_GC_XX.txt data_contigs/
 
 explorer le répertoire network
 
@@ -60,20 +60,22 @@ création d’un répertoire de sortie
 
 conversion d'un fichier texte en fichier binaire utilisable par l’algorithme de Louvain
 
-> convert_net  -i  network/XX_network_norm.txt  -o  binning/net.bin  -w  binning/net.weights
+> ~/Bureau/install/louvain/convert_net  -i  network/XX_network_norm.txt  -o  binning/net.bin  -w  binning/net.weights
 
 calcul des communautés et rendu d'un arbre hiérarchique
 
-> louvain binning/net.bin  -l  -1  -w binning/net.weights  >  binning/net.tree
+> ~/Bureau/install/louvain/louvain binning/net.bin  -l  -1  -w binning/net.weights  >  binning/net.tree
 
 calcul des informations concernant l'arbre hiérarchique (nb de niveau et nb de communautés par niveau)
 
-> hierarchy  binning/net.tree  >  binning/level_louvain.txt
+> ~/Bureau/install/louvain/hierarchy  binning/net.tree  >  binning/level_louvain.txt
 
 rendu de l'appartenance d'un nœud à une communauté pour un niveau hiérarchique donné
-NB : nous travaillons toujours avec le dernier niveau. C'est à vous de le déterminer en fonction du fichier "level_louvain.txt"    ?  
+NB : nous travaillons toujours avec le dernier niveau. C'est à vous de le déterminer en fonction du fichier "level_louvain.txt"
 
-> hierarchy  binning/net.tree  -l  ?  >  binning/output_louvain.txt
+donc NE ME METTEZ PAS UNE LIGNE DE COMMANDE AVEC UN "?" !!!!!!!
+
+> ~/Bureau/install/louvain/hierarchy  binning/net.tree  -l  ?  >  binning/output_louvain.txt
 
 Le fichier obtenu comprend dans la colonne 1 l'indice du contig et dans la colonne 2 l'indice de la communauté. 
 A partir de ce fichier et du fichier contenant les données des contigs (taille, couverture, contenu en GC), on peut générer tout un ensemble de données sur les communautés ou « bins » déterminés par l’algorithme de louvain. Pour cela, nous allons utiliser le script louvain_data_treatment écrit en bash et qui permet de recouper les différentes informations et de générer divers fichiers :
@@ -111,13 +113,13 @@ nous allons réaliser une boucle afin de réaliser 100 itérations de Louvain
 
 > do
 
-> louvain  binning/net.bin  -l  -1  -w binning/net.weights  >  binning/net.tree 
+> ~/Bureau/install/louvain/louvain  binning/net.bin  -l  -1  -w binning/net.weights  >  binning/net.tree 
 
-> hierarchy  binning/net.tree  >  binning/level_louvain.txt 
+> ~/Bureau/install/louvain/hierarchy  binning/net.tree  >  binning/level_louvain.txt 
 
 > level=$(tail  -1  binning/level_louvain.txt | awk ‘{print $2}’)
 
-> hierarchy  binning/net.tree  -l  "$level"  >  binning/louvain_"$iteration".txt
+> ~/Bureau/install/louvain/hierarchy  binning/net.tree  -l  "$level"  >  binning/louvain_"$iteration".txt
 
 > done 
 

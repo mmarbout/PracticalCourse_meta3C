@@ -75,7 +75,7 @@ o 	--domE : au niveau des domaines protéiques
 
 lancer la détection de motifs
 
-> hmmsearch  -E  0.0001  --domE  0.0001  database/Resfams.hmm  annotations/XX_prot.fa  >  annotations/XX_500/HMM_resfam.out
+> hmmsearch  -E  0.0001  --domE  0.0001  database/Resfams.hmm  annotations/XX_500/XX_prot.fa  >  annotations/XX_500/HMM_resfam.out
 
 récupérer les séquences d'intérêt
 

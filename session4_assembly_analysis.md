@@ -38,3 +38,5 @@ lancer les statistiques d'assemblage
 > ~/Bureau/install/quast-5.0.1/quast.py  assemblage/assemblage_XX_500.fa  -o  assemblage/rapport_assemblage/sampleXX  >  log_files/quast_XX.log  2>&1
 
 Désormais vous allez travailler sur l’assemblage global correspondant à votre échantillon (9010 ou 10015).
+
+et rassurez vous ... la pause arrive très bientot !!!

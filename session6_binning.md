@@ -117,11 +117,13 @@ nous allons réaliser une boucle afin de réaliser 100 itérations de Louvain
 
 > ~/Bureau/install/louvain/hierarchy  binning/net.tree  >  binning/level_louvain.txt 
 
-> level=$(tail  -1  binning/level_louvain.txt | awk ‘{print $2}’)
+> level=$(tail  -1  binning/level_louvain.txt | awk '{print $2}' | sed 's/://')
 
 > ~/Bureau/install/louvain/hierarchy  binning/net.tree  -l  "$level"  >  binning/louvain_"$iteration".txt
 
 > done 
+
+PETITE PAUSE le temps que les 100 itérations se fassent
 
 Etape 2 : génération d’un output de Louvain
 

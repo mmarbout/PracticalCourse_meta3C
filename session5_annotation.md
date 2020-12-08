@@ -113,7 +113,7 @@ vous trouverez le fichier alignement sur GAIA
 
 > mkdir -p alignment/
 
-> scp votrelogin@tars.pasteur:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/alignment/XX_alignment.txt alignment/
+> scp votrelogin@tars.pasteur:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/alignement/XX_alignment.txt alignment/
 
 > bash scripts/contig_matrix_generation.sh NODE_XX_length_XX alignment/XX_alignment.txt figure_sample/
 

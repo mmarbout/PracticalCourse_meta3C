@@ -2,6 +2,10 @@ Session 5 : Annotation d'un assemblage
 
 L'annotation d'un métagénome a deux objectifs principaux : i - caractériser les différents organismes (annotation taxonomique); ii - caractériser les différentes fonctions (annotation fonctionnelle), présentes dans l'échantillon. L’annotation peut se faire soit au niveau des séquences d'ADN obtenues (cf séance 2), soit au niveau des séquences protéiques putatives. L'utilisation des séquences d'ADN est plus précise mais plus difficile car les séquences d'ADN sont plus divergentes que les séquences protéiques. La première étape va donc consister à caractériser les ORFs putatives présentes dans notre assemblage.
 
+vous avez récupérer votre assemblage qui contient des contigs renommés et sous cette forme:
+
+NODE_XX_length_XX (length correspondant à la longueur du contig !!)
+
 •	Recherche des phases ouvertes de lecture
 
 Différents programmes existent pour rechercher de potentielles phases ouvertes de lecture (ORFs) (genemark, metagenemark, prodigal). Dans le cadre de ce TP nous utiliserons le programme prodigal qui est bien adapté aux métagénomes. Prodigal est un algorithme d'apprentissage automatique non supervisé (unsupervised machine learning). Il apprend de lui-même les propriétés du/des génome(s) à partir de la séquence elle-même, y compris le code génétique, l'utilisation du motif RBS (Ribosome Binding Site), l'utilisation du codon start ainsi que les statistiques d’utilisation des codons.

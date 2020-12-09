@@ -16,6 +16,20 @@ iii - l'hétérogénéité de souches (mesure reliée au nombre de marqueurs en 
 
 Ce sont des calculs lourds qui ont été lancés sur le cluster de calcul de l'Institut Pasteur. Vous trouverez les résultats dans le dossier [checkM_output] qui contient différentes informations sur les bins identifiés.
 
+CheckM génère différents fichiers :
+
+- checkM_results_complete2_TP_XX_1it.txt : contient des données sur les génomes reconstruits 
+
+- checkM_results_complete_TP_XX_1it.txt : contient des données sur les génomes reconstruit et les marqueurs taxonomiques utilisés pour évaluer les génomes
+
+- TP_XX_1it1.txt: contient des données sur l'annotations taxonomique des génomes reconstruits
+
+vous trouverez ces fichiers pour 1 itération de louvain (1it), 100 itérations (100it) et 100 itérations + 10 itérations en recursif (RE) 
+
+copier les différents fichiers générés par checkM
+
+> scp votrelogin@pasteur.fr
+
 Nous considèrerons un génome complet quand :
 
 o	sa complétude se situe au-delà de 90%

@@ -86,11 +86,11 @@ usage du script : bash matrix_generation.sh  [fichier de sortie des données de 
 
 idem que au dessus concernant la ligne de commande !!!
 
-vous êtes désormais (enfin j'espère) suffisamment à l'aise avec ces lignes de commandes et les arguments pour vous ens ortir tout seul ;)
+vous êtes désormais (enfin j'espère) suffisamment à l'aise avec ces lignes de commandes et les arguments pour vous en sortir tout seul ;)
 
 lancement du script :
 
-> bash bins_matrix_generation.sh  output/contig_data.txt  alignement/XX_alignment.txt  figure/  20
+> bash bins_matrix_generation.sh  data_contigs/XX_contig_data_jesaispasquoi.txt  alignement/XX_alignment.txt  figure/  20
 
 •	Arbres phylogénétiques
 

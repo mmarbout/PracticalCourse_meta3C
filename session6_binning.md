@@ -153,9 +153,35 @@ Etape 2 : génération d’un output de Louvain
 
 
 Qi30 : en utilisant les scripts utilisés aujourd’hui refaites la même analyse des bins obtenus après 100 itérations de Louvain (nombre de bins, répartition en fonction de leur taille).
+combien de bin entre 2 et 10Kb ? entre 10 et 100Kb ? entre 100 et 500Kb ? au dela de 500 Kb ?
 
 
 Il est également possible d’analyser l’évolutions des différentes communautés en fonction du nombre d’itérations de Louvain (1, 5, 10, 20, 50, 100). A l’aide de vos connaissances, des scripts déjà utilisés et des données fournies, réaliser une analyse de l'évolution des groupes de contigs en fonction du nombre d'itérations de l'algorithme de Louvain (cf polycopié du TP)
+
+pour cela, vous avez déjà les fichiers binning/louvain_"$iteration".txt ... vous pouvez donc refaire la 2ème boucle pour obtenir les résultats à chaque itérations
+
+je vous détaille un peu les lignes de commande mais vous ne devez pas les utiliser aveuglèment ;)
+
+inspirez vous en !!!
+
+NB: il faut supprimer les fichiers d'avant !!!!
+
+> rm temp/*
+
+> for iteration in $(seq 1 iteration souhaité)
+
+> do
+
+> cat  binning/louvain_"$iteration".txt  |  awk  '{print $1}'  >  temp/contig_idx.txt 
+
+> cat  binning/louvain_"$iteration".txt  |  awk  '{print $2";"}'  >  temp/bin_idx_"$iteration".txt
+
+> done 
+
+> paste  temp/bin_idx_*  | sed 's/\t//g'  >  temp/temp1.txt 
+
+> paste  temp/contig_idx.txt  temp/temp1.txt  |  awk  '{print $1,$2}'  > binning/output_louvain_"iterations souhaité".txt
+
 
 Qi31 : Comment évolue votre binning au cours des différentes itérations ? Combien d’itérations de louvain faudrait-il faire (justifier ce choix) ?
 

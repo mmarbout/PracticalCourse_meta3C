@@ -194,6 +194,9 @@ NB: il faut supprimer les fichiers d'avant !!!!
 > paste  temp/contig_idx.txt  temp/temp1.txt  |  awk  '{print $1,$2}'  > binning/output_louvain_"iterations souhaité".txt
 
 
+NB: les fichiers output_louvain_XX.txt ne sont pas exploitables en l'état ... pensez bien à refaire tourner le script louvain_data_treatment.sh à chaque fois
+et faites attention !!! les fichiers de sorties risquent d'écraser vos fichiers précedents !!!
+
 Qi31 : Comment évolue votre binning au cours des différentes itérations ? Combien d’itérations de louvain faudrait-il faire (justifier ce choix) ?
 
 

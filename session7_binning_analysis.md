@@ -2,6 +2,12 @@ session 7 : Analyse et validation des bins obtenus
 
 Différentes approches permettent de valider les bins obtenus. Nous allons essayer de passer en revue différentes méthodes permettant de valider notre binning.
 
+tout d'abord ... vous trouverez les données contig_data pour différentes itérations (contig_length_coverage_GCcontent_bin id _ bin size) sur l'espace GAIA
+
+> scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/XX_contig_data_1it.txt  data_contigs/
+
+> scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/XX_contig_data_100it.txt  data_contigs/
+
 •	Marqueurs taxonomiques
 
 Différents programmes existent afin de valider les bins obtenus après partitionnement d'un métagénome. Dans notre cas nous utiliserons checkM. La validation des bins avec ce programme consiste à rechercher un set de gènes bactériens (via des modèles HMM), essentiels et présents en une seule copie dans plus de 97% des génomes bactériens connus.

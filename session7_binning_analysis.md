@@ -78,9 +78,13 @@ Pour cela, nous allons utiliser le script bins_matrix_generation.sh écrit en ba
 
 usage du script : bash matrix_generation.sh  [fichier de sortie des données de louvain]  [fichier de l’alignement]  [dossier d’output]  [taille des pixels x 5Kb]
 
+idem que au dessus concernant la ligne de commande !!!
+
+vous êtes désormais (enfin j'espère) suffisamment à l'aise avec ces lignes de commandes et les arguments pour vous ens ortir tout seul ;)
+
 lancement du script :
 
-> bash bins_matrix_generation.sh  output/contig_data.txt  alignment/XX_alignment.txt  figure/  20
+> bash bins_matrix_generation.sh  output/contig_data.txt  alignement/XX_alignment.txt  figure/  20
 
 •	Arbres phylogénétiques
 
@@ -88,7 +92,7 @@ CheckM offre également la possibilité d’étudier le placement des bins étud
 
 https://itol.embl.de/
 
-Vous trouverez un dossier tree/ dans le dossier correspondant à votre échantillon, il contient les différents fichiers permettant de générer les arbres phylogénétiques des bins correspondants à votre échantillon.Vous y trouverez également différent fichiers permettant d'annoter votre arbre.
+Vous trouverez un dossier tree/ sur l'espace GAIA, il contient les différents fichiers permettant de générer les arbres phylogénétiques des bins correspondants à votre échantillon.Vous y trouverez également différent fichiers permettant d'annoter votre arbre.
 
 si vous avez du temps ... allez y jeter un oeil !!! cela permet de faire des figures très jolies !!! 
 

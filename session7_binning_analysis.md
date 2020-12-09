@@ -4,9 +4,9 @@ Différentes approches permettent de valider les bins obtenus. Nous allons essay
 
 tout d'abord ... vous trouverez les données contig_data pour différentes itérations (contig_length_coverage_GCcontent_bin id _ bin size) sur l'espace GAIA
 
-> scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/XX_contig_data_1it.txt  data_contigs/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/XX_contig_data_1it.txt  data_contigs/
 
-> scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/XX_contig_data_100it.txt  data_contigs/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/XX_contig_data_100it.txt  data_contigs/
 
 •	Marqueurs taxonomiques
 
@@ -38,9 +38,9 @@ créer un repertoire
 
 copier les différents fichiers générés par checkM
 
-> scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/checkM_data/*XX_1it.txt checkM_data/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/checkM_data/*XX_1it.txt checkM_data/
 
-> scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/checkM_data/*XX_100it.txt checkM_data/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/checkM_data/*XX_100it.txt checkM_data/
 
 Nous considèrerons un génome complet quand :
 
@@ -58,9 +58,9 @@ Qi34 : Avez-vous une idée de la manière d'améliorer le processus de binning ?
 
 Vous trouverez différents fichiers correspondant au binning final sur l’espace GAIA/ dans le dossier data_contigs/ et checkM_data/
 
-> scp scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/XX_* data_contigs/
+> scp scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/XX_* data_contigs/
 
-> scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/checkM_data/*XX_RE.txt checkM_data/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/checkM_data/*XX_RE.txt checkM_data/
 
 Étudiez l’évolution de vos bins (taille, complétion, contamination) au cours du processus de binning après 1 itération, 100 itérations et le processus recursif (RE) (exemple dans le polycopié)
 

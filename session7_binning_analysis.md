@@ -66,7 +66,7 @@ Vous trouverez différents fichiers correspondant au binning final sur l’espac
 
 •	Couverture et contenu en GC
 
-Une autre façon de vérifier la qualité de nos bins est de regarder l’homogénéité de leur couverture et de leur contenu en GC. A l’aide du fichier contig_data.txt , générez différent boxplot des bin > 300 Kb (GC, coverage) (cf polycopié)
+Une autre façon de vérifier la qualité de nos bins est de regarder l’homogénéité de leur couverture et de leur contenu en GC. A l’aide du fichier contig_data.txt , générez différent boxplot des bin > 300 Kb (GC, coverage) (cf polycopié - p48 je crois)
 
 Il est également possible de générer des « density plot » pour chaque bin afin de vérifier leur homogénéité.
 
@@ -74,7 +74,7 @@ lancement du script bin_analysis.sh qui prends 3 arguments en entrée [1-targete
 
 ATTENTION ICI !!!!  ne recopiez pas la ligne de commande betement !! il faut remplacer targeted bin par un bin que vous souhaitez étudier et le fichier contig_data par celui correspondant aux process en question ...
 
-> bash scripts/bin_analysis.sh  targeted_bin  figure/  output/contig_data_XX.txt 
+> bash scripts/bin_analysis.sh  targeted_bin  figure/  data_contigs/contig_data_XX.txt 
 
 •	Matrices d’interactions
 
@@ -87,6 +87,12 @@ usage du script : bash matrix_generation.sh  [fichier de sortie des données de 
 idem que au dessus concernant la ligne de commande !!!
 
 vous êtes désormais (enfin j'espère) suffisamment à l'aise avec ces lignes de commandes et les arguments pour vous en sortir tout seul ;)
+
+cela prend un peu de temps !! c'est une assez grosse matrice
+
+vous pouvez faire cette matrice de tous les bins à différentes étpaes du process ... 1it / 100it etc ..
+
+attention
 
 lancement du script :
 

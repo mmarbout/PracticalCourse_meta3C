@@ -95,6 +95,14 @@ lancement du script :
 
 > bash scripts/louvain_data_treatment.sh  output/  binning/output_louvain.txt  data_contigs/idx_contig_length_cov_GC_XX.txt
 
+Les infos importantes sont dans le dossier output/
+
+et dans les fichiers :
+
+-	contig_data.txt : contig – length – coverage – GC content – bin id – bin size
+
+-	bin_data: bin – bin size
+
 Qi25 : Combien de bins détectez-vous ?
 
 Qi26 : Combien de contigs ne sont associés à aucun autre (ou combien de communautés ne comprennent qu'un seul contig) ?

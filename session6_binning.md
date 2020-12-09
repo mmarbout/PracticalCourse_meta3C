@@ -158,6 +158,9 @@ Etape 2 : génération d’un output de Louvain
 
 > paste  temp/contig_idx.txt  temp/temp1.txt  |  awk  '{print $1,$2}'  > binning/output_louvain_100it.txt
 
+à partir de ce fichier output_louvain_100it.txt ... vous pouvez refaire tourner le script louvain_data_treatment en y mettant les bons arguments et ainsi obtenir 2 fichiers de sortie !!
+
+faites la commande vous meme en vous inspirant de celle deja faites précédemment
 
 
 Qi30 : en utilisant les scripts utilisés aujourd’hui refaites la même analyse des bins obtenus après 100 itérations de Louvain (nombre de bins, répartition en fonction de leur taille).

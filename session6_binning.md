@@ -26,11 +26,11 @@ explorer le répertoire network
 
 > ls  -l  network/
 
-fichier=XX_network.txt (col1: contig1 (nœud1) / col2: contig2 (noeud / col3: score)
+fichier=XX_network.txt (col1: contig1 (nœud1) / col2: contig2 (noeud2) / col3: score)
 
-fichier=XX_network_raw.txt (col1: contig1 (nœud1) / col2: contig2 (noeud / col3: score)
+fichier=XX_network_raw.txt (col1: contig1 (nœud1) / col2: contig2 (noeud2) / col3: score)
 
-fichier=XX_network_norm.txt (col1: contig1 (nœud1) / col2: contig2 (noeud / col3: score normalisé)
+fichier=XX_network_norm.txt (col1: contig1 (nœud1) / col2: contig2 (noeud2) / col3: score normalisé)
 
 
 Qi21 : Quelles sont les différences entre les différents fichiers Network ?

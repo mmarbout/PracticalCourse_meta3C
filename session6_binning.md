@@ -75,6 +75,12 @@ NB : nous travaillons toujours avec le dernier niveau. C'est à vous de le déte
 
 donc NE ME METTEZ PAS UNE LIGNE DE COMMANDE AVEC UN "?" !!!!!!!
 
+explorez le fichier level.txt
+
+> cat binning/level_louvain.txt
+
+quel level devez vous prendre ? il s'agit de son indice qu'il faut mettre !!! 
+
 > ~/Bureau/install/louvain/hierarchy  binning/net.tree  -l  ?  >  binning/output_louvain.txt
 
 Le fichier obtenu comprend dans la colonne 1 l'indice du contig et dans la colonne 2 l'indice de la communauté. 
@@ -108,6 +114,8 @@ Etape 1 : génération des données brutes des 100 itérations de Louvain
 
 NB le fichier binaire existe déjà, il est donc inutile de le recréer !!! gain de temps de calcul !!!
 nous allons réaliser une boucle afin de réaliser 100 itérations de Louvain
+
+pour cela on va générer une variable avec la fonction seq qui va compter de 1 à 100
 
 > for iteration in $(seq 1 100)
 

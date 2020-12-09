@@ -26,9 +26,9 @@ CheckM génère différents fichiers :
 
 vous trouverez ces fichiers pour 1 itération de louvain (1it), 100 itérations (100it) et 100 itérations + 10 itérations en recursif (RE) 
 
-copier les différents fichiers générés par checkM
+copier l'ensemble du dossier contenant les différents fichiers générés par checkM
 
-> scp votrelogin@pasteur.fr
+> scp -r votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/checkM_data/ ./
 
 Nous considèrerons un génome complet quand :
 
@@ -36,6 +36,7 @@ o	sa complétude se situe au-delà de 90%
 
 o	sa contamination se situe en deçà de 10%
 
+pour avoir cette information je vous conseille d'utiliser 
 
 Qi32 : Combien de génome(s) reconstruit(s) et complet(s) avez-vous ?
 

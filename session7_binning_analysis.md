@@ -24,11 +24,17 @@ CheckM génère différents fichiers :
 
 - TP_XX_1it1.txt: contient des données sur l'annotations taxonomique des génomes reconstruits
 
-vous trouverez ces fichiers pour 1 itération de louvain (1it), 100 itérations (100it) et 100 itérations + 10 itérations en recursif (RE) 
+vous trouverez ces fichiers pour 1 itération de louvain (1it), 100 itérations (100it) 
 
-copier l'ensemble du dossier contenant les différents fichiers générés par checkM
+créer un repertoire
 
-> scp -r votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/checkM_data/ ./
+> mkdir -p checkM_data/
+
+copier les différents fichiers générés par checkM
+
+> scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/checkM_data/*XX_1it.txt checkM_data/
+
+> scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/checkM_data/*XX_100it.txt checkM_data/
 
 Nous considèrerons un génome complet quand :
 
@@ -36,18 +42,21 @@ o	sa complétude se situe au-delà de 90%
 
 o	sa contamination se situe en deçà de 10%
 
-pour avoir cette information je vous conseille d'utiliser 
+pour avoir cette information je vous conseille d'utiliser les fichiers checkM_results_complete2_TP_XX_1/100it.txt
 
-Qi32 : Combien de génome(s) reconstruit(s) et complet(s) avez-vous ?
+Qi32 : Combien de génome(s) reconstruit(s) et complet(s) avez-vous ? après 1 itération ? après 100 itérations ?
 
-Qi33 : A quoi peut être due la présence de bins contaminés ?
+Qi33 : A quoi peut être due la présence de bins contaminés même après 100 itérations ?
 
-Qi34 : Avez-vous une idée de la manière d'améliorer le processus de binning ?
+Qi34 : Avez-vous une idée de la manière d'améliorer le processus de binning ? bon en même temps la réponse est plus ou moins juste après ;)
 
+Vous trouverez différents fichiers correspondant au binning final sur l’espace GAIA/ dans le dossier data_contigs/ et checkM_data/
 
-Vous trouverez différents fichiers correspondant au binning final sur l’espace GAIA/ dans le dossier data_contigs/
+> scp scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/XX_* data_contigs/
 
-Étudiez l’évolution de vos bins (taille, complétion, contamination) au cours du processus de binning (exemple dans le polycopié)
+> scp votrelogin@pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/checkM_data/*XX_RE.txt checkM_data/
+
+Étudiez l’évolution de vos bins (taille, complétion, contamination) au cours du processus de binning après 1 itération, 100 itérations et le processus recursif (RE) (exemple dans le polycopié)
 
 •	Couverture et contenu en GC
 
@@ -57,7 +66,9 @@ Il est également possible de générer des « density plot » pour chaque bin a
 
 lancement du script bin_analysis.sh qui prends 3 arguments en entrée [1-targeted_bin; 2-output_directory; 3-contig_data_file]
 
-> bash scripts/bin_analysis.sh  targeted_bin  figure/  output/contig_data.txt 
+ATTENTION ICI !!!!  ne recopiez pas la ligne de commande betement !! il faut remplacer targeted bin par un bin que vous souhaitez étudier et le fichier contig_data par celui correspondant aux process en question ...
+
+> bash scripts/bin_analysis.sh  targeted_bin  figure/  output/contig_data_XX.txt 
 
 •	Matrices d’interactions
 
@@ -78,4 +89,8 @@ CheckM offre également la possibilité d’étudier le placement des bins étud
 https://itol.embl.de/
 
 Vous trouverez un dossier tree/ dans le dossier correspondant à votre échantillon, il contient les différents fichiers permettant de générer les arbres phylogénétiques des bins correspondants à votre échantillon.Vous y trouverez également différent fichiers permettant d'annoter votre arbre.
+
+si vous avez du temps ... allez y jeter un oeil !!! cela permet de faire des figures très jolies !!! 
+
+on verra cela avec la correction ;)
 

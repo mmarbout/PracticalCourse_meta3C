@@ -197,6 +197,8 @@ NB: il faut supprimer les fichiers d'avant !!!!
 NB: les fichiers output_louvain_XX.txt ne sont pas exploitables en l'état ... pensez bien à refaire tourner le script louvain_data_treatment.sh à chaque fois
 et faites attention !!! les fichiers de sorties risquent d'écraser vos fichiers précedents !!!
 
+une autre possibilité serait de changer le repertoire de sortie ;)
+
 Qi31 : Comment évolue votre binning au cours des différentes itérations ? Combien d’itérations de louvain faudrait-il faire (justifier ce choix) ?
 
 

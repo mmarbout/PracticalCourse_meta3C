@@ -106,6 +106,12 @@ https://itol.embl.de/
 
 Vous trouverez un dossier tree/ sur l'espace GAIA, il contient les différents fichiers permettant de générer les arbres phylogénétiques des bins correspondants à votre échantillon.Vous y trouverez également différent fichiers permettant d'annoter votre arbre.
 
+voici l'adresse
+
+/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/tree
+
+je vous laisse faire le scp ;)
+
 si vous avez du temps ... allez y jeter un oeil !!! cela permet de faire des figures très jolies !!! 
 
 vous pouvez cliquer dans la barre du haut sur "upload"

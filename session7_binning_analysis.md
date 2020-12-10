@@ -96,7 +96,7 @@ attention
 
 lancement du script :
 
-> bash bins_matrix_generation.sh  data_contigs/XX_contig_data_jesaispasquoi.txt  alignement/XX_alignment.txt  figure/  20
+> bash scripts/bins_matrix_generation.sh  data_contigs/XX_contig_data_jesaispasquoi.txt  alignement/XX_alignment.txt  figure/  20
 
 •	Arbres phylogénétiques
 

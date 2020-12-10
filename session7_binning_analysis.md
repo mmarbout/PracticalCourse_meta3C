@@ -108,5 +108,21 @@ Vous trouverez un dossier tree/ sur l'espace GAIA, il contient les différents f
 
 si vous avez du temps ... allez y jeter un oeil !!! cela permet de faire des figures très jolies !!! 
 
+vous pouvez cliquer dans la barre du haut sur "upload"
+
+vous chargez votre treefile [concat_XX.fa.treefile]
+
+puis Upload 
+
+et la c'est magique !! j'adore !!! 
+
+ensuite vous pouvez directement faire des glisser de vos fichiers clas_treefile.txt, completion_trefile.txt .. etc sur la fenetre de votre arbre 
+
+la correspondance couleur - taxo se trouve ici : /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/taxo_color.txt
+
+Les couleurs sont au format RGB (on les trouve sur internet ;)
+
+vous verrez c'est chouette !!!
+
 on verra cela avec la correction ;)
 

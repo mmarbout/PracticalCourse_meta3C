@@ -112,6 +112,8 @@ voici l'adresse
 
 je vous laisse faire le scp ;)
 
+attention c'est un dossier ... une petite option après le scp sera la bienvenue pour copier l'ensemble du dossier ;)
+
 si vous avez du temps ... allez y jeter un oeil !!! cela permet de faire des figures très jolies !!! 
 
 vous pouvez cliquer dans la barre du haut sur "upload"

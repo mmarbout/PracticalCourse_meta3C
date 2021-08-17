@@ -27,7 +27,7 @@ Il est également possible de regrouper l’ensemble des données afin d'effectu
 
 Copier l’assemblage global correspondant à votre échantillon dans votre répertoire assemblage/ et refaites l’analyse Quast de votre échantillon.
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/assemblage/assemblage_XX_500.fa assemblage/  
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/assemblage/assembly_sampleXX.fa assemblage/  
 
 créer un répertoire de sortie 
 
@@ -35,7 +35,7 @@ créer un répertoire de sortie
 
 lancer les statistiques d'assemblage
 
-> ~/Bureau/install/quast-5.0.1/quast.py  assemblage/assemblage_XX_500.fa  -o  assemblage/rapport_assemblage/sampleXX  >  log_files/quast_XX.log  2>&1
+> ~/Bureau/install/quast-5.0.1/quast.py  assemblage/assembly_sampleXX.fa  -o  assemblage/rapport_assemblage/sampleXX  >  log_files/quast_XX.log  2>&1
 
 Désormais vous allez travailler sur l’assemblage global correspondant à votre échantillon.
 

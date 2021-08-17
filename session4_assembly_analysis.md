@@ -25,7 +25,7 @@ Qi14 : Quelle est la valeur théorique du N100 ?
 
 Il est également possible de regrouper l’ensemble des données afin d'effectuer un assemblage global de l’expérience. Cet assemblage a été réalisé sur le cluster de calcul de l'Institut Pasteur car le nombre de reads est assez important et, par conséquent, les temps de calcul également. 
 
-Copier l’assemblage global correspondant à votre échantillon (9010 ou 10015) dans votre répertoire assemblage/ et refaites l’analyse Quast de votre échantillon.
+Copier l’assemblage global correspondant à votre échantillon dans votre répertoire assemblage/ et refaites l’analyse Quast de votre échantillon.
 
 > scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/assemblage/assemblage_XX_500.fa assemblage/  
 
@@ -37,6 +37,6 @@ lancer les statistiques d'assemblage
 
 > ~/Bureau/install/quast-5.0.1/quast.py  assemblage/assemblage_XX_500.fa  -o  assemblage/rapport_assemblage/sampleXX  >  log_files/quast_XX.log  2>&1
 
-Désormais vous allez travailler sur l’assemblage global correspondant à votre échantillon (9010 ou 10015).
+Désormais vous allez travailler sur l’assemblage global correspondant à votre échantillon.
 
 et rassurez vous ... la pause arrive très bientot !!!

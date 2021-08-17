@@ -44,7 +44,7 @@ Qi18 : Quel est la longueur totale des gènes détectés ?
 
 Qi19 : Quelle est la densité en séquences codantes de votre assemblage ? cette valeur vous semble-t-elle cohérente ?
 
-Différents outils existent afin de caractériser les ORFs putatives présentes dans un assemblage (Principalement Blast ou HMM). Dans cette partie, nous allons rechercher les gènes putatifs de résistances aux antibiotiques et comparer ces 2 outils.
+Différents outils existent afin de caractériser les ORFs putatives présentes dans un assemblage (Principalement Blast ou HMM). Dans cette partie, nous allons rechercher les gènes putatifs de résistances aux antibiotiques et comparer différents outils.
 
 •	BLAST
 
@@ -85,33 +85,39 @@ récupérer les séquences d'intérêt
 
 > grep  'NODE'  annotations/XX_500/HMM_resfam.out  |  grep  'e-'  |  awk  '{print  $9}'  >  annotations/XX_500/resfam_prot.txt
 
-Qi20 : Combien de gènes de type AMR retrouvez-vous dans votre échantillon selon l’outil utilisé ? Quel est le nombre de gènes AMR spécifiquement détecté par chaque outil ?
-
 •	Programmes spécifiques
 
 Il existe un grand nombre de programmes dédiés à la caractérisation de certains types d’éléments génétiques tel que les transposons, les plasmides, les phages. Ces programmes s’appuient généralement sur des séquences protéiques, des modèles HMM et d’autres spécificités des éléments étudiés pour caractériser des familles d’éléments bien spécifiques.
 
-Recherches de phages : VIRSorter, VIBRANT …
+Recherches de gènes de type AMR : Resfinder ...
 
-Recherches de plasmides : PlasmidFinder, Plasflow …
+Recherches de phages : VIRSorter, VIBRANT ...
+
+Recherches de plasmides : PlasmidFinder, Plasflow ...
 
 Vous trouverez dans le dossier annotations/ les fichiers de sorties de 2 programmes spécifiques (VIRSorter et PlasFlow). Jetez y un oeil, vous pourrez en avoir besoin dans la suite du TP ...
 
 copier les fichiers correspondants sur GAIA
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/PlasFlow/XX_plasflow.txt annotations/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/Resfinder/Resfinder_sampleXX.txt annotations/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/VirSorter/VIRSorter_XX.csv annotations/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/PlasFlow/PLASFLOW_sampleXX.tsv annotations/
 
-copier également le dossier scipts qui nous servira par la suite 
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/VIRSorter/VIRSORTER_sampleXX.csv annotations/
+
+
+Qi20 : Combien de gènes de type AMR retrouvez-vous dans votre échantillon selon l’outil utilisé (Blast vs. HMM vs. Resfinder) ? Quel est le nombre de gènes AMR spécifiquement détecté par chaque outil ?
+
+
+copier le dossier scipts qui nous servira par la suite 
 
 > scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/scripts ./
 
 Par exemple, l'un des avantages de la technique de Meta3C est de pouvoir obtenir des matrices d'interactions de chaque contig de l'assemblage et donc d'étudier sa topologie. VirSorter, par exemple, indique si le contig détecté comme phage est circulaire.
 
-Rechercher dans votre fichier "annotations/VIRSorter_sampleX.csv" le plus gros contig annoté comme circulaire de votre assemblage 
+Rechercher dans votre fichier "annotations/VIRSORTER_sampleXX.csv" le plus gros contig annoté comme circulaire de votre assemblage 
 
-> cat annotations/VIRSorter_XX.csv | grep "circu" | awk -F "," '{print $1}' | sed 's/VIRSorter_//' | sed 's/-circular//' | sed 's/length_/length /g' | sort -k 2,2 -g -r | awk '{print $1"_"$2}' | head -1 
+> cat annotations/VIRSORTER_sampleXX.csv | grep "circu" | awk -F "," '{print $1}' | sed 's/VIRSorter_//' | sed 's/-circular//' | sed 's/length_/length /g' | sort -k 2,2 -g -r | awk '{print $1"_"$2}' | head -1 
 
 Une fois que vous connaissez ce contig, lancer le script contig_matrix_generation.sh qui prend 3 arguments en entrée [1-contig_target; 2-alignment_file; 3-output_directory]
 
@@ -137,6 +143,6 @@ maintenant ... vous pouvez lancer le script !!!
 
 > bash scripts/contig_matrix_generation.sh NODE_XX_length_YY alignement/XX_alignment.txt figure/
 
-vous pourrez alors visualiser votre matrice et voir le signal circulaire dans le fichier d'ouput
+vous pourrez alors visualiser votre matrice et voir le signal circulaire (ou pas) dans le fichier d'ouput
 
 

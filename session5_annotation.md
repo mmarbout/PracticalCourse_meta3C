@@ -46,6 +46,11 @@ Qi19 : Quelle est la densité en séquences codantes de votre assemblage ? cette
 
 Différents outils existent afin de caractériser les ORFs putatives présentes dans un assemblage (Principalement Blast ou HMM). Dans cette partie, nous allons rechercher les gènes putatifs de résistances aux antibiotiques et comparer différents outils.
 
+copier les différents fichiers qui sont sur l'espace GAIA
+
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/database/* database/
+
+
 •	BLAST
 
 Concernant les bases de données de blast (protéiques ou nucléiques), elles peuvent être très générales (non-redundant nucleotide database sur NCBI) ou plus spécifiques de certains groupes ou familles de gènes (marqueurs taxonomiques, phages, gènes de résistance aux antibiotiques...). Il est également possible de réaliser soi-même sa base de données.
@@ -66,10 +71,6 @@ faire le blast
 
 Un modèle de Markov caché (HMM) est un modèle statistique qui permet de modéliser une séquence cible mais en autorisant un certain degré de variabilité. Les modèles de Markov cachés sont massivement utilisés notamment en reconnaissance de formes, en intelligence artificielle, en traitement automatique du langage naturel et également pour la détection de motifs protéiques. Différents modèles sont disponibles notamment sur la base de données "Pfam" (Protein family).
 Nous allons travailler avec le logiciel hmmer qui s'utilise en ligne de commande, les modèles se trouvent dans [database/] sur l'espace GAIA. 
-
-copier les modèles HMM qui sont sur l'espace GAIA
-
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/database/*.hmm database/
 
 Pour le seuil de la recherche de motif, nous avons les deux options suivantes :
 

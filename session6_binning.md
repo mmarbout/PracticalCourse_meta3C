@@ -14,13 +14,13 @@ Les données générées par ce script se trouve sur GAIA. Copier le dossier cor
 
 > mkdir -p network/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/network/XX_* network/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/Network/sampleXX_* network/
 
 vous aurez aussi besoin d'un fichier contenant les données des contigs
 
 > mkdir -p data_contigs/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/idx_contig_length_cov_GC_XX.txt data_contigs/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/contig_data_sampleXX.txt data_contigs/
 
 explorer le répertoire network
 

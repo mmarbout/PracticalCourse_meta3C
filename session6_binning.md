@@ -4,23 +4,17 @@ La métagénomique permet aujourd'hui d'étudier les micro-organismes non cultiv
 
 •	Génération du réseau d’interactions inter-contig
 
-La première étape va consister à aligner les paires de lectures sur l’assemblage global afin d'établir un réseau d'interactions entre les contigs de l’assemblage. Ce réseau nous servira ensuite au regroupement (binning) des contigs. Le script a déjà été lancé avec l’ensemble des données fastq afin de générer un réseau d’interaction global contenant l’ensemble des expériences pour les 2 échantillons.
+La première étape va consister à aligner les paires de lectures sur l’assemblage global afin d'établir un réseau d'interactions entre les contigs de l’assemblage. Ce réseau nous servira ensuite au regroupement (binning) des contigs. Le programme MetaTOR a déjà été lancé avec l’ensemble des données fastq afin de générer un réseau d’interaction global contenant l’ensemble des expériences pour nos différents échantillons.
 
-Si vous souhaitez voir le script, vous le trouverez dans le répertoire [scripts/]
+Les données générées par notre programme se trouve sur GAIA. Copier les fichiers correspondants à votre échantillon dans votre dossier [network/].
 
-usage du script : bash network_generation.sh  [repertoire de sortie]  [fichier d’assemblage]  [fichiers FastQ_for]  [fichiers FastQ_rev]  [Mapping_Quality_Threshold]
-
-Les données générées par ce script se trouve sur GAIA. Copier le dossier correspondant à votre échantillon dans votre dossier et décompresser le. Ce dossier contient différents répertoires contenants chacun différents fichiers.
-
-> mkdir -p network/
-
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/Network/sampleXX_* network/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/Network/sampleXX_* network/
 
 vous aurez aussi besoin d'un fichier contenant les données des contigs
 
 > mkdir -p data_contigs/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/data_contigs/contig_data_sampleXX.txt data_contigs/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/data_contigs/contig_data_sampleXX.txt data_contigs/
 
 explorer le répertoire network
 

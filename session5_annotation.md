@@ -105,6 +105,8 @@ récupérer les séquences d'intérêt
 
 > cat annotations/hmm_output/sampleXX_vs_crassPol.out  |  awk '{print $9}' |  grep  'NODE'  >  annotations/hmm_output/sampleXX_vs_crassPol.txt
 
+FAIRE LA MEME CHOSE AVEC LA TERMINASE
+
 Qi21 : Comme précédemment ... Combien de contigs candidats obtenez vous selon la séquence recherchée ? Quels sont les contigs qui vous paraissent les plus connvaincants et Pourquoi ? 
 
 •	Programmes spécifiques

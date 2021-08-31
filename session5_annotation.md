@@ -153,9 +153,9 @@ Une fois que vous connaissez ce contig, lancer le script contig_matrix_generatio
 
 vous trouverez le fichier alignement sur GAIA
 
-> mkdir -p Network/
+> mkdir -p network/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/Network/alignment_sampleXX.txt Network/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/network/alignment_sampleXX.txt network/
 
 Mais avant de pouvoir utiliser ce script ... il va falloir installer quelques programmes et librairies !!
 
@@ -171,7 +171,7 @@ taper votre mot de passe de la session (CoursGeno1$)
 
 maintenant ... vous pouvez lancer le script !!!
 
-> bash scripts/contig_matrix_generation.sh NODE_XX_length_YY Network/alignment_sampleXX.txt figure/
+> bash scripts/contig_matrix_generation.sh NODE_XX_length_YY network/alignment_sampleXX.txt figure/
 
 vous pourrez alors visualiser votre matrice et voir le signal circulaire (ou pas) dans le fichier d'ouput
 

@@ -1,6 +1,6 @@
 Session 2 : Annotation taxonomique des reads issues d’un métagénome
 
-Estimer la diversité taxonomique d’un jeu de données métagénomique consiste à déterminer la liste des taxons présents et à calculer leur abondance. L’approche classique consiste à aligner toutes les séquences contre toutes celles d’une ou plusieurs banques de références. Le score d’alignement le plus élevé entre une séquence et une référence est alors utilisé pour estimer leur ressemblance d’un point de vue phylogénétique. Il existe de nombreuses banques de références, telles que RefSeq pour aligner les séquences contre des génomes complets, ou Greengenes pour les aligner contre des marqueurs phylogénétiques connus. Ces dernières présentes l’avantage d’estimer la diversité en n’utilisant qu’une fraction des reads et donc de réduire la taille des bases de données nécessaires ainsi que les temps de calcul. L’inconvénient de ces approches basées sur des références est qu’elles sont limitées par nos connaissances. 
+Estimer la diversité taxonomique d’un jeu de données métagénomique consiste à déterminer la liste des taxons présents et à calculer leur abondance. L’approche classique consiste à aligner toutes les séquences contre toutes celles d’une ou plusieurs banques de références. Le score d’alignement le plus élevé entre une séquence et une référence est alors utilisé pour estimer leur ressemblance d’un point de vue phylogénétique. Il existe de nombreuses banques de références, telles que RefSeq pour aligner les séquences contre des génomes complets, ou Greengenes pour les aligner contre des marqueurs phylogénétiques connus. Ces dernières présentes l’avantage d’estimer la diversité en n’utilisant qu’une fraction des reads et donc de réduire la taille des bases de données nécessaires ainsi que les temps de calcul. L’inconvénient de ces approches basées sur des références est qu’elles sont limitées par nos connaissances et les bases de données. 
 Dans notre cas, nous allons comparer les données à une base de données de marqueurs taxonomiques via les programmes bowtie2 (alignements des reads) et MetaPhlan (analyse des alignements).
 
 bowtie2 est un aligneur de lecture rapide et efficace en mémoire. Il aligne de courtes séquences d'ADN sur le génome humain à un rythme de plus de 25 millions de lectures de 35 pb par heure. bowtie2 indexe le génome avec un index de Burrows-Wheeler afin de conserver une empreinte mémoire réduite (environ 2,2 Go pour le génome humain). Il possède un grand nombre d’option que vous pouvez voir en utilisant la commande : bowtie2 -help
@@ -9,7 +9,7 @@ créer un répertoire de sortie des fichiers d’alignement
 
 > mkdir  -p  alignement/
 
-nous allons avoir également besoin du programme metaphlan2 (la versin sur votre VM ne fonctionne pas avec mes base de données)
+nous allons avoir également besoin du programme metaphlan2 (la version sur votre VM ne fonctionne pas avec mes base de données)
 
 créer un répertoire contenant les programmes
 
@@ -17,7 +17,7 @@ créer un répertoire contenant les programmes
 
 copier le programme
 
-> scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/software/metaphlan2/ software/
+> scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/software/metaphlan2/ software/
 
 donner les autorisations !!
 

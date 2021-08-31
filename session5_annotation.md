@@ -30,7 +30,7 @@ lancer la recherche de phases ouvertes de lecture
 
 > prodigal -p meta -a annotations/XX_500/XX_prot.fa -o annotations/XX_500/XX.gene -d annotations/XX_500/XX_gene.fa -i  assemblage/assemblage_XX_500.fa  >  log_files/prodigal.log  2>&1
 
-Vous avez le droit à une bonne pause de 20 min le temps que Prodigal fin isse son travail !!!
+Vous avez le droit à une bonne pause de 20 min le temps que Prodigal finisse son travail !!!
 
 En vous servant des fichiers obtenus et de vos connaissances Unix (et du mémo fourni), répondez aux questions suivantes :
 
@@ -44,33 +44,52 @@ Qi18 : Quel est la longueur totale des gènes détectés ?
 
 Qi19 : Quelle est la densité en séquences codantes de votre assemblage ? cette valeur vous semble-t-elle cohérente ?
 
-Différents outils existent afin de caractériser les ORFs putatives présentes dans un assemblage (Principalement Blast ou HMM). Dans cette partie, nous allons rechercher les gènes putatifs de résistances aux antibiotiques et comparer différents outils.
+#############################################
 
-copier les différents fichiers qui sont sur l'espace GAIA
+Différents outils existent afin de caractériser les ORFs putatives présentes dans un assemblage (Principalement Blast ou HMM). Dans cette partie, nous allons rechercher des représentant de la famille des CrAss phages dans nos différents echantillons.
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/database/* database/
+Concernant les bases de données de blast (protéiques ou nucléiques), elles peuvent être très générales (non-redundant nucleotide database sur NCBI) ou plus spécifiques de certains groupes ou familles de gènes (marqueurs taxonomiques, phages, gènes de résistance aux antibiotiques...). Il est également possible de réaliser soi-même sa base de données. Nous allons avec des base de données de deux protéines caractéristiques de la famille des crAss phages : La Polymérase et la Terminase.
 
+création des index
 
-•	BLAST
+> makeblastdb -in database/Crass_Polymerase.fa -input_type fasta -dbtype prot -out database/crass_pol > log_files/blastdb.log  2>&1
 
-Concernant les bases de données de blast (protéiques ou nucléiques), elles peuvent être très générales (non-redundant nucleotide database sur NCBI) ou plus spécifiques de certains groupes ou familles de gènes (marqueurs taxonomiques, phages, gènes de résistance aux antibiotiques...). Il est également possible de réaliser soi-même sa base de données.
+> makeblastdb -in database/Crass_Terminase.fa -input_type fasta -dbtype prot -out database/crass_ter > log_files/blastdb.log  2>&1
 
-créer un répertoire de sortie pour les bases de données
+création des répertoires de sortie
 
-> mkdir -p database/
+> mkdir -p annotations/blast_output/ 
 
-création de la base de données
+faire les blasts
 
-> makeblastdb -in fasta/ARmeta-polypeptides.fa -input_type fasta -dbtype prot -out database/ARmeta > log_files/blastdb.log  2>&1
+> blastp -db database/crass_pol -query annotations/prodigal/sampleXX_prot.fa -evalue 0.0001 -num_threads 4 -outfmt 6 -out annotations/blast_output/sampleXX_vs_crassPol.txt >  log_files/blast_crass_pol.log  2>&1
 
-faire le blast
+> blastp -db database/crass_ter -query annotations/prodigal/sampleXX_prot.fa -evalue 0.0001 -num_threads 4 -outfmt 6 -out annotations/blast_output/sampleXX_vs_crassTer.txt >  log_files/blast_crass_ter.log  2>&1
 
-> blastp -db database/ARmeta -query annotations/XX_500/XX_prot.fa -evalue 0.0001 -num_threads 4 -outfmt 6 -out annotations/XX_500/blast_ARmeta.txt >  log_files/blast_ARmeta.log  2>&1
+Qi20 : Combien de contigs candidats obtenez vous selon la séquence recherchée ? Quels sont les contigs qui vous paraissent les plus connvaincants et Pourquoi ? 
 
 •	Recherche d'homologie par "hidden Markov model" (HMM)
 
 Un modèle de Markov caché (HMM) est un modèle statistique qui permet de modéliser une séquence cible mais en autorisant un certain degré de variabilité. Les modèles de Markov cachés sont massivement utilisés notamment en reconnaissance de formes, en intelligence artificielle, en traitement automatique du langage naturel et également pour la détection de motifs protéiques. Différents modèles sont disponibles notamment sur la base de données "Pfam" (Protein family).
-Nous allons travailler avec le logiciel hmmer qui s'utilise en ligne de commande, les modèles se trouvent dans [database/] sur l'espace GAIA. 
+Nous allons travailler avec le logiciel hmmer qui s'utilise en ligne de commande. 
+
+Nous allons commencer par construire un modèle HMM pour chacune des séquences recherchées. La première étape consiste à réaliser un alignement de nos séquuences avant de pouvoir construire le modèle.
+
+> software/muscle3.8.31_i86darwin64 -quiet -in database/Crass_Polymerase.fa -out database/Crass_Polymerase_aln.fa
+
+nettoyer les en-têtes de l'alignement
+
+> cat database/Crass_Polymerase_aln.fa | sed 's/>/> /' | sed 's/_/ /g' | awk '{if ($1==">") print $1$2"_"$3"_"$4"_"$5; else print $0}' > database/Crass_Polymerase_aln_V2.fa
+
+construire le modèle HMM
+
+> hmmbuild database/Polymerase_crass.hmm database/Crass_Polymerase_aln_V2.fa
+
+FAIRE LA MEME CHOSE AVEC LA TERMINASE
+
+création du répertoire de sortie 
+
+> mkdir -p annotations/hmm_output/
 
 Pour le seuil de la recherche de motif, nous avons les deux options suivantes :
 
@@ -80,11 +99,13 @@ o 	--domE : au niveau des domaines protéiques
 
 lancer la détection de motifs
 
-> hmmsearch  -E  0.0001  --domE  0.0001  database/Resfams.hmm  annotations/XX_500/XX_prot.fa  >  annotations/XX_500/HMM_resfam.out
+> hmmsearch  -E  0.0001  --domE  0.0001  database/Polymerase_crass.hmm  annotations/prodigal/sampleXX_prot.fa  >  annotations/hmm_output/sampleXX_vs_crassPol.out
 
 récupérer les séquences d'intérêt
 
-> grep  'NODE'  annotations/XX_500/HMM_resfam.out  |  grep  'e-'  |  awk  '{print  $9}'  >  annotations/XX_500/resfam_prot.txt
+> cat annotations/hmm_output/sampleXX_vs_crassPol.out  |  awk '{print $9}' |  grep  'NODE'  >  annotations/hmm_output/sampleXX_vs_crassPol.txt
+
+Qi21 : Comme précédemment ... Combien de contigs candidats obtenez vous selon la séquence recherchée ? Quels sont les contigs qui vous paraissent les plus connvaincants et Pourquoi ? 
 
 •	Programmes spécifiques
 
@@ -96,27 +117,29 @@ Recherches de phages : VIRSorter, VIBRANT ...
 
 Recherches de plasmides : PlasmidFinder, Plasflow ...
 
-Vous trouverez dans le dossier annotations/ les fichiers de sorties de 2 programmes spécifiques (VIRSorter et PlasFlow). Jetez y un oeil, vous pourrez en avoir besoin dans la suite du TP ...
+Vous trouverez dans le dossier annotations/ les fichiers de sorties de différents programmes. Jetez y un oeil, vous pourrez en avoir besoin dans la suite du TP ...
 
 copier les fichiers correspondants sur GAIA
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/Resfinder/Resfinder_sampleXX.txt annotations/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/VIRSorter/Resfinder_sampleXX.txt annotations/
 
 > scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/PlasFlow/PLASFLOW_sampleXX.tsv annotations/
 
 > scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/VIRSorter/VIRSORTER_sampleXX.csv annotations/
 
+jetez un oeil sur le fichier de sortie du programme VIRSorter
 
-Qi20 : Combien de gènes de type AMR retrouvez-vous dans votre échantillon selon l’outil utilisé (Blast vs. HMM vs. Resfinder) ? Quel est le nombre de gènes AMR spécifiquement détecté par chaque outil ?
+Qi22 : Combien de Phages de chaque catégorie sont détectés ?
 
+Qi23: faites une comparaison des différents résultats obtenus !! Quels contigs garderiez vous pour la poursuite de l'analyse des CrAss phages dans nos échantillons ?
 
 copier le dossier scipts qui nous servira par la suite 
 
-> scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/scripts ./
+> scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/scripts ./
 
 Par exemple, l'un des avantages de la technique de Meta3C est de pouvoir obtenir des matrices d'interactions de chaque contig de l'assemblage et donc d'étudier sa topologie. VirSorter, par exemple, indique si le contig détecté comme phage est circulaire.
 
-Rechercher dans votre fichier "annotations/VIRSORTER_sampleXX.csv" le plus gros contig annoté comme circulaire de votre assemblage 
+Rechercher dans votre fichier "annotations/VIRSORTER_sampleXX.csv" le plus gros contig annoté comme circulaire de votre assemblage ou un contig candidat de la famille des CrAss phages
 
 > cat annotations/VIRSORTER_sampleXX.csv | grep "circu" | awk -F "," '{print $1}' | sed 's/VIRSorter_//' | sed 's/-circular//' | sed 's/length_/length /g' | sort -k 2,2 -g -r | awk '{print $1"_"$2}' | head -1 
 
@@ -124,9 +147,9 @@ Une fois que vous connaissez ce contig, lancer le script contig_matrix_generatio
 
 vous trouverez le fichier alignement sur GAIA
 
-> mkdir -p alignement/
+> mkdir -p Network/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/alignement/XX_alignment.txt alignement/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/Network/alignment_sampleXX.txt Network/
 
 Mais avant de pouvoir utiliser ce script ... il va falloir installer quelques programmes et librairies !!
 
@@ -142,7 +165,7 @@ taper votre mot de passe de la session (CoursGeno1$)
 
 maintenant ... vous pouvez lancer le script !!!
 
-> bash scripts/contig_matrix_generation.sh NODE_XX_length_YY alignement/XX_alignment.txt figure/
+> bash scripts/contig_matrix_generation.sh NODE_XX_length_YY Network/alignment_sampleXX.txt figure/
 
 vous pourrez alors visualiser votre matrice et voir le signal circulaire (ou pas) dans le fichier d'ouput
 

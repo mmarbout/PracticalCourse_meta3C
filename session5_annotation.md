@@ -123,11 +123,11 @@ Vous trouverez dans le dossier annotations/ les fichiers de sorties de différen
 
 copier les fichiers correspondants sur GAIA
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/VIRSorter/Resfinder_sampleXX.txt annotations/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2021/TP_Meta3C/annotations/VIRSorter/Resfinder_sampleXX.txt annotations/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/PlasFlow/PLASFLOW_sampleXX.tsv annotations/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/annotations/PlasFlow/PLASFLOW_sampleXX.tsv annotations/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/annotations/VIRSorter/VIRSORTER_sampleXX.csv annotations/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/annotations/VIRSorter/VIRSORTER_sampleXX.csv annotations/
 
 jetez un oeil sur le fichier de sortie du programme VIRSorter
 

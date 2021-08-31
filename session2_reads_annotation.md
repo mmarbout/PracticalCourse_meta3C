@@ -45,7 +45,7 @@ ATTENTION !! ne prenez pas en compte les abondances < 1%
 
 et evitez d'aller au dela de l'ordre car sinon cela va etre le bazar ;)
 
-Qi11 : Observez-vous une différence entre vos différentes librairies (SG VS 3C) ?
+Qi11 : Observez-vous une différence entre vos différentes librairies (SG VS 3C) ? A quoi pourrait être du cette différence ?
 
  
 

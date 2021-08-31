@@ -33,12 +33,9 @@ o	sa complétude se situe au-delà de 90%
 
 o	sa contamination se situe en deçà de 10%
 
-Qi32 : Combien de génome(s) reconstruit(s) et complet(s) avez-vous ? 
+Qi35 : Combien de génome(s) reconstruit(s) et complet(s) avez-vous ? Quelle proportion en terme de séquence cela représente t il ?
 
-
-
-Qi34 : Avez-vous une idée de la manière d'améliorer le processus de binning ? bon en même temps la réponse est plus ou moins juste après ;)
-
+cf graphique dans le polycopié !!!!
 
 •	Couverture et contenu en GC
 
@@ -46,15 +43,15 @@ Une autre façon de vérifier la qualité de nos bins est de regarder l’homog�
 
 cf polycopié pour le graph à générer
 
-Qi33 : graph du polycopié à essayer de reproduire
+Qi36 : graph du polycopié à essayer de reproduire
 
 Il est également possible de générer des « density plot » pour chaque bin afin de vérifier leur homogénéité.
 
-lancement du script bin_analysis.sh qui prends 3 arguments en entrée [1-targeted_bin; 2-output_directory; 3-contig_data_file]
+lancement du script bin_analysis.sh qui prends 3 arguments en entrée [1-targeted_bin; 2-output_directory; 3-contig_data_file from MetaTOR]
 
 ATTENTION ICI !!!!  ne recopiez pas la ligne de commande betement !! il faut remplacer targeted bin par un bin que vous souhaitez étudier et le fichier contig_data par celui correspondant aux process en question ...
 
-> bash scripts/bin_analysis.sh  targeted_bin  figure/  data_contigs/contig_data_XX.txt 
+> bash scripts/bin_analysis.sh  targeted_bin  figure/  output_MetaTOR/contig_data_final.txt 
 
 •	Matrices d’interactions
 
@@ -74,19 +71,22 @@ attention
 
 lancement du script :
 
-> bash scripts/bins_matrix_generation.sh  data_contigs/XX_contig_data_jesaispasquoi.txt  alignement/XX_alignment.txt  figure/  20
+> bash scripts/bins_matrix_generation.sh  output_MetaTOR/XX_contig_data_jesaispasquoi.txt  network/alignment_sampleXX.txt  figure/  20
+
+
+################## EXTRA #############################
 
 •	Arbres phylogénétiques
 
-CheckM offre également la possibilité d’étudier le placement des bins étudiés dans « l’arbre de la vie ».
+Nous avons également la possibilité de construire une phylogénie des MAGs obtenus
 
 https://itol.embl.de/
 
-Vous trouverez un dossier tree/ sur l'espace GAIA, il contient les différents fichiers permettant de générer les arbres phylogénétiques des bins correspondants à votre échantillon.Vous y trouverez également différent fichiers permettant d'annoter votre arbre.
+Vous trouverez un dossier arbre_MAGs/ sur l'espace GAIA, il contient les différents fichiers permettant de générer les arbres phylogénétiques des MAGs correspondants à votre échantillon.Vous y trouverez également différent fichiers permettant d'annoter votre arbre.
 
 voici l'adresse
 
-/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/tree
+/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/arbre_MAGs
 
 je vous laisse faire le scp ;)
 
@@ -102,9 +102,9 @@ puis Upload
 
 et la c'est magique !! j'adore !!! 
 
-ensuite vous pouvez directement faire des glisser de vos fichiers clas_treefile.txt, completion_trefile.txt .. etc sur la fenetre de votre arbre 
+ensuite vous pouvez directement faire des glisser des fichiers du dossier [itol_files/] .. etc sur la fenetre de votre arbre 
 
-la correspondance couleur - taxo se trouve ici : /pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/taxo_color.txt
+la correspondance couleur - taxo se trouve dans le dossier
 
 Les couleurs sont au format RGB (on les trouve sur internet ;)
 

@@ -27,13 +27,13 @@ fichier=XX_network_raw.txt (col1: contig1 (nœud1) / col2: contig2 (noeud2) / co
 fichier=XX_network_norm.txt (col1: contig1 (nœud1) / col2: contig2 (noeud2) / col3: score normalisé)
 
 
-Qi21 : Quelles sont les différences entre les différents fichiers Network ?
+Qi24 : Quelles sont les différences entre les différents fichiers Network ?
 
-Qi22 : Combien de nœuds contient votre réseau global ?
+Qi25 : Combien de nœuds contient votre réseau global ?
 
-Qi23 : Combien de liens différents contient-il (c-a-d entre 2 contigs, sans tenir compte du poids de ces liens) ?
+Qi26 : Combien de liens différents contient-il (c-a-d entre 2 contigs, sans tenir compte du poids de ces liens) ?
 
-Qi24 : Combien de liens au total contient-il ?
+Qi27 : Combien de liens au total contient-il ?
 
 
 •	Algorithme de Louvain
@@ -87,9 +87,9 @@ usage du script : bash scripts/louvain_data_treatment.sh  [repertoire de sortie]
 
 lancement du script : 
 
-> bash scripts/louvain_data_treatment.sh  output/  binning/output_louvain.txt  data_contigs/idx_contig_length_cov_GC_XX.txt
+> bash scripts/louvain_data_treatment.sh  output_binning/  binning/output_louvain.txt  data_contigs/contig_data_sampleXX.txt
 
-Les infos importantes sont dans le dossier output/
+Les infos importantes sont dans le dossier output_binning/
 
 et dans les fichiers :
 
@@ -97,15 +97,15 @@ et dans les fichiers :
 
 -	bin_data: bin – bin size
 
-Qi25 : Combien de bins détectez-vous ?
+Qi28 : Combien de bins détectez-vous ?
 
-Qi26 : Combien de contigs ne sont associés à aucun autre (ou combien de communautés ne comprennent qu'un seul contig) ?
+Qi29 : Combien de contigs ne sont associés à aucun autre (ou combien de communautés ne comprennent qu'un seul contig) ?
 
-Qi27 : Combien de bin contiennent plus de 10 Kb, 100 Kb, 500 Kb et 1 Mb de séquences ?
+Qi30 : Combien de bin contiennent plus de 10 Kb, 100 Kb, 500 Kb et 1 Mb de séquences ?
 
-Qi28 : Notez bien ces chiffres et refaites tourner l'algorithme avec les mêmes lignes de commandes (pas grave si vous écrasez les fichiers existants !!) Détectez-vous le même nombre de communautés que précédemment ? Ces communautés sont-elles de la même taille ?
+Qi31 : Notez bien ces chiffres et refaites tourner l'algorithme avec les mêmes lignes de commandes (pas grave si vous écrasez les fichiers existants !!) Détectez-vous le même nombre de communautés que précédemment ? Ces communautés sont-elles de la même taille ?
 
-Qi29 : Qu'en déduisez-vous ?
+Qi32 : Qu'en déduisez-vous ?
 
 
 •	Louvain itératif
@@ -157,7 +157,7 @@ Etape 2 : génération d’un output de Louvain
 faites la commande vous meme en vous inspirant de celle deja faites précédemment
 
 
-Qi30 : en utilisant les scripts utilisés aujourd’hui refaites la même analyse des bins obtenus après 100 itérations de Louvain (nombre de bins, répartition en fonction de leur taille).
+Qi33 : en utilisant les scripts utilisés aujourd’hui refaites la même analyse des bins obtenus après 100 itérations de Louvain (nombre de bins, répartition en fonction de leur taille).
 combien de bin entre 2 et 10Kb ? entre 10 et 100Kb ? entre 100 et 500Kb ? au dela de 500 Kb ?
 
 
@@ -193,6 +193,6 @@ et faites attention !!! les fichiers de sorties risquent d'écraser vos fichiers
 
 une autre possibilité serait de changer le repertoire de sortie ;)
 
-Qi31 : Comment évolue votre binning au cours des différentes itérations ? Combien d’itérations de louvain faudrait-il faire (justifier ce choix) ?
+Qi34 : Comment évolue votre binning au cours des différentes itérations ? Combien d’itérations de louvain faudrait-il faire (justifier ce choix) ?
 
 

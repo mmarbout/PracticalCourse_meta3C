@@ -16,7 +16,7 @@ se placer sur le bureau de la Machine virtuelle
 
 > cd ~/Bureau/
 
-créer un répertoire (l'option -p permet de créer des répertoires dans des répertoires n'existant pas et évite les messages d'erreurs ... c'est parfois utile et c'est un réflexe chez moi))
+créer un répertoire (l'option -p permet de créer des répertoires de manière recursive et dans des répertoires n'existant pas et évite les messages d'erreurs ... c'est parfois utile et c'est un réflexe chez moi))
 
 > mkdir -p TP_Meta3C/
 
@@ -32,11 +32,11 @@ créer un répertoire pour y déposer les fichiers fastq
  
 choisissez au hasard parmi les 10 échantillons et copier les fichiers fastq correspondants (n'oubliez pas de changer le X !!!)
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/FastQ/sampleX_* fastq/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/FastQ/sampleX_* fastq/
 
-pour cette séance vous aurez également besoin d'un fichier fasta contenant les séquences des adaptateurs illumina. Copier l'ensemble du dossier fasta sur GAIA qui contient d'autre fichiers dont nous aurons besoin par la suite.
+pour cette séance vous aurez également besoin d'un fichier fasta contenant les séquences des adaptateurs illumina. Copier l'ensemble du dossier [database/] sur GAIA qui contient d'autre fichiers dont nous aurons besoin par la suite.
 
-> scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/fasta/ ./
+> scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/database/ ./
 
 visualiser vos données fastq 
 
@@ -106,7 +106,7 @@ on aurait également pu écrire une petite boucle pour faire tout cela (il y a u
 
 > done
 
-Qi7 : En analysant le rapport de qualité Quelle est l’enzyme que vous avez utilisée pour faire votre banque 3C ?
+Qi7 : En analysant et comparant les rapports de qualité, quelles différences observez vous entre vos différentes banques ? Quelle est l’enzyme que vous avez utilisée pour faire votre banque 3C ?
 
 •	Cutadapt : détection et retrait des séquences d’adaptateurs
 
@@ -124,11 +124,11 @@ o 	-q : option permettant de définir une qualité minimale
 
 o 	-m : option permettant de définir une longueur minimale des reads
 
-NB : Dans le dossier [fasta/] sur l'espace GAIA vous trouverez le fichier contenant les séquences des adaptateurs que nous utilisons au laboratoire.
+NB : Dans le dossier [database/] sur l'espace GAIA vous trouverez le fichier contenant les séquences des adaptateurs que nous utilisons au laboratoire.
 
 supprimer les séquences des adaptateurs
 
-> cutadapt  -q 20  -m  45  -a  file:fasta/adaptateur.fasta  -A  file:fasta/adaptateur.fasta  -o  fastq/sampleX_filtre_SG_for.fastq.gz  -p  fastq/sampleX_filtre_SG_rev.fastq.gz  fastq/sampleX_SG_for.fastq.gz  fastq/sampleX_SG_rev.fastq.gz  >  log_files/cutadapt_SG.log  2>&1
+> cutadapt  -q 20  -m  45  -a  file:database/adaptateur.fasta  -A  file:database/adaptateur.fasta  -o  fastq/sampleX_filtre_SG_for.fastq.gz  -p  fastq/sampleX_filtre_SG_rev.fastq.gz  fastq/sampleX_SG_for.fastq.gz  fastq/sampleX_SG_rev.fastq.gz  >  log_files/cutadapt_SG.log  2>&1
 
 Petite pause peut être ? c'est un poil long ...
 
@@ -136,7 +136,7 @@ refaire l’analyse FastQC
 
 > ~/Bureau/install/FastQC/fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/sampleX_filtre_SG_for.fastq.gz  >  log_files/fastqc_filter_SG_for.log 2>&1
 
-Qi8 : Combien de reads avez-vous gardé après cette étape de filtration ? En quoi votre jeu de données est-il différent ?
+Qi8 : Combien de reads avez-vous gardé après cette étape de filtration ?
 
 Refaire la même chose pour les reads 3C.
 

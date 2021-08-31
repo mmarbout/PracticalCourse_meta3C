@@ -24,11 +24,11 @@ o	 -i : fichier d'input
 
 créer un répertoire de sortie
 
-> mkdir  -p  annotations/XX_500/
+> mkdir  -p  annotations/prodigal/
 
 lancer la recherche de phases ouvertes de lecture
 
-> prodigal -p meta -a annotations/XX_500/XX_prot.fa -o annotations/XX_500/XX.gene -d annotations/XX_500/XX_gene.fa -i  assemblage/assemblage_XX_500.fa  >  log_files/prodigal.log  2>&1
+> prodigal -p meta -a annotations/prodigal/sampleXX_prot.fa -o annotations/prodigal/sampleXX.gene -d annotations/prodigal/sampleXX_gene.fa -i  assemblage/assemblage_XX_500.fa  >  log_files/prodigal.log  2>&1
 
 Vous avez le droit à une bonne pause de 20 min le temps que Prodigal finisse son travail !!!
 

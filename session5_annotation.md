@@ -133,6 +133,10 @@ Qi22 : Combien de Phages de chaque catégorie sont détectés ?
 
 Qi23: faites une comparaison des différents résultats obtenus !! Quels contigs garderiez vous pour la poursuite de l'analyse des CrAss phages dans nos échantillons ?
 
+################# EXTRA ###################@
+
+L'un des avantages de la technique de Meta3C est de pouvoir obtenir des matrices d'interactions de chaque contig de l'assemblage et donc d'étudier sa topologie. VirSorter, par exemple, indique si le contig détecté comme phage est circulaire.
+
 copier le dossier scipts qui nous servira par la suite 
 
 > scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/scripts ./

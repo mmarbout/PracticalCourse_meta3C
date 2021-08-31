@@ -10,9 +10,8 @@ créer un répertoire de sortie
 
 copier les fichiers
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/output_MetaTOR/contig_data_final_XX.txt  output_MetaTOR/
+> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/output_MetaTOR/sample_XX/*.txt  output_MetaTOR/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/output_MetaTOR/bin_summary_XX.txt  output_MetaTOR/
 
 •	Marqueurs taxonomiques
 

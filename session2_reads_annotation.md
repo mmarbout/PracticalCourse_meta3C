@@ -17,7 +17,7 @@ créer un répertoire contenant les programmes
 
 copier le programme
 
-> scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/software/metaphlan2/ software/
+> scp -r votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/software/metaphlan2/ software/
 
 donner les autorisations !!
 

@@ -14,15 +14,9 @@ Vous allez choisir un numéro de banque entre 1 et 10 et poursuivre l'ensemble d
 
 Le TP s'organisera de la manière suivante:
 
-- Travail personnel le matin en faisant les "tutoriels" (je serais présent sur Slack pour vous aider).
+- Chaque session aura son propre fichier "readme" associé.
 
-- correction l'après midi avec l'équipe enseignante.
-
-Chaque session aura son propre fichier "readme" associé.
-
-Nous finirons la semaine d'analyse des données par un travail personnel sur l'étude d'un composant bien spécifique de vos échantillons.
-
-les tutoriels (ou sessions) sont construits de manière à ce que vous puissiez les faire seul sans trop de difficulté.
+- Les tutoriels (ou sessions) sont construits de manière à ce que vous puissiez les faire seul sans trop de difficulté. Nous serons avec vous dans la classe pour vous aider et corriger les exercices.
 
 NB1: chaque ligne de commande est indiquée et peut être directement copié du github vers le terminal (cf ci-dessous)
 
@@ -50,4 +44,4 @@ Planning des sessions
 
 -	7 – Analyse et validation des bins obtenus (jour 4)
 
--	8 – Travail personnel : « à la recherche du CrAss phage » (jour 5)
+-	8 – A définir - étude de notre cohorte (jour 5)

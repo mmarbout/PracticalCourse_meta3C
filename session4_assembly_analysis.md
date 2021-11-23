@@ -12,7 +12,7 @@ créer un répertoire de sortie des rapports d'assemblage
 
 lancer les statistiques d'assemblage
 
-> /Formation_AdG/quast/quast.py  assemblage/sampleX/final.contigs.fa  -o  assemblage/rapport_assemblage/sampleX/  >  log_files/quast_sampleX.log  2>&1 
+> /Formation_AdG/quast-5.1.0rc1/quast.py  assemblage/sampleX/final.contigs.fa  -o  assemblage/rapport_assemblage/sampleX/  >  log_files/quast_sampleX.log  2>&1 
 
 Afin d'avoir accès aux statistiques, ouvrir le fichier [report.html] (double clic).
 
@@ -38,7 +38,7 @@ créer un répertoire de sortie
 
 lancer les statistiques d'assemblage
 
-> /Formation_AdG/quast/quast.py  assemblage/assembly_sampleXX.fa  -o  assemblage/rapport_assemblage/sampleXX  >  log_files/quast_XX.log  2>&1
+> /Formation_AdG/quast-5.1.0rc1/quast.py  assemblage/assembly_sampleXX.fa  -o  assemblage/rapport_assemblage/sampleXX  >  log_files/quast_XX.log  2>&1
 
 Désormais vous allez travailler sur l’assemblage d'un échantillon de la cohorte.
 

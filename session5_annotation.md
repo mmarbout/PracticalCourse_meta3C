@@ -133,7 +133,7 @@ Vous trouverez dans le dossier annotations/ les fichiers de sorties de différen
 
 copier les fichiers correspondants sur GAIA
 
-> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/annotations/VIRSorter/Resfinder_sampleXX.txt annotations/
+> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/annotations/Resfinder/Resfinder_sampleXX.txt annotations/
 
 > scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/annotations/PlasFlow/PLASFLOW_sampleXX.tsv annotations/
 

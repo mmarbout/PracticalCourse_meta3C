@@ -85,7 +85,7 @@ donner les autorisations
 
 lancer l'alignement
 
-> software/muscle3.8.31_i86darwin64 -quiet -in database/Crass_Polymerase.fa -out database/Crass_Polymerase_aln.fa
+> software/muscle_v5.0.1428_linux -quiet -in database/Crass_Polymerase.fa -out database/Crass_Polymerase_aln.fa
 
 nettoyer les en-têtes de l'alignement
 

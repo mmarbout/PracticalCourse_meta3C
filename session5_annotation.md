@@ -28,7 +28,7 @@ créer un répertoire de sortie
 
 lancer la recherche de phases ouvertes de lecture
 
-> prodigal -p meta -a annotations/prodigal/sampleXX_prot.fa -o annotations/prodigal/sampleXX.gene -d annotations/prodigal/sampleXX_gene.fa -i  assemblage/assemblage_XX_500.fa  >  log_files/prodigal.log  2>&1
+> prodigal -p meta -a annotations/prodigal/sampleXX_prot.fa -o annotations/prodigal/sampleXX.gene -d annotations/prodigal/sampleXX_gene.fa -i  assemblage/assembly_sampleXX.fa  >  log_files/prodigal.log  2>&1
 
 Vous avez le droit à une bonne pause de 20 min le temps que Prodigal finisse son travail !!!
 
@@ -74,6 +74,10 @@ Un modèle de Markov caché (HMM) est un modèle statistique qui permet de modé
 Nous allons travailler avec le logiciel hmmer qui s'utilise en ligne de commande. 
 
 Nous allons commencer par construire un modèle HMM pour chacune des séquences recherchées. La première étape consiste à réaliser un alignement de nos séquuences avant de pouvoir construire le modèle.
+
+copier le logiciel muscle
+
+>
 
 > software/muscle3.8.31_i86darwin64 -quiet -in database/Crass_Polymerase.fa -out database/Crass_Polymerase_aln.fa
 

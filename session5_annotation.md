@@ -77,7 +77,13 @@ Nous allons commencer par construire un modèle HMM pour chacune des séquences 
 
 copier le logiciel muscle
 
->
+> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/software/muscle3.8.31_i86darwin64 software/
+
+donner les autorisations 
+
+> chmod +X software/muscle3.8.31_i86darwin64
+
+lancer l'alignement
 
 > software/muscle3.8.31_i86darwin64 -quiet -in database/Crass_Polymerase.fa -out database/Crass_Polymerase_aln.fa
 
@@ -127,11 +133,11 @@ Vous trouverez dans le dossier annotations/ les fichiers de sorties de différen
 
 copier les fichiers correspondants sur GAIA
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2021/TP_Meta3C/annotations/VIRSorter/Resfinder_sampleXX.txt annotations/
+> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/annotations/VIRSorter/Resfinder_sampleXX.txt annotations/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/annotations/PlasFlow/PLASFLOW_sampleXX.tsv annotations/
+> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/annotations/PlasFlow/PLASFLOW_sampleXX.tsv annotations/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/annotations/VIRSorter/VIRSORTER_sampleXX.csv annotations/
+> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C//annotations/VIRSorter/VIRSORTER_sampleXX.csv annotations/
 
 jetez un oeil sur le fichier de sortie du programme VIRSorter
 
@@ -145,7 +151,7 @@ L'un des avantages de la technique de Meta3C est de pouvoir obtenir des matrices
 
 copier le dossier scipts qui nous servira par la suite 
 
-> scp -r votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/scripts ./
+> scp -r votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/scripts ./
 
 Par exemple, l'un des avantages de la technique de Meta3C est de pouvoir obtenir des matrices d'interactions de chaque contig de l'assemblage et donc d'étudier sa topologie. VirSorter, par exemple, indique si le contig détecté comme phage est circulaire.
 
@@ -159,7 +165,7 @@ vous trouverez le fichier alignement sur GAIA
 
 > mkdir -p network/
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/network/alignment_sampleXX.txt network/
+> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/network/alignment_sampleXX.txt network/
 
 Mais avant de pouvoir utiliser ce script ... il va falloir installer quelques programmes et librairies !!
 

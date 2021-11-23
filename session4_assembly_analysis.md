@@ -30,7 +30,7 @@ Ces assemblages a été réalisé sur le cluster de calcul de l'Institut Pasteur
 
 Copier l’assemblage de votre choix dans votre répertoire assemblage/ et refaites l’analyse Quast de cet échantillon.
 
-> scp votrelogin@sftcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/assembly/assembly_sampleXX.fa assemblage/  
+> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/assembly/assembly_sampleXX.fa assemblage/  
 
 créer un répertoire de sortie 
 

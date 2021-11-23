@@ -77,11 +77,11 @@ Nous allons commencer par construire un modèle HMM pour chacune des séquences 
 
 copier le logiciel muscle
 
-> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/software/muscle3.8.31_i86darwin64 software/
+> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/software/muscle_v5.0.1428_linux software/
 
 donner les autorisations 
 
-> chmod +X software/muscle3.8.31_i86darwin64
+> chmod +x software/muscle_v5.0.1428_linux
 
 lancer l'alignement
 

@@ -44,4 +44,4 @@ Planning des sessions
 
 -	7 – Analyse et validation des bins obtenus (jour 4)
 
--	8 – A définir - étude de notre cohorte (jour 5)
+-	8 – A définir - étude "libre" (jour 5)

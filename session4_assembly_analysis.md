@@ -22,10 +22,11 @@ Qi13 : Donnez une définition du N50 ?
 
 Qi14 : Quelle est la valeur théorique du N100 ?
 
+############################################
 
-Il est également possible de regrouper l’ensemble des données afin d'effectuer un assemblage global de l’expérience. Cet assemblage a été réalisé sur le cluster de calcul de l'Institut Pasteur car le nombre de reads est assez important et, par conséquent, les temps de calcul également.
-
-A l'origine, il y avait 10 patients dans notre cohorte (sample 1 à 10)
+A l'origine, il y avait 10 patients dans notre cohorte (sample 1 à 10) et nous avonns obtenu de nombreuses données sur ces échantillons.
+Nous avons notamment généré un assemblage pour chaque échantillon à partir d'un grand nombre de reads.
+Ces assemblages a été réalisé sur le cluster de calcul de l'Institut Pasteur car le nombre de reads est assez important et, par conséquent, les temps de calcul et lesbesoins en ressources également.
 
 Copier l’assemblage de votre choix dans votre répertoire assemblage/ et refaites l’analyse Quast de cet échantillon.
 

@@ -103,7 +103,7 @@ Qi29 : Combien de contigs ne sont associés à aucun autre (ou combien de commun
 
 Qi30 : Combien de bin contiennent plus de 10 Kb, 100 Kb, 500 Kb et 1 Mb de séquences ?
 
-Qi31 : Notez bien ces chiffres et refaites tourner l'algorithme avec les mêmes lignes de commandes (pas grave si vous écrasez les fichiers existants !!) Détectez-vous le même nombre de communautés que précédemment ? Ces communautés sont-elles de la même taille ?
+Qi31 : Notez bien ces chiffres et refaites tourner l'algorithme avec les mêmes lignes de commandes (pas grave si vous écrasez les fichiers existants !! ou sinon vous mettez les fichiers de sorties dans un repertoire différent ;)) Détectez-vous le même nombre de communautés que précédemment ? Ces communautés sont-elles de la même taille ?
 
 Qi32 : Qu'en déduisez-vous ?
 

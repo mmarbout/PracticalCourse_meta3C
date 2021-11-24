@@ -169,15 +169,18 @@ vous trouverez le fichier alignement sur GAIA
 
 Mais avant de pouvoir utiliser ce script ... il va falloir installer quelques programmes et librairies !!
 
-1- des librairies python via la commande pip
+1- une librairie python permettant de téléchragre d'autres librairies python 
 
-> sudo python3 -mpip install matplotlib Tk hicstuff
+> curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+> python get-pip.py
 
-taper votre mot de passe de la session (CoursGeno1$)
+2- des librairies python via la commande pip
 
-2- un package nécessaire via la commande apt-get
+> ~/.local/bin/pip3 install matplotlib Tk hicstuff
 
-> sudo apt-get install python3.5-tk
+3- un package nécessaire via la commande apt-get
+
+> sudo apt-get install python3-tk
 
 maintenant ... vous pouvez lancer le script !!!
 

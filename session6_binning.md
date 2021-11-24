@@ -8,7 +8,7 @@ La première étape va consister à aligner les paires de lectures sur l’assem
 
 Les données générées par notre programme se trouve sur GAIA. Copier les fichiers correspondants à votre échantillon dans votre dossier [network/].
 
-> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/Network/sampleXX_* network/
+> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/network/sampleXX_* network/
 
 vous aurez aussi besoin d'un fichier contenant les données des contigs
 

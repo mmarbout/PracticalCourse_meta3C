@@ -26,7 +26,7 @@ créer un répertoire de sortie
 
 > mkdir  -p  annotations/prodigal/
 
-lancer la recherche de phases ouvertes de lecture
+lancer la recherche de phases ouvertes de lecture (25 min)
 
 > prodigal -p meta -a annotations/prodigal/sampleXX_prot.fa -o annotations/prodigal/sampleXX.gene -d annotations/prodigal/sampleXX_gene.fa -i  assemblage/assembly_sampleXX.fa  >  log_files/prodigal.log  2>&1
 
@@ -60,7 +60,7 @@ création des répertoires de sortie
 
 > mkdir -p annotations/blast_output/ 
 
-faire les blasts
+faire les blasts (8-10 min)
 
 > blastp -db database/crass_pol -query annotations/prodigal/sampleXX_prot.fa -evalue 0.0001 -num_threads 4 -outfmt 6 -out annotations/blast_output/sampleXX_vs_crassPol.txt >  log_files/blast_crass_pol.log  2>&1
 
@@ -83,7 +83,7 @@ donner les autorisations
 
 > chmod +x software/muscle_v5.0.1428_linux
 
-lancer l'alignement
+lancer l'alignement (20 min) (vous pouvez aller voir un peu plus bas le paragraphe sur "les programmes spécifiques" en attendant.
 
 > software/muscle_v5.0.1428_linux -quiet -in database/Crass_Polymerase.fa -out database/Crass_Polymerase_aln.fa
 
@@ -141,7 +141,7 @@ copier les fichiers correspondants sur GAIA
 
 jetez un oeil sur le fichier de sortie du programme VIRSorter
 
-Qi22 : Combien de Phages de chaque catégorie sont détectés ?
+Qi22 : Combien de contigs de phages candidats le programme VIRSorter détecte t il ? a quoi correspondent les catégories dans les fichiers de sorties du programme ?
 
 Qi23: faites une comparaison des différents résultats obtenus !! Quels contigs garderiez vous pour la poursuite de l'analyse des CrAss phages dans nos échantillons ?
 

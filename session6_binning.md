@@ -33,7 +33,7 @@ Qi25 : Combien de nœuds contient votre réseau global ?
 
 Qi26 : Combien de liens différents contient-il (c-a-d entre 2 contigs, sans tenir compte du poids de ces liens) ?
 
-Qi27 : Combien de liens au total contient-il ?
+Qi27 : Combien de reads au total avons nous gardé pour construire ce réseau ? en proportion des reads initiaux ?
 
 
 •	Algorithme de Louvain

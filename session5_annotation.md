@@ -60,7 +60,7 @@ création des répertoires de sortie
 
 > mkdir -p annotations/blast_output/ 
 
-faire les blasts (8-10 min)
+faire les blasts (8-10 min par blast)
 
 > blastp -db database/crass_pol -query annotations/prodigal/sampleXX_prot.fa -evalue 0.0001 -num_threads 4 -outfmt 6 -out annotations/blast_output/sampleXX_vs_crassPol.txt >  log_files/blast_crass_pol.log  2>&1
 
@@ -83,7 +83,7 @@ donner les autorisations
 
 > chmod +x software/muscle_v5.0.1428_linux
 
-lancer l'alignement (20 min) (vous pouvez aller voir un peu plus bas le paragraphe sur "les programmes spécifiques" en attendant.
+lancer l'alignement (20 min) (vous pouvez aller voir un peu plus bas le paragraphe sur "les programmes spécifiques" en attendant).
 
 > software/muscle_v5.0.1428_linux -quiet -in database/Crass_Polymerase.fa -out database/Crass_Polymerase_aln.fa
 
@@ -115,7 +115,7 @@ récupérer les séquences d'intérêt
 
 > cat annotations/hmm_output/sampleXX_vs_crassPol.out  |  awk '{print $9}' |  grep  'NODE'  >  annotations/hmm_output/sampleXX_vs_crassPol.txt
 
-FAIRE LA MEME CHOSE AVEC LA TERMINASE
+si vous avez le temps vous pouvez faire la même chose avec la terminase (sinon je vais vous donner les alignements déjà fait).
 
 Qi21 : Comme précédemment ... Combien de contigs candidats obtenez vous selon la séquence recherchée ? Quels sont les contigs qui vous paraissent les plus connvaincants et Pourquoi ? 
 

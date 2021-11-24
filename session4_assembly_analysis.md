@@ -28,7 +28,8 @@ A l'origine, il y avait 10 patients dans notre cohorte (sample 1 à 10) et nous 
 Nous avons notamment généré un assemblage pour chaque échantillon à partir d'un grand nombre de reads.
 Ces assemblages a été réalisé sur le cluster de calcul de l'Institut Pasteur car le nombre de reads est assez important et, par conséquent, les temps de calcul et lesbesoins en ressources également.
 
-Copier l’assemblage correspondant à votre échantillon (16021 = sample 4 ou 10015 = sample 3) dans votre répertoire assemblage/ et refaites l’analyse Quast de cet échantillon.
+Copier l’assemblage correspondant à votre échantillon (16021 = sample 4 de la chohorte ou 10015 = sample 3 de la cohorte) dans votre répertoire assemblage/ et refaites l’analyse Quast de cet échantillon.
+Vous avez également le droit de choisir un échantillon différent pour la suite de l'analyse !! (évitez juste le sample 1 qui est beaucoup plus couvert et avec un assemblage beaucoup plus important et nécessitant des temps de calculs plus important)
 
 > scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/assembly/assembly_sampleXX.fa assemblage/  
 

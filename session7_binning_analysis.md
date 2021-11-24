@@ -10,7 +10,7 @@ créer un répertoire de sortie
 
 copier les fichiers
 
-> scp votrelogin@tars.pasteur.fr:/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021_2022/TP_Meta3C/output_MetaTOR/sample_XX/*.txt  output_MetaTOR/
+> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/output_MetaTOR/sample_XX/*.txt  output_MetaTOR/
 
 
 •	Marqueurs taxonomiques
@@ -86,7 +86,7 @@ Vous trouverez un dossier arbre_MAGs/ sur l'espace GAIA, il contient les différ
 
 voici l'adresse
 
-/pasteur/projets/policy01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2020_2021/TP_Meta3C/arbre_MAGs
+/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/arbre_MAGs
 
 je vous laisse faire le scp ;)
 

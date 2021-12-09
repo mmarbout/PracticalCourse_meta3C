@@ -23,9 +23,7 @@ i - la complétude (mesure reliée au nombre de marqueurs au sein d'un bin par r
 
 ii - la contamination (mesure reliée au nombre de marqueurs en plusieurs copies).
 
-Ce sont des calculs lourds qui ont été lancés sur le cluster de calcul de l'Institut Pasteur. Vous trouverez les résultats dans le dossier [checkM_output] qui contient différentes informations sur les bins identifiés.
-
-Les données concernant ces résultats sont contenues dans le fichier bin_summay
+Les données concernant ces résultats sont contenues dans les fichiers de sorties de notre pipelline MetaTOR.
 
 Nous considèrerons un génome complet quand :
 

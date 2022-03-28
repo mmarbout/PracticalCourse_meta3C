@@ -16,7 +16,9 @@ Le TP s'organisera de la manière suivante:
 
 NB1: chaque ligne de commande est indiquée et peut être directement copié du github vers le terminal (cf ci-dessous)
 
-> ligne de commande
+```sh
+echo "ligne de commande"
+```
 
 NB2: n'oubliez pas de répondre aux questions posées et de faire les exercices demandés tout au long du TP 
 

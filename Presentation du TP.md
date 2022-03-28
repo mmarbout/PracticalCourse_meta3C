@@ -2,15 +2,11 @@
 
 Ce TP a pour objectif de vous apprendre à analyser des séquences issues d'échantillons environnementaux. 
 Nous allons partir des fichiers FastQ "brutes" en sortie directe du séquenceur et les analyser.
-L'objectif est de décrire et d'analyser la composition du microbiote intestinal d'un donneur sain.
+L'objectif est de caractériser la composition du communauté bactérienne artificielle.
 
-Nous avons réalisé différentes banques génomiques (shotgun et 3C) à partir de 2 échantillons de selles de donneurs sains (patient 16021 et 10015).
+Nous avons réalisé différentes banques génomiques (shotgun et 3C) à partir d'un mélange inconnu d'espèces.
 
 Vous allez prendre le numéro de banque entre 1 et 10 correspondant à votre banque et poursuivre l'analyse.
-
-- banque 1 à 5 = échantillon 16021
-
-- banque 6 à 10 = échantillon 10015
 
 Le TP s'organisera de la manière suivante:
 
@@ -44,4 +40,4 @@ Planning des sessions
 
 -	7 – Analyse et validation des bins obtenus (jour 4)
 
--	8 – A définir - étude "libre" (jour 5)
+-	8 – travail libre (jour 5)

@@ -12,7 +12,7 @@ Avant de procéder à l'analyse ou à l'exploitation d'un ensemble de données d
 se placer sur le bureau de la Machine virtuelle
 
 ```sh
-mkdir cd ~/Bureau/
+cd ~/Bureau/
 ```
 
 créer un répertoire (l'option -p permet de créer des répertoires de manière recursive et dans des répertoires n'existant pas et évite les messages d'erreurs ... c'est parfois utile et c'est un réflexe chez moi))

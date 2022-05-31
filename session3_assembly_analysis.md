@@ -5,19 +5,19 @@ Différents logiciels permettent d'analyser les résultats d'assemblage. Nous ut
 explorer le répertoire de sortie de l'assemblage
 
 ```sh
-ls  -l  assemblage/sampleX/
+ls  -l  assemblage/libX/
 ```
 
 créer un répertoire de sortie des rapports d'assemblage
 
 ```sh
-mkdir  -p  assemblage/rapport_assemblage/sampleX
+mkdir  -p  assemblage/rapport_assemblage/libX
 ```
 
 lancer les statistiques d'assemblage
 
 ```sh
-/Formation_AdG/quast-5.1.0rc1/quast.py  assemblage/sampleX/final.contigs.fa  -o  assemblage/rapport_assemblage/sampleX/  >  log_files/quast_sampleX.log  2>&1 
+/Formation_AdG/quast-5.1.0rc1/quast.py  assemblage/libX/final.contigs.fa  -o  assemblage/rapport_assemblage/libX/  >  log_files/quast_libX.log  2>&1 
 ```
 
 Afin d'avoir accès aux statistiques, ouvrir le fichier [report.html] (double clic).

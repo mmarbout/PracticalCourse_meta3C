@@ -25,7 +25,7 @@ mkdir -p assemblage/
 lancer l’assemblage
 
 ```sh
-/Formation_AdG/MEGAHIT/bin/megahit -1 fastq/sampleX_filtre_SG_for.fastq.gz -2 fastq/sampleX_filtre_SG_rev.fastq.gz -o assemblage/sampleX/ > log_files/megahit_sampleX_log  2>&1
+/Formation_AdG/MEGAHIT/bin/megahit -1 fastq/libX_filtre_SG_for.fastq.gz -2 fastq/libX_filtre_SG_rev.fastq.gz -o assemblage/sampleX/ > log_files/megahit_sampleX_log  2>&1
 ```
 
 

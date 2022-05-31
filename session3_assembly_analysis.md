@@ -22,11 +22,11 @@ lancer les statistiques d'assemblage
 
 Afin d'avoir accès aux statistiques, ouvrir le fichier [report.html] (double clic).
 
-Qi12 : Quelles sont les données fournies par Quast ?
+Qi9 : Quelles sont les données fournies par Quast ?
 
-Qi13 : Donnez une définition du N50 ?
+Qi10 : Donnez une définition du N50 ?
 
-Qi14 : Quelle est la valeur théorique du N100 ?
+Qi11 : Quelle est la valeur théorique du N100 ?
 
 Nous avons également généré un assemblage issue d'un grand nombre de reads. Cet assemblage a été réalisé sur le cluster de calcul de l'Institut Pasteur car le nombre de reads est assez important et, par conséquent, les temps de calcul et les besoins en ressources également.
 

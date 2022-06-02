@@ -94,10 +94,15 @@ blastp -db database/Res_aa -query annotations/prodigal/assembly_prot.fa -num_thr
 
 Qi23 : Combien de gènes/protéines candidats obtenez vous ? 
 
-on estime que l'on a un vrai homologue lorsque l'on a une identité d'au moins 80% sur 80% de la longueur du gène
+on estime que l'on a un vrai homologue lorsque l'on a une identité d'au moins 80% sur 80% de la longueur du gène.
 
 Qi24: combien de vos gènes répondent à ce critère ?
 
+certaines options du programme blast permettent d'obtenir directement ce résultat:
+
+```sh
+blastp -db database/Res_aa -query annotations/prodigal/assembly_prot.fa -perc_identity 80 -qcov_hsp_perc 80 -num_threads 4 -outfmt 6 -out annotations/blast_output/prot_vs_AMR_V2.txt >  log_files/blast_AMR.log  2>&1
+```
 
 ### Recherche d'homologie par "hidden Markov model" (HMM)
 
@@ -152,51 +157,5 @@ concernant Resfinder:
 
 Qi25 : Combien de gènes candidats le programme Resfinder détecte t il ? faites une comparaison avec les méthodes précédentes.
 
-
-
-################# EXTRA ###################@
-
-L'un des avantages de la technique de Meta3C est de pouvoir obtenir des matrices d'interactions de chaque contig de l'assemblage et donc d'étudier sa topologie. VirSorter, par exemple, indique si le contig détecté comme phage est circulaire.
-
-Rechercher dans le fichier de sortie de VirSorter un contig annoté comme circulaire
-
-```sh
-scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/annotations/*_results_table.txt annotations/
-```
-
-
-
-###############################
-
-> cat annotations/VIRSORTER_sampleXX.csv | grep "circu" | awk -F "," '{print $1}' | sed 's/VIRSorter_//' | sed 's/-circular//' | sed 's/length_/length /g' | sort -k 2,2 -g -r | awk '{print $1"_"$2}' | head -1 
-
-Une fois que vous connaissez ce contig, lancer le script contig_matrix_generation.sh qui prend 3 arguments en entrée [1-contig_target; 2-alignment_file; 3-output_directory]
-
-vous trouverez le fichier alignement sur GAIA
-
-> mkdir -p network/
-
-> scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/network/alignment_sampleXX.txt network/
-
-Mais avant de pouvoir utiliser ce script ... il va falloir installer quelques programmes et librairies !!
-
-1- une librairie python permettant de télécharger d'autres librairies python 
-
-> curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-> python get-pip.py
-
-2- des librairies python via la commande pip
-
-> ~/.local/bin/pip3 install matplotlib Tk hicstuff
-
-3- un package nécessaire via la commande apt-get
-
-> sudo apt-get install python3-tk
-
-maintenant ... vous pouvez lancer le script !!!
-
-> bash scripts/contig_matrix_generation.sh NODE_XX_length_YY network/alignment_sampleXX.txt figure/
-
-vous pourrez alors visualiser votre matrice et voir le signal circulaire (ou pas) dans le fichier d'ouput
 
 

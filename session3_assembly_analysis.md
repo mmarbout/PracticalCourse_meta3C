@@ -32,6 +32,10 @@ Qi12: Combien de contigs circulaires avez vous ?
 
 Qi13: Combien de contigs indépendants ?
 
+certains logiciels sont dédiés à l'analyse des assemblages. Nous allons utiliser le logicial QUAST.
+
+![Quast](docs/images/Quast.png)
+
 créer un répertoire de sortie des rapports d'assemblage
 
 ```sh
@@ -62,12 +66,12 @@ scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAI
 
 créer un répertoire de sortie 
 ```sh
-mkdir assemblage/rapport_assemblage/all_sample
+mkdir assemblage/rapport_assemblage/all_lib
 ```
 
 lancer les statistiques d'assemblage
 ```sh
-/Formation_AdG/quast-5.1.0rc1/quast.py  assemblage/assembly_all.fa  -o  assemblage/rapport_assemblage/all_sample  >  log_files/quast_all.log  2>&1
+/Formation_AdG/quast-5.1.0rc1/quast.py  assemblage/assembly_all.fa  -o  assemblage/rapport_assemblage/all_lib  >  log_files/quast_all.log  2>&1
 ```
 
 Désormais vous allez travailler sur cet assemblage.

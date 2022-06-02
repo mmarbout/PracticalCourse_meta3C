@@ -41,13 +41,13 @@ metator network -n -t 4 -1 fastq/libX_filtre_3C_for.fastq.gz -2 fastq/libX_filtr
 
 en vous servant du fichier log généré par MetaTOR ainsi que du fichier "network" généré, répondez aux questions suivantes:
 
-Qi25 : Combien de nœuds (ou contigs) contient votre réseau global ?
+Qi27 : Combien de nœuds (ou contigs) contient votre réseau global ?
 
-Qi26 : Combien de paires de reads ont été alignées  ?
+Qi28 : Combien de paires de reads ont été alignées  ?
 
-Qi27 : Combien de paires de reads ont été alignées sur deux contigs différents ?
+Qi29 : Combien de paires de reads ont été alignées sur deux contigs différents ?
 
-Qi27 : déduisez en le 3D ratio (nb de reads liant 2 contigs différent par rapport au nombre total de reads alignés)
+Qi30 : déduisez en le 3D ratio (nb de reads liant 2 contigs différent par rapport au nombre total de reads alignés)
 
 NB: il est nécessaire de ne pas prendre en compte les interactions au sein d'un même contig (intra-contig)... c'est pourquoi votre réseau ne contient pas les liens intra-contigs.
 
@@ -78,7 +78,7 @@ metator partition -h
 nous devons d'abord indiquer au programme ou se trouve l'algorithme de louvain car il ne fait par parti stricto-senso du programme MetaTOR
 
 ```sh
-export LOUVAIN_PATH=/pasteur/zeus/projets/p02/rsg_fast/Martial/gen-louvain/
+export LOUVAIN_PATH=TP_Meta3C/software/gen-louvain/
 ```
 
 ```sh
@@ -86,32 +86,29 @@ metator partition -n -O 100 -i 1 -t 4 -n metator_output/network -c metator_outpu
 ```
 
 
-Qi28 : Combien de bins détectez-vous ?
+Qi31 : Combien de bins détectez-vous ?
 
-Qi29 : Combien de contigs ne sont associés à aucun autre (ou combien de communautés ne comprennent qu'un seul contig) ?
+Qi32 : Combien de contigs ne sont associés à aucun autre (ou combien de communautés ne comprennent qu'un seul contig) ?
 
-Qi30 : Combien de bin contiennent plus de 10 Kb, 100 Kb, 500 Kb et 1 Mb de séquences ?
+Qi33 : Combien de bin contiennent plus de 10 Kb, 100 Kb, 500 Kb et 1 Mb de séquences ?
 
-Qi31 : Notez bien ces chiffres et refaites tourner l'algorithme avec les mêmes lignes de commandes (il faut mettre l'option -F afin d'écraser les fichiers existants !! ou sinon vous mettez les fichiers de sorties dans un repertoire différent ;)) Détectez-vous le même nombre de communautés que précédemment ? Ces communautés sont-elles de la même taille ?
+Notez bien ces chiffres et refaites tourner l'algorithme avec les mêmes lignes de commandes (il faut mettre l'option -F afin d'écraser les fichiers existants !! ou sinon vous mettez les fichiers de sorties dans un repertoire différent ;)) 
 
-Qi32 : Qu'en déduisez-vous ?
+Qi34 : Détectez-vous le même nombre de communautés que précédemment ? Ces communautés sont-elles de la même taille ? Qu'en déduisez-vous ?
 
 
 •	Louvain itératif
 
-L'algorithme de Louvain est non déterministe, c'est à dire qu'en utilisant un jeu de données identiques, les résultats produits seront différents à chaque fois. Il est donc possible d'utiliser cette propriété de l'algorithme pour réaliser une sorte de "bootstraping" de notre partitionnement en communauté. Nous allons donc réaliser plusieurs itérations indépendantes de l'algorithme et de regrouper les contigs qui ségrégent toujours ensemble au cours des différentes itérations. Il est également possible de faire varier le seuil a partir duquel 2 contigs seront regroupés ensemble (overlapping communities)
+L'algorithme de Louvain est non déterministe, c'est à dire qu'en utilisant un jeu de données identiques, les résultats produits seront différents à chaque fois. Il est donc possible d'utiliser cette propriété de l'algorithme pour réaliser une sorte de "bootstraping" de notre partitionnement en communauté. Nous allons donc réaliser plusieurs itérations indépendantes de l'algorithme et de regrouper les contigs qui ségrégent toujours ensemble au cours des différentes itérations. Il est également possible de faire varier le seuil a partir duquel 2 contigs seront regroupés ensemble (overlapping communities).
+
+Il est ainsi possible d’analyser l’évolutions des différentes communautés en fonction du nombre d’itérations de Louvain (1, 5, 10, 20, 30, 40, 50) et du seuil de regroupement des contigs (70%, 80%, 90%, 100%). 
 
 
+A l’aide de vos connaissances, des scripts déjà utilisés et des données fournies, réaliser une analyse de l'évolution des groupes de contigs en fonction du nombre d'itérations de l'algorithme de Louvain (cf graph ci-dessous)
 
+![louvain_iteration1](docs/images/louvain_it1.png)
 
-Qi33 : en utilisant les scripts utilisés aujourd’hui refaites la même analyse des bins obtenus après 100 itérations de Louvain (nombre de bins, répartition en fonction de leur taille).
-combien de bin entre 2 et 10Kb ? entre 10 et 100Kb ? entre 100 et 500Kb ? au dela de 500 Kb ?
-
-
-Il est également possible d’analyser l’évolutions des différentes communautés en fonction du nombre d’itérations de Louvain (1, 5, 10, 20, 50, 100). A l’aide de vos connaissances, des scripts déjà utilisés et des données fournies, réaliser une analyse de l'évolution des groupes de contigs en fonction du nombre d'itérations de l'algorithme de Louvain (cf polycopié du TP)
-
-
-une autre possibilité serait de changer le repertoire de sortie ;)
+![louvain_iteration2](docs/images/louvain_it2.png)
 
 Qi34 : Comment évolue votre binning au cours des différentes itérations ? Combien d’itérations de louvain faudrait-il faire (justifier ce choix) ?
 

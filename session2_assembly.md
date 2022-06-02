@@ -16,11 +16,8 @@ ATTENTION: Megahit ne veut pas que le repertoire de sortie existe déjà !!!
 Il s’utilise en ligne de commande avec les options suivantes :
 
     -1 : reads forward
-
     -2 : reads reverse
-
     -o : répertoire de sortie (créé par megahit !!!)
-
     -t : nombre de cpu
 
 créer un répertoire « assemblage » . on utilisera ce repertoire pour y stocker d'autres données

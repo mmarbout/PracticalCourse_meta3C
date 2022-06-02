@@ -80,6 +80,9 @@ o 	-o : répertoire de sortie
 
 o 	--nogroup : option permettant d’avoir des graphiques pour chaque base et non par groupe de 5
 
+
+![metator_pipeline](docs/images/FastQC.png)
+
 créer un répertoire de sortie des rapports de qualité des lectures
 ```sh
 mkdir -p fastq/rapport_qualite/

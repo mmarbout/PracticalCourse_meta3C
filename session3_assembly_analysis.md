@@ -17,7 +17,7 @@ cat assemblage/libX/final.contigs.fa | head
 
 le fichier de sortie de megahit se présente de la manière suivante:
 
-    k77_0 flag=0 multi=7.6491 len=4919
+    >k77_0 flag=0 multi=7.6491 len=4919
 
     AAATAATACCACCAATGGCACAACCAATGTTGAAAATGGAGACAATTAAACCA....
 

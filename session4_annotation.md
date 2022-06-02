@@ -32,7 +32,7 @@ créer un répertoire de sortie
 mkdir -p annotations/prodigal/
 ```
 
-lancer la recherche de phases ouvertes de lecture (XX min)
+lancer la recherche de phases ouvertes de lecture (20-30 min)
 
 ```sh
 prodigal -p meta -a annotations/prodigal/assembly_prot.fa -o annotations/prodigal/assembly.gene -d annotations/prodigal/assembly_gene.fa -i  assemblage/assembly_all.fa > log_files/prodigal.log  2>&1
@@ -73,14 +73,23 @@ Qi22 : Quelle est la densité en séquences codantes de votre assemblage ? cette
 
 Différents outils existent afin de caractériser les ORFs putatives (ou protéines) présentes dans un assemblage (Principalement Blast ou HMM). Dans cette partie, nous allons rechercher un certain type de protéines impliqué dans l'organisation spatiale des génomes bactériens
 
-### Blast 
+### Blast (diamond)
 
 Concernant les bases de données de blast (protéiques ou nucléiques), elles peuvent être très générales (non-redundant nucleotide database sur NCBI) ou plus spécifiques de certains groupes ou familles de gènes (marqueurs taxonomiques, phages, gènes de résistance aux antibiotiques...). Il est également possible de réaliser soi-même sa base de données. Nous allons utiliser une base de données de gènes de résistances aux antibiotiques pour rechercher ces gènes dans notre assemblage.
+Pour le blast, nous utiliserons le logiciel diamond qui est une sorte de blast en beaucoup beaucoup plus rapide !!!
+
+![diamond](docs/images/diamond.png)
+
+pour voir l'ensemble des options du logiciel diamond:
+
+```sh
+diamond help
+```
 
 création des index
 
 ```sh
-makeblastdb -in database/Res_aa.fa -input_type fasta -dbtype prot -out database/Res_aa > log_files/blastdb.log 2>&1
+diamond makedb -d database/Res_aa --in database/Res_aa.fa > log_files/blastdb_diamond.log 2>&1
 ```
 
 création des répertoires de sortie
@@ -89,28 +98,35 @@ création des répertoires de sortie
 mkdir -p annotations/blast_output/
 ```
 
-faire les blasts
+faire les blasts (15 minutes) 
 ```sh
-blastp -db database/Res_aa -query annotations/prodigal/assembly_prot.fa -num_threads 4 -outfmt 6 -out annotations/blast_output/prot_vs_AMR.txt >  log_files/blast_AMR.log  2>&1
+diamond blastp -p 8 --db database/Res_diam.dmnd -o annotations/blast_output/prot_vs_AMR.txt --outfmt 6 -q annotations/prodigal/assembly_prot.fa
 ```
+
+NB: le format de sortie "outfmt" est un format tabulaire donnant les infos suivantes:
+
+![outfmt](docs/images/outfmt.png)
 
 Qi23 : Combien de gènes/protéines candidats obtenez vous ? 
 
-on estime que l'on a un vrai homologue lorsque l'on a une identité d'au moins 80% sur 80% de la longueur du gène.
+on estime que l'on a un vrai homologue lorsque l'on a une identité d'au moins 80% sur 80% de la longueur du gène. en utlisant des options particulières de la sortie "outfmt", on peut avoir toutes les infos pour faire ce crible.
 
-Qi24: combien de vos gènes répondent à ce critère ?
-
-certaines options du programme blast permettent d'obtenir directement ce résultat:
+![outfmt2](docs/images/outfmt2.png)
 
 ```sh
-blastp -db database/Res_aa -query annotations/prodigal/assembly_prot.fa -perc_identity 80 -qcov_hsp_perc 80 -num_threads 4 -outfmt 6 -out annotations/blast_output/prot_vs_AMR_V2.txt >  log_files/blast_AMR.log  2>&1
+diamond blastp -p 8 --db database/Res_diam.dmnd -o annotations/blast_output/prot_vs_AMR.txt --outfmt 6 qseqid sseqid pident qcovhsp  -q annotations/prodigal/assembly_prot.fa
 ```
+
+Qi24: combien de vos gènes répondent aux critères définis au dessus ?
+
+certaines options du programme permettent également d'appliquer directement ces filtres au moment de l'alignement.
 
 ### Recherche d'homologie par "hidden Markov model" (HMM)
 
 Un modèle de Markov caché (HMM) est un modèle statistique qui permet de modéliser une séquence cible mais en autorisant un certain degré de variabilité. Les modèles de Markov cachés sont massivement utilisés notamment en reconnaissance de formes, en intelligence artificielle, en traitement automatique du langage naturel et également pour la détection de motifs protéiques. Différents modèles sont disponibles notamment sur la base de données "Pfam" (Protein family).
 Nous allons travailler avec le logiciel hmmer qui s'utilise en ligne de commande. 
 
+![hmmer](docs/images/hmmer.png)
 
 création du répertoire de sortie 
 
@@ -127,11 +143,11 @@ o 	--domE : au niveau des domaines protéiques
 lancer la détection de motifs
 
 ```sh
-mkdir  -p  hmmsearch  -E  0.0001  --domE  0.0001  database/Resfams.hmm  annotations/prodigal/assembly_prot.fa  >  annotations/hmm_output/prot_vs_resfam.out
+hmmsearch  -E  0.0001  --domE  0.0001  database/Resfams.hmm  annotations/prodigal/assembly_prot.fa  >  annotations/hmm_output/prot_vs_resfam.out
 ```
 récupérer les séquences d'intérêt
 ```sh
-mkdir  -p  annotations/hmm_output/prot_vs_resfam.out  |  awk '{print $9}' |  grep  'NODE'  >  annotations/hmm_output/prot_vs_resfam.txt
+cat annotations/hmm_output/prot_vs_resfam.out  |  awk '{print $9}' |  grep  'NODE'  >  annotations/hmm_output/prot_vs_resfam.txt
 ```
 
 Qi25 : Combien de candidats obtenez vous avec cette méthode ? 
@@ -141,11 +157,11 @@ Qi25 : Combien de candidats obtenez vous avec cette méthode ?
 
 Il existe un grand nombre de programmes dédiés à la caractérisation de certains types d’éléments génétiques tel que les transposons, les plasmides, les phages. Ces programmes s’appuient généralement sur des séquences protéiques, des modèles HMM et d’autres spécificités des éléments étudiés pour caractériser des familles d’éléments bien spécifiques.
 
-Recherches de gènes de type AMR : Resfinder ...
+Recherches de gènes de type AMR : Resfinder, AMRFinder ...
 
 Recherches de phages : VIRSorter, VIBRANT ...
 
-Recherches de plasmides : PlasmidFinder, Plasflow ...
+Recherches de plasmides : PlasmidFinder, Plasflow, PlasX ...
 
 Vous trouverez dans le dossier annotations/ les fichiers de sorties de différents programmes. Jetez y un oeil, vous pourrez en avoir besoin dans la suite du TP ...
 

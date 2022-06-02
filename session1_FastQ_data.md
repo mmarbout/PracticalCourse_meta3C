@@ -103,7 +103,7 @@ faire la même chose pour les reads reverse
 on aurait également pu écrire une petite boucle pour faire tout cela...
 
 ```sh
-for sens in for rev; do; for type in SG 3C; do; /Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_"$type"_"$sens".fastq.gz >  log_files/fastqc_raw_"$type"_"$sens".log 2>&1; done; done
+for sens in for rev; do for type in SG 3C; do /Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_"$type"_"$sens".fastq.gz >  log_files/fastqc_raw_"$type"_"$sens".log 2>&1; done; done
 ```
 
 Qi7 : En analysant et comparant les rapports de qualité, quelles différences observez vous entre vos différentes banques ? Quelle est l’enzyme que vous avez utilisée pour faire votre banque 3C ?

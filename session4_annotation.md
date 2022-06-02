@@ -16,15 +16,15 @@ Ici, nous allons exécuter prodigal en mode méta, afin qu'il puisse s'adapter a
 
 Prodigal s'utilise en ligne de commande avec les options suivantes :
 
-o	 -a : fichier d'output où seront écrites les séquences de protéines putatives
+o   -a : fichier d'output où seront écrites les séquences de protéines putatives
 
-o 	-p meta : pour les métagénomes
+o   -p meta : pour les métagénomes
 
-o 	-o : fichier d'output où seront écrites les données sur les ORFs détectées
+o   -o : fichier d'output où seront écrites les données sur les ORFs détectées
 
-o 	-d : fichier d'output où seront écrites les séquences des ORFs putatives (ADN)
+o   -d : fichier d'output où seront écrites les séquences des ORFs putatives (ADN)
 
-o	 -i : fichier d'input
+o   -i : fichier d'input
 
 créer un répertoire de sortie
 

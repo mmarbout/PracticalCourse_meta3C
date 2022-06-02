@@ -16,15 +16,15 @@ Ici, nous allons exécuter prodigal en mode méta, afin qu'il puisse s'adapter a
 
 Prodigal s'utilise en ligne de commande avec les options suivantes :
 
-o   -a : fichier d'output où seront écrites les séquences de protéines putatives
+   -a : fichier d'output où seront écrites les séquences de protéines putatives
 
-o   -p meta : pour les métagénomes
+   -p meta : pour les métagénomes
 
-o   -o : fichier d'output où seront écrites les données sur les ORFs détectées
+   -o : fichier d'output où seront écrites les données sur les ORFs détectées
 
-o   -d : fichier d'output où seront écrites les séquences des ORFs putatives (ADN)
+   -d : fichier d'output où seront écrites les séquences des ORFs putatives (ADN)
 
-o   -i : fichier d'input
+   -i : fichier d'input
 
 créer un répertoire de sortie
 
@@ -134,7 +134,7 @@ récupérer les séquences d'intérêt
 mkdir  -p  annotations/hmm_output/prot_vs_resfam.out  |  awk '{print $9}' |  grep  'NODE'  >  annotations/hmm_output/prot_vs_resfam.txt
 ```
 
-Qi19 : Combien de candidats obtenez vous avec cette méthode ? 
+Qi25 : Combien de candidats obtenez vous avec cette méthode ? 
 
 
 ### Programmes spécifiques
@@ -157,7 +157,7 @@ jetez un oeil sur les différents fichier de sortie des 3 programmes ...
 
 concernant Resfinder:
 
-Qi25 : Combien de gènes candidats le programme Resfinder détecte t il ? faites une comparaison avec les méthodes précédentes.
+Qi26 : Combien de gènes candidats le programme Resfinder détecte t il ? faites une comparaison avec les méthodes précédentes.
 
 
 

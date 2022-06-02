@@ -66,7 +66,7 @@ scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAI
 
 créer un répertoire de sortie 
 ```sh
-mkdir assemblage/rapport_assemblage/all_lib
+mkdir -p assemblage/rapport_assemblage/all_lib
 ```
 
 lancer les statistiques d'assemblage

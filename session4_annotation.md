@@ -16,15 +16,11 @@ Ici, nous allons exécuter prodigal en mode méta, afin qu'il puisse s'adapter a
 
 Prodigal s'utilise en ligne de commande avec les options suivantes :
 
-   -a : fichier d'output où seront écrites les séquences de protéines putatives
-
-   -p meta : pour les métagénomes
-
-   -o : fichier d'output où seront écrites les données sur les ORFs détectées
-
-   -d : fichier d'output où seront écrites les séquences des ORFs putatives (ADN)
-
-   -i : fichier d'input
+      -a : fichier d'output où seront écrites les séquences de protéines putatives
+      -p meta : pour les métagénomes
+      -o : fichier d'output où seront écrites les données sur les ORFs détectées
+      -d : fichier d'output où seront écrites les séquences des ORFs putatives (ADN)
+      -i : fichier d'input
 
 créer un répertoire de sortie
 
@@ -45,11 +41,11 @@ Prodigal a créé deux fichiers, le fichier de protéine .faa et le fichier de g
 
 Voici un exemple de sortie de gène :
 
->contig1_1 # 2 # 232 # -1 # ID=1_1 ; partial=10 ; start_type=ATG ; rbs_motif=None ; rbs_spacer=None ; gc_cont=0.424
-ATGTTCAAGTCAGCCGTTTATTCAATTTTAGCCGCTTCTTTGGTTAATGCAGGTACCATTCCCCTCGGAA
-AACTATCTGACATTGATAAAATCGGAAGCCAAACAGAGATTTTCCCATTTTTGGGTGGTTCTGGGCCATA
-CTACTCTTTCCCTGGTGATTACGGTATTTCTTGACTTGCCGGAAAGTTGTGAAATGAAGCAAGTGCAA
-ATGGTTGGTAGACACGGTGAA
+      >contig1_1 # 2 # 232 # -1 # ID=1_1 ; partial=10 ; start_type=ATG ; rbs_motif=None ; rbs_spacer=None ; gc_cont=0.424
+      ATGTTCAAGTCAGCCGTTTATTCAATTTTAGCCGCTTCTTTGGTTAATGCAGGTACCATTCCCCTCGGAA
+      AACTATCTGACATTGATAAAATCGGAAGCCAAACAGAGATTTTCCCATTTTTGGGTGGTTCTGGGCCATA
+      CTACTCTTTCCCTGGTGATTACGGTATTTCTTGACTTGCCGGAAAGTTGTGAAATGAAGCAAGTGCAA
+      ATGGTTGGTAGACACGGTGAA
 
 L'en-tête Prodigal comprend : (i) le nom du contig et le numéro du gène/de la protéine, (ii) la position de départ et (iii) la position d'arrêt dans le contig, (iv) si dans le brin (+1) ou le brin complémentaire inverse (-1) (v) l'identification du gène, (vi) si partiel dans le brin gauche seulement (10), le brin droit seulement (01) ou les deux (11), (vii) le type de codon de départ, (viii) le motif du site de liaison au ribosome détecté (ix) la distance d'espacement du site de liaison au ribosome, (x) le contenu en gc.
 
@@ -136,16 +132,17 @@ mkdir -p annotations/hmm_output/
 
 Pour le seuil de la recherche de motif, nous avons les deux options suivantes :
 
-o	 -E : au niveau de la protéine entière
+      -E : au niveau de la protéine entière
 
-o 	--domE : au niveau des domaines protéiques
+      --domE : au niveau des domaines protéiques
 
 lancer la détection de motifs
 
 ```sh
-hmmsearch  -E  0.0001  --domE  0.0001  database/Resfams.hmm  annotations/prodigal/assembly_prot.fa  >  annotations/hmm_output/prot_vs_resfam.out
+hmmsearch  -E  0.000001  --domE  0.000001  database/Resfams.hmm  annotations/prodigal/assembly_prot.fa  >  annotations/hmm_output/prot_vs_resfam.out
 ```
 récupérer les séquences d'intérêt
+
 ```sh
 cat annotations/hmm_output/prot_vs_resfam.out  |  awk '{print $9}' |  grep  'NODE'  >  annotations/hmm_output/prot_vs_resfam.txt
 ```

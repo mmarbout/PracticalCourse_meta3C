@@ -5,14 +5,14 @@ Différents logiciels permettent d'analyser les résultats d'assemblage. Nous ut
 explorer le répertoire de sortie de l'assemblage
 
 ```sh
-ls  -l  assemblage/libX/
+ls -l assemblage/libX/
 ```
 
 
 explorer le fichier de sortie de magahit
 
 ```sh
-cat  assemblage/libX/final.contigs.fa | head
+cat assemblage/libX/final.contigs.fa | head
 ```
 
 le fichier de sortie de megahit se présente de la manière suivante:
@@ -45,7 +45,7 @@ mkdir  -p  assemblage/rapport_assemblage/libX
 lancer les statistiques d'assemblage
 
 ```sh
-/Formation_AdG/quast-5.1.0rc1/quast.py  assemblage/libX/final.contigs.fa  -o  assemblage/rapport_assemblage/libX/  >  log_files/quast_libX.log  2>&1 
+/Formation_AdG/quast-5.1.0rc1/quast.py assemblage/libX/final.contigs.fa -o assemblage/rapport_assemblage/libX/ > log_files/quast_libX.log 2>&1 
 ```
 
 Afin d'avoir accès aux statistiques, ouvrir le fichier [report.html] (double clic).
@@ -71,7 +71,7 @@ mkdir assemblage/rapport_assemblage/all_lib
 
 lancer les statistiques d'assemblage
 ```sh
-/Formation_AdG/quast-5.1.0rc1/quast.py  assemblage/assembly_all.fa  -o  assemblage/rapport_assemblage/all_lib  >  log_files/quast_all.log  2>&1
+/Formation_AdG/quast-5.1.0rc1/quast.py assemblage/assembly_all.fa -o assemblage/rapport_assemblage/all_lib > log_files/quast_all.log 2>&1
 ```
 
 Désormais vous allez travailler sur cet assemblage.

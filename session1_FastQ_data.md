@@ -126,9 +126,10 @@ o 	-m : option permettant de définir une longueur minimale des reads
 
 NB : Dans le dossier [database/] sur l'espace GAIA vous trouverez le fichier contenant les séquences des adaptateurs que nous utilisons au laboratoire.
 
-supprimer les séquences des adaptateurs
+supprimer les séquences des adaptateurs et les reads de mauvaise qualité de la librairie ShotGun (10 minutes)
+
 ```sh
-cutadapt -q 20 -m 45 -a file:database/adaptateur.fasta -A file:database/adaptateur.fasta -o fastq/libX_filtre_SG_for.fastq.gz -p fastq/libX_filtre_SG_rev.fastq.gz fastq/libX_SG_for.fastq.gz fastq/libX_SG_rev.fastq.gz > log_files/cutadapt_SG.log 2>&1
+cutadapt -q 20 -m 45 -j 8 -a file:database/adaptateur.fasta -A file:database/adaptateur.fasta -o fastq/libX_filtre_SG_for.fastq.gz -p fastq/libX_filtre_SG_rev.fastq.gz fastq/libX_SG_for.fastq.gz fastq/libX_SG_rev.fastq.gz > log_files/cutadapt_SG.log 2>&1
 ```
 
 Petite pause peut être ? c'est un poil long ...
@@ -140,7 +141,7 @@ refaire l’analyse FastQC
 
 Qi8 : Combien de reads avez-vous gardé après cette étape de filtration ?
 
-Refaire la même chose pour les reads 3C.
+Refaire la même chose pour les reads 3C (plus rapide ... 2-3 minutes).
 
 idem on aurait pu faire une petite boucle ;)
 

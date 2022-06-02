@@ -128,14 +128,14 @@ NB : Dans le dossier [database/] sur l'espace GAIA vous trouverez le fichier con
 
 supprimer les séquences des adaptateurs
 ```sh
-cutadapt  -q 20  -m  45  -a  file:database/adaptateur.fasta  -A  file:database/adaptateur.fasta  -o  fastq/libX_filtre_SG_for.fastq.gz  -p  fastq/libX_filtre_SG_rev.fastq.gz  fastq/libX_SG_for.fastq.gz  fastq/libX_SG_rev.fastq.gz  >  log_files/cutadapt_SG.log  2>&1
+cutadapt -q 20 -m 45 -a file:database/adaptateur.fasta -A file:database/adaptateur.fasta -o fastq/libX_filtre_SG_for.fastq.gz -p fastq/libX_filtre_SG_rev.fastq.gz fastq/libX_SG_for.fastq.gz fastq/libX_SG_rev.fastq.gz > log_files/cutadapt_SG.log 2>&1
 ```
 
 Petite pause peut être ? c'est un poil long ...
 
 refaire l’analyse FastQC
 ```sh
-~/Bureau/install/FastQC/fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/libX_filtre_SG_for.fastq.gz  >  log_files/fastqc_filter_SG_for.log 2>&1
+~/Bureau/install/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_filtre_SG_for.fastq.gz > log_files/fastqc_filter_SG_for.log 2>&1
 ```
 
 Qi8 : Combien de reads avez-vous gardé après cette étape de filtration ?

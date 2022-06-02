@@ -1,5 +1,8 @@
 # Practical Course Meta3C
 
+![meta3C](docs/images/Meta3C.png)
+
+
 Ce TP a pour objectif de vous apprendre à analyser des séquences issues d'échantillons environnementaux. 
 Nous allons partir des fichiers FastQ "brutes" en sortie directe du séquenceur et les analyser.
 L'objectif est de caractériser la composition du communauté bactérienne artificielle.

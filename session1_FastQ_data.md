@@ -90,7 +90,7 @@ créer un répertoire de sortie des fichiers log
 mkdir -p log_files/
 ```
 
-lancer le programme FastQC
+lancer le programme FastQC (1 à 3 minutes par fichier)
 ```sh
 /Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_SG_for.fastq.gz > log_files/fastqc_raw_SG_for.log 2>&1
 /Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_3C_for.fastq.gz > log_files/fastqc_raw_3C_for.log 2>&1
@@ -101,14 +101,9 @@ Vous trouverez les données générées par fastQC dans le dossier [fastq/rappor
 faire la même chose pour les reads reverse
 
 on aurait également pu écrire une petite boucle pour faire tout cela...
+
 ```sh
-for sens in for rev
-do 
-	for type in SG 3C
-	do
-		/Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_"$type"_"$sens".fastq.gz >  log_files/fastqc_raw_"$type"_"$sens".log 2>&1
-	done
-done
+for sens in for rev; do; for type in SG 3C; do; /Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_"$type"_"$sens".fastq.gz >  log_files/fastqc_raw_"$type"_"$sens".log 2>&1; done; done
 ```
 
 Qi7 : En analysant et comparant les rapports de qualité, quelles différences observez vous entre vos différentes banques ? Quelle est l’enzyme que vous avez utilisée pour faire votre banque 3C ?

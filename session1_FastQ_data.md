@@ -74,11 +74,9 @@ Qi6 : Quelles différences observez-vous entre les Reads SG et les Reads 3C ?
 
 fastQC est un programme qui prend comme entrée un fichier FastQ et exécute une série de tests pour générer un rapport complet sur la qualité des reads et des bases à différentes positions. Le programme s’exécute en ligne de commande avec les options suivantes :
 
-o 	-t : nombre de processeurs accordé au programme
-
-o 	-o : répertoire de sortie
-
-o 	--nogroup : option permettant d’avoir des graphiques pour chaque base et non par groupe de 5
+    -t : nombre de processeurs accordé au programme
+    -o : répertoire de sortie
+    --nogroup : option permettant d’avoir des graphiques pour chaque base et non par groupe de 5
 
 
 ![FastQC](docs/images/FastQC.png)
@@ -115,17 +113,12 @@ Qi7 : En analysant et comparant les rapports de qualité, quelles différences o
 
 cutadapt est un programme permettant de rechercher des séquences d’adaptateurs à l'intérieur des reads brutes afin de les retirer car elles peuvent provoquer des problèmes au moment de l'assemblage. Il permet également de filtrer les reads afin de retirer du jeu de données ceux de mauvaise qualité et/ou trop petits. Le programme s’exécute en ligne de commande avec les options suivantes :
 
-o	 -a file : fichier contenant les séquences des adaptateurs forward
-
-o 	-A file : fichier contenant les séquences des adaptateurs reverse
-
-o 	-o : fichier de sortie FastQ forward
-
-o 	-p : fichier de sortie FastQ reverse
-
-o 	-q : option permettant de définir une qualité minimale
-
-o 	-m : option permettant de définir une longueur minimale des reads
+    -a file : fichier contenant les séquences des adaptateurs forward
+    -A file : fichier contenant les séquences des adaptateurs reverse
+    -o : fichier de sortie FastQ forward
+    -p : fichier de sortie FastQ reverse
+    -q : option permettant de définir une qualité minimale
+    -m : option permettant de définir une longueur minimale des reads
 
 NB : Dans le dossier [database/] sur l'espace GAIA vous trouverez le fichier contenant les séquences des adaptateurs que nous utilisons au laboratoire.
 

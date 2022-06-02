@@ -39,7 +39,7 @@ certains logiciels sont dédiés à l'analyse des assemblages. Nous allons utili
 créer un répertoire de sortie des rapports d'assemblage
 
 ```sh
-mkdir  -p  assemblage/rapport_assemblage/libX
+mkdir -p assemblage/rapport_assemblage/libX
 ```
 
 lancer les statistiques d'assemblage

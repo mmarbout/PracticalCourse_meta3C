@@ -15,13 +15,13 @@ ATTENTION: Megahit ne veut pas que le repertoire de sortie existe déjà !!!
 
 Il s’utilise en ligne de commande avec les options suivantes :
 
-o	 -1 : reads forward
+    -1 : reads forward
 
-o	 -2 : reads reverse
+    -2 : reads reverse
 
-o	 -o : répertoire de sortie (créé par megahit !!!)
+    -o : répertoire de sortie (créé par megahit !!!)
 
-o	 -t : nombre de cpu
+    -t : nombre de cpu
 
 créer un répertoire « assemblage » . on utilisera ce repertoire pour y stocker d'autres données
 

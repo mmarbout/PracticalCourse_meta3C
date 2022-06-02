@@ -173,6 +173,8 @@ jetez un oeil sur les différents fichier de sortie des 3 programmes ...
 
 concernant Resfinder:
 
+![resfinder](docs/images/Resfinder.png)
+
 Qi26 : Combien de gènes candidats le programme Resfinder détecte t il ? faites une comparaison avec les méthodes précédentes.
 
 

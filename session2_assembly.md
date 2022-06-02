@@ -21,6 +21,8 @@ o	 -2 : reads reverse
 
 o	 -o : répertoire de sortie (créé par megahit !!!)
 
+o	 -t : nombre de cpu
+
 créer un répertoire « assemblage » . on utilisera ce repertoire pour y stocker d'autres données
 
 ```sh
@@ -30,7 +32,7 @@ mkdir -p assemblage/
 lancer l’assemblage
 
 ```sh
-/Formation_AdG/MEGAHIT/bin/megahit -1 fastq/libX_filtre_SG_for.fastq.gz -2 fastq/libX_filtre_SG_rev.fastq.gz -o assemblage/libX/ > log_files/megahit_libX_log  2>&1
+/Formation_AdG/MEGAHIT/bin/megahit -t 8 -1 fastq/libX_filtre_SG_for.fastq.gz -2 fastq/libX_filtre_SG_rev.fastq.gz -o assemblage/libX/ > log_files/megahit_libX_log  2>&1
 ```
 
 

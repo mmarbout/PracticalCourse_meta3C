@@ -10,6 +10,8 @@ NODE_XX_length_YY (length correspondant à la longueur du contig !!)
 
 Différents programmes existent pour rechercher de potentielles phases ouvertes de lecture (ORFs) (genemark, metagenemark, prodigal). Dans le cadre de ce TP nous utiliserons le programme prodigal qui est spécialisé dans la détection de gènes procaryotes à l'intérieur de génomes ou de métagénomes. En mode métagénomique, il s'entraîne directement à partir de l'échantillon métagénomique pour détecter le site d'initiation de la traduction et le code génétique alternatif (comme le genre Mycoplasma). Il peut également prédire les gènes incomplets (en 5', 3' ou des deux côtés) provenant du bord des contigs.
 
+![prodigal](docs/images/prodigal.png)
+
 Ici, nous allons exécuter prodigal en mode méta, afin qu'il puisse s'adapter aux différents codes génétiques et sites d'initiation de la traduction.
 
 Prodigal s'utilise en ligne de commande avec les options suivantes :
@@ -27,13 +29,13 @@ o	 -i : fichier d'input
 créer un répertoire de sortie
 
 ```sh
-mkdir  -p  annotations/prodigal/
+mkdir -p annotations/prodigal/
 ```
 
 lancer la recherche de phases ouvertes de lecture (XX min)
 
 ```sh
-prodigal -p meta -a annotations/prodigal/assembly_prot.fa -o annotations/prodigal/assembly.gene -d annotations/prodigal/assembly_gene.fa -i  assemblage/assembly_all.fa  >  log_files/prodigal.log  2>&1
+prodigal -p meta -a annotations/prodigal/assembly_prot.fa -o annotations/prodigal/assembly.gene -d annotations/prodigal/assembly_gene.fa -i  assemblage/assembly_all.fa > log_files/prodigal.log  2>&1
 ```
 
 Vous avez le droit à une bonne pause de 20 min le temps que Prodigal finisse son travail !!!
@@ -78,7 +80,7 @@ Concernant les bases de données de blast (protéiques ou nucléiques), elles pe
 création des index
 
 ```sh
-makeblastdb -in database/Res_aa.fa -input_type fasta -dbtype prot -out database/Res_aa > log_files/blastdb.log  2>&1
+makeblastdb -in database/Res_aa.fa -input_type fasta -dbtype prot -out database/Res_aa > log_files/blastdb.log 2>&1
 ```
 
 création des répertoires de sortie

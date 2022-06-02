@@ -9,6 +9,8 @@ Le but de cette partie est d’obtenir un assemblage de notre métagénome, un j
 Pour l’assemblage nous utilisons le programme megahit (il en existe beaucoup d'autres, chacun avec ses spécificités). Le logiciel megahit constitue un bon compromis entre vitesse, consommation de mémoire et performances d'assemblage. Megahit est conçu pour effectuer un assemblage métagénomique itératif rapide. L'utilisateur peut fournir différents paramètres d'assemblage et la taille des kmer itératifs. Dans notre cas, nous utiliserons les paramètres par défaut du logiciel.
 Pourquoi un assemblage itératif ? Comme indiqué dans Megahit : Alors qu'une petite taille de k-mer est favorable pour filtrer les "liens" (edge of the de brujin graph) erronés et combler les trous dans les régions à faible couverture, une grande taille de k-mer est utile pour résoudre les problèmes d'assemblages dû aux répétitions.
 
+![megahit](docs/images/Megahit.png)
+
 ATTENTION: Megahit ne veut pas que le repertoire de sortie existe déjà !!!
 
 Il s’utilise en ligne de commande avec les options suivantes :
@@ -19,7 +21,7 @@ o	 -2 : reads reverse
 
 o	 -o : répertoire de sortie (créé par megahit !!!)
 
-créer un répertoire « assemblage » . onutilisera ce repertoire pour y stocker d'autres données
+créer un répertoire « assemblage » . on utilisera ce repertoire pour y stocker d'autres données
 
 ```sh
 mkdir -p assemblage/

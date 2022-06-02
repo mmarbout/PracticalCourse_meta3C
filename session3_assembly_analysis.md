@@ -32,7 +32,9 @@ Qi12: Combien de contigs circulaires avez vous ?
 
 Qi13: Combien de contigs indépendants ?
 
-certains logiciels sont dédiés à l'analyse des assemblages. Nous allons utiliser le logicial QUAST.
+
+
+certains logiciels sont dédiés à l'analyse des assemblages. Nous allons voir l'utilisation du logiciel QUAST.
 
 ![Quast](docs/images/Quast.png)
 

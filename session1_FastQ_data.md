@@ -82,18 +82,18 @@ o 	--nogroup : option permettant d’avoir des graphiques pour chaque base et no
 
 créer un répertoire de sortie des rapports de qualité des lectures
 ```sh
-mkdir  -p  fastq/rapport_qualite/
+mkdir -p fastq/rapport_qualite/
 ```
 
 créer un répertoire de sortie des fichiers log
 ```sh
-mkdir  -p  log_files/
+mkdir -p log_files/
 ```
 
 lancer le programme FastQC
 ```sh
-/Formation_AdG/FastQC/fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/libX_SG_for.fastq.gz  >  log_files/fastqc_raw_SG_for.log 2>&1
-/Formation_AdG/FastQC/fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/libX_3C_for.fastq.gz  >  log_files/fastqc_raw_3C_for.log 2>&1
+/Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_SG_for.fastq.gz > log_files/fastqc_raw_SG_for.log 2>&1
+/Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_3C_for.fastq.gz > log_files/fastqc_raw_3C_for.log 2>&1
 ```
 
 Vous trouverez les données générées par fastQC dans le dossier [fastq/rapport_qualite/sampleX_raw_SG_for_fastqc]. Afin d'avoir accès à différentes statistiques concernant vos reads, ouvrir le fichier [fastqc_report.html] (par double clic). Ne prenez pas en compte la partie "Kmer content" qui est sujette à controverse notamment en ce qui concerne des reads issues d'un métagénome.
@@ -106,7 +106,7 @@ for sens in for rev
 do 
 	for type in SG 3C
 	do
-		/Formation_AdG/FastQC/fastqc  -t  4  --nogroup  -o  fastq/rapport_qualite/  fastq/libX_"$type"_"$sens".fastq.gz  >  log_files/fastqc_raw_"$type"_"$sens".log 2>&1
+		/Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_"$type"_"$sens".fastq.gz >  log_files/fastqc_raw_"$type"_"$sens".log 2>&1
 	done
 done
 ```

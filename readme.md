@@ -1,6 +1,6 @@
 # Practical Course Meta3C
 
-![meta3C](docs/images/Meta3C.png)
+![meta3C](docs/images/Meta3C_V2.png)
 
 
 Ce TP a pour objectif de vous apprendre à analyser des séquences issues d'échantillons environnementaux. 

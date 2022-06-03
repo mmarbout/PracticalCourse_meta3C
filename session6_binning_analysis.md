@@ -101,37 +101,32 @@ Une autre façon de vérifier la qualité de nos bins est de regarder l’homog�
 
 ![outMAG](docs/images/outMAG4.png)
 
+si vous avez un peu de mal ... vous pouvez jeter un oeil au script binning_analysis.sh dans le dossier scripts/.
+
+
+##	analyse de bin unique
 
 Il est également possible de générer des « density plot » pour chaque bin afin de vérifier leur homogénéité ou au contraire voir si il y a différentes populations de contigs.
 
 ![outMAG](docs/images/outMAG7.png)
 
-pour celui là , je vais vous filer un coup de pouce ... 
+pour celui là , je vais vous filer un coup de pouce ... il y aun dossier scripts/
 
 lancement du script bin_analysis.sh qui prends 3 arguments en entrée [1-targeted_bin; 2-output_directory; 3-contig_data_file from MetaTOR]
 
-ATTENTION ICI !!!!  ne recopiez pas la ligne de commande betement !! il faut remplacer targeted bin par un bin que vous souhaitez étudier et le fichier contig_data par celui correspondant aux process en question ...
-
-> bash scripts/bin_analysis.sh  targeted_bin  figure/  output_MetaTOR/contig_data_final.txt 
+```sh
+bash scripts/bin_analysis MetaTOR_2_0 figures/ binning/metator_all/contig_data_final.txt
+```
 
 ##	Matrices d’interactions
 
 A partir de n'importe quel réseau ou fichier d’alignement, il est possible de générer une matrice qui est une méthode de visualisation de graphe.
 
-Pour cela, nous allons utiliser le script bins_matrix_generation.sh écrit en bash et qui permet de recouper les différentes informations et de générer une matrice non réordonnée et une matrice réordonnée des contigs de l’assemblage :
+Pour cela, nous allons utiliser une fonction de notre programme MetaTOR qui permet de générer des matrices d'interactions pour différents "objets" (contig, core_bin, overlapping, bin, final_bin)
 
-usage du script : bash bins_matrix_generation.sh  [fichier de sortie des données de louvain]  [fichier de l’alignement]  [dossier d’output]  [taille des pixels x 5Kb]
-
-idem que au dessus concernant la ligne de commande !!!
-
-vous êtes désormais (enfin j'espère) suffisamment à l'aise avec ces lignes de commandes et les arguments pour vous en sortir tout seul ;)
-
-cela prend un peu de temps !! c'est une assez grosse matrice
-
-attention
-
-lancement du script :
-
-> bash scripts/bins_matrix_generation.sh  output_MetaTOR/XX_contig_data_jesaispasquoi.txt  network/alignment_sampleXX.txt  figure/  20
+```sh
+metator contactmap -h
+```
+on peut par exemple, 
 
 

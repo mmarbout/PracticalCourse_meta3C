@@ -37,6 +37,8 @@ maintenant ... on peut commencer !!
 
 ##	Marqueurs taxonomiques
 
+![checkM](docs/images/checkm.png)
+
 Différents programmes existent afin de valider les bins obtenus après partitionnement d'un métagénome (CheckM, Micomplete). Dans notre cas nous utiliserons Micomplete qui est moins complet mais beacoup moins gourmand que CheckM.
 
 La validation des bins avec ce programme consiste à rechercher un set de gènes bactériens (via des modèles HMM), essentiels et présents en une seule copie dans plus de 97% des génomes bactériens connus.
@@ -49,24 +51,30 @@ ii - la contamination (mesure reliée au nombre de marqueurs en plusieurs copies
 
 ![micomplete](docs/images/micomplete.png)
 
-installation de micomplete
 
-
+pour lancer micomplete, il faut d'abord changer les extensions des bins (.fa --> .fna)
 
 ```sh
-mkdir -p binning
+var=$(ls -l binning/metator/bins/overlapping_bin/ | sed '1d' | awk '{print $9}' | awk -F "." '{print $1}')
+for i in $var; do mv binning/metator/bins/overlapping_bin/"$i".fa binning/metator/bins/overlapping_bin/"$i".fna; done
 ```
 
-lancement de micomplete
+il faut ensuite construire un fichier nécessaire au fonctionnement de micomplete
 
 ```sh
-mkdir -p binning
+find binning/metator/bins/overlapping_bin/ -maxdepth 1 -type f -name "*.fna" | miCompletelist.sh > binning/metator/bins/overlapping_bin/listbins.tab
 ```
 
-analyse des résultats
+on peut ensuite lancer l'analyse:
 
 ```sh
-mkdir -p binning
+miComplete binning/metator/bins/overlapping_bin/listbins.tab --threads 8 --hmms Bact105 -o binning/metator/miComplete.txt 
+```
+
+et jeter un oeil aux résultats
+
+```sh
+cat binning/metator/miComplete.txt | head
 ```
 
 Nous considèrerons un génome complet quand :

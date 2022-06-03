@@ -133,7 +133,7 @@ mkdir -p annotations/hmm_output/
 lancer la détection de motifs
 
 ```sh
-hmmsearch --tblout annotations/hmm_output/prot_vs_resfam.txt database/Resfams.hmm  annotations/prodigal/assembly_prot.fa  >  annotations/hmm_output/prot_vs_resfam.out
+hmmsearch --tblout annotations/hmm_output/prot_vs_resfam.txt --cpu 8 database/Resfams.hmm  annotations/prodigal/assembly_prot.fa  >  annotations/hmm_output/prot_vs_resfam.out
 ```
 
 Pour les recherches utilisant les modèles HMM, nous avons les deux options suivantes concernant les scores:

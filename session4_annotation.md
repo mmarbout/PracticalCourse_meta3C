@@ -94,7 +94,7 @@ création des répertoires de sortie
 mkdir -p annotations/blast_output/
 ```
 
-faire les blasts (15 minutes) 
+faire les blasts 
 ```sh
 diamond blastp -p 8 --db database/Res_diam.dmnd -o annotations/blast_output/prot_vs_AMR.txt --outfmt 6 -q annotations/prodigal/assembly_prot.fa
 ```
@@ -130,22 +130,19 @@ création du répertoire de sortie
 mkdir -p annotations/hmm_output/
 ```
 
-Pour le seuil de la recherche de motif, nous avons les deux options suivantes :
+lancer la détection de motifs
+
+```sh
+hmmsearch --tblout annotations/hmm_output/prot_vs_resfam.txt database/Resfams.hmm  annotations/prodigal/assembly_prot.fa  >  annotations/hmm_output/prot_vs_resfam.out
+```
+
+Pour les recherches utilisant les modèles HMM, nous avons les deux options suivantes concernant les scores:
 
       -E : au niveau de la protéine entière
 
       --domE : au niveau des domaines protéiques
-
-lancer la détection de motifs
-
-```sh
-hmmsearch  -E  0.000001  --domE  0.000001  database/Resfams.hmm  annotations/prodigal/assembly_prot.fa  >  annotations/hmm_output/prot_vs_resfam.out
-```
-récupérer les séquences d'intérêt
-
-```sh
-cat annotations/hmm_output/prot_vs_resfam.out  |  awk '{print $9}' |  grep  'NODE'  >  annotations/hmm_output/prot_vs_resfam.txt
-```
+      
+Les auteurs de la base de données ResFams préconisent un seuil de détection de 1e-50 au niveau de la protéine entière.
 
 Qi25 : Combien de candidats obtenez vous avec cette méthode ? 
 

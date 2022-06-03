@@ -56,19 +56,19 @@ pour lancer micomplete, il faut d'abord changer les extensions des bins (.fa -->
 
 ```sh
 var=$(ls -l binning/metator/bins/overlapping_bin/ | sed '1d' | awk '{print $9}' | awk -F "." '{print $1}')
-for i in $var; do mv binning/metator/bins/overlapping_bin/"$i".fa binning/metator/bins/overlapping_bin/"$i".fna; done
+for i in $var; do mv binning/metator/overlapping_bin/"$i".fa binning/metator/overlapping_bin/"$i".fna; done
 ```
 
 il faut ensuite construire un fichier nécessaire au fonctionnement de micomplete
 
 ```sh
-find binning/metator/bins/overlapping_bin/ -maxdepth 1 -type f -name "*.fna" | miCompletelist.sh > binning/metator/bins/overlapping_bin/listbins.tab
+find binning/metator/overlapping_bin/ -maxdepth 1 -type f -name "*.fna" | miCompletelist.sh > binning/metator/overlapping_bin/listbins.tab
 ```
 
 on peut ensuite lancer l'analyse:
 
 ```sh
-miComplete binning/metator/bins/overlapping_bin/listbins.tab --threads 8 --hmms Bact105 -o binning/metator/miComplete.txt 
+miComplete binning/metator/overlapping_bin/listbins.tab --threads 8 --hmms Bact105 -o binning/metator/miComplete.txt 
 ```
 
 et jeter un oeil aux résultats

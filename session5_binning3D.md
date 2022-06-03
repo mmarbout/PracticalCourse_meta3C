@@ -82,7 +82,7 @@ export LOUVAIN_PATH=TP_Meta3C/software/gen-louvain/
 ```
 
 ```sh
-metator partition -n -O 100 -i 1 -t 4 -n metator_output/network -c metator_output/contig_data -a assemblage/assembly_all.fa -o metator_output
+metator partition -n -O 100 -i 1 -t 4 -n metator_output/network -c metator_output/contig_data_network.txt -a assemblage/assembly_all.fa -o metator_output
 ```
 
 

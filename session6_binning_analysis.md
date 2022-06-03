@@ -2,6 +2,38 @@
 
 Différentes approches permettent de valider les bins obtenus. Nous allons essayer de passer en revue différentes méthodes permettant de valider notre binning.
 
+Mais avant de pouvoir commencer cette session ... il va falloir installer quelques programmes et librairies !!
+
+1- une librairie python permettant de télécharger d'autres librairies python 
+
+```sh
+curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+```
+
+ensuite lancez la commande suivante:
+```sh
+python get-pip.py
+```
+
+2- des librairies python via la commande pip
+
+```sh
+~/.local/bin/pip3 install matplotlib Tk hicstuff
+```
+
+3- un package nécessaire via la commande apt-get
+
+```sh
+sudo apt-get install python3-tk
+```
+
+4- le programme micomplete
+
+```sh
+pip install micomplete
+```
+
+maintenant ... on peut commencer !!
 
 ##	Marqueurs taxonomiques
 

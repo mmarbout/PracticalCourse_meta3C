@@ -15,7 +15,11 @@ i - la complétude (mesure reliée au nombre de marqueurs au sein d'un bin par r
 
 ii - la contamination (mesure reliée au nombre de marqueurs en plusieurs copies).
 
-Les données concernant ces résultats sont contenues dans les fichiers de sorties de notre pipelline MetaTOR.
+![micomplete](docs/images/micomplete.png)
+
+installation de micomplete
+
+
 
 Nous considèrerons un génome complet quand :
 

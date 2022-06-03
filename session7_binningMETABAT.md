@@ -18,6 +18,6 @@ lancer MetaBAT
 metabat -i assemblage/assembly_all.fa -o binning/metabat/bin_metaBAT -m 1500 -a database/cov_SG_ass.txt
 ```
 
-vous avez maintenant toutes les connaissances pour regarder la qualité des bins obtenus par MetaBAT en utilisant Micomplete et réaliser une analyse comparative avec les bins obtenus via MetaTOR (cf ci-dessous).
+vous avez maintenant toutes les connaissances pour regarder la qualité des bins obtenus par MetaBAT en utilisant Micomplete et réaliser une analyse comparative avec les bins obtenus via MetaTOR (vous pouvez également tester différents paramètres de MetaTOR ;) (cf ci-dessous).
 
 ![out_fig_5](docs/images/outMAG5.png)

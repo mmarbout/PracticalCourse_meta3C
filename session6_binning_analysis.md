@@ -62,13 +62,13 @@ for i in $var; do mv binning/metator/overlapping_bin/"$i".fa binning/metator/ove
 il faut ensuite construire un fichier nécessaire au fonctionnement de micomplete
 
 ```sh
-find binning/metator/overlapping_bin/ -maxdepth 1 -type f -name "*.fna" | miCompletelist.sh > binning/metator/overlapping_bin/listbins.tab
+find binning/metator/overlapping_bin/ -maxdepth 1 -type f -name "*.fna" | micomplete/micomplete/utils/miCompletelist.sh > binning/metator/overlapping_bin/listbins.tab
 ```
 
 on peut ensuite lancer l'analyse:
 
 ```sh
-miComplete binning/metator/overlapping_bin/listbins.tab --threads 8 --hmms Bact105 -o binning/metator/miComplete.txt 
+micomplete/micomplete/micomplete.py binning/metator/overlapping_bin/listbins.tab --threads 8 --hmms Bact105 -o binning/metator/miComplete.txt 
 ```
 
 et jeter un oeil aux résultats
@@ -95,15 +95,14 @@ Qi35 : Combien de génome(s) reconstruit(s) et complet(s) avez-vous ? Quelle pro
 
 Une autre façon de vérifier la qualité de nos bins est de regarder l’homogénéité de leur couverture et de leur contenu en GC.
 
-
-Qi36 : graph ci-dessous à reproduire
+à l'aide des données du fichier contig_data_partition.txt, générez les graph ci-dessous (boxplot)
 
 ![outMAG](docs/images/outMAG3.png)
 
 ![outMAG](docs/images/outMAG4.png)
 
 
-Il est également possible de générer des « density plot » pour chaque bin afin de vérifier leur homogénéité.
+Il est également possible de générer des « density plot » pour chaque bin afin de vérifier leur homogénéité ou au contraire voir si il y a différentes populations de contigs.
 
 ![outMAG](docs/images/outMAG7.png)
 

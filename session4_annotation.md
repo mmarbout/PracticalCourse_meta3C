@@ -165,11 +165,13 @@ scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAI
 ```
 jetez un oeil sur les différents fichier de sortie des 3 programmes ...
 
-concernant Resfinder:
+Qi26 : Combien de gènes candidats le programme Resfinder détecte t il ? faites une comparaison avec les méthodes précédentes.
+
+vous pouvez par exemple utiliser ce site : http://bioinformatics.psb.ugent.be/webtools/Venn/
 
 ![resfinder](docs/images/Resfinder.png)
 
-Qi26 : Combien de gènes candidats le programme Resfinder détecte t il ? faites une comparaison avec les méthodes précédentes.
+
 
 
 

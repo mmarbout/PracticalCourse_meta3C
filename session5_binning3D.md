@@ -35,8 +35,15 @@ vous pouvez voir l'ensemble des options du logiciel avec l'option --help
 metator network --help
 ```
 
+créez un répertoire de sortie pour le binning
+
 ```sh
-metator network -n -t 4 -1 fastq/libX_filtre_3C_for.fastq.gz -2 fastq/libX_filtre_3C_rev.fastq.gz -a assemblage/assembly_all.fa -o metator_output
+mkdir -p binning
+```
+et maintenant, lancez la ligne de commande permettant de générer le réseau d'interactions.
+
+```sh
+metator network -n -t 4 -1 fastq/libX_filtre_3C_for.fastq.gz -2 fastq/libX_filtre_3C_rev.fastq.gz -a assemblage/assembly_all.fa -o binning/metator/
 ```
 
 en vous servant du fichier log généré par MetaTOR ainsi que du fichier "network" généré, répondez aux questions suivantes:
@@ -51,7 +58,7 @@ Qi30 : déduisez en le 3D ratio (nb de reads liant 2 contigs différent par rapp
 
 NB: il est nécessaire de ne pas prendre en compte les interactions au sein d'un même contig (intra-contig)... c'est pourquoi votre réseau ne contient pas les liens intra-contigs.
 
-vous pouvez également faire des tests sur les différentes normalisations offertes par le programme.
+vous pouvez également faire des tests sur les différentes normalisations offertes par le programme avec l'option -n
 
 
 ### partitionnement du réseau d'interaction
@@ -75,16 +82,24 @@ Une modularité est une mesure de la qualité d'une partition des sommets (les n
 metator partition -h
 ```
 
-nous devons d'abord indiquer au programme ou se trouve l'algorithme de louvain car il ne fait par parti stricto-senso du programme MetaTOR
+nous devons d'abord indiquer au programme ou se trouve l'algorithme de louvain car il ne fait par parti stricto-senso du programme MetaTOR et il est codé en c++
 
 ```sh
 export LOUVAIN_PATH=software/gen-louvain/
 ```
 
+nous allons maintenant lancer le partionnement de notre réseau avec la ligne de commande suivante:
+
 ```sh
-metator partition -n -O 100 -i 1 -t 4 -n metator_output/network.txt -c metator_output/contig_data_network.txt -a assemblage/assembly_all.fa -o metator_output
+metator partition -i 1 -t 4 -n binning/metator/network.txt -c binning/metator/contig_data_network.txt -a assemblage/assembly_all.fa -o binning/metator/
 ```
 
+explorer le dossier de sortie et notamment le fichier contig_data_partition.txt
+
+
+```sh
+cat binning/metator/contig_data_partition.txt | head
+```
 
 Qi31 : Combien de bins détectez-vous ?
 
@@ -94,6 +109,10 @@ Qi33 : Combien de bin contiennent plus de 10 Kb, 100 Kb, 500 Kb et 1 Mb de séqu
 
 Notez bien ces chiffres et refaites tourner l'algorithme avec les mêmes lignes de commandes (il faut mettre l'option -F afin d'écraser les fichiers existants !! ou sinon vous mettez les fichiers de sorties dans un repertoire différent ;)) 
 
+```sh
+metator partition -i 1 -F -t 4 -n binning/metator/network.txt -c binning/metator/contig_data_network.txt -a assemblage/assembly_all.fa -o binning/metator/
+```
+
 Qi34 : Détectez-vous le même nombre de communautés que précédemment ? Ces communautés sont-elles de la même taille ? Qu'en déduisez-vous ?
 
 
@@ -101,8 +120,12 @@ Qi34 : Détectez-vous le même nombre de communautés que précédemment ? Ces c
 
 L'algorithme de Louvain est non déterministe, c'est à dire qu'en utilisant un jeu de données identiques, les résultats produits seront différents à chaque fois. Il est donc possible d'utiliser cette propriété de l'algorithme pour réaliser une sorte de "bootstraping" de notre partitionnement en communauté. Nous allons donc réaliser plusieurs itérations indépendantes de l'algorithme et de regrouper les contigs qui ségrégent toujours ensemble au cours des différentes itérations. Il est également possible de faire varier le seuil a partir duquel 2 contigs seront regroupés ensemble (overlapping communities).
 
-Il est ainsi possible d’analyser l’évolutions des différentes communautés en fonction du nombre d’itérations de Louvain (1, 5, 10, 20, 30, 40, 50) et du seuil de regroupement des contigs (70%, 80%, 90%, 100%). 
+ces différents paramètres se contrôle avec les options
 
+    -O overlapping threshold (%) ex: -O 80
+    -i nombre d'itérations ex: -i 40
+
+Il est ainsi possible d’analyser l’évolutions des différentes communautés en fonction du nombre d’itérations de Louvain (1, 5, 10, 20, 30, 40, 50) et du seuil de regroupement des contigs (70%, 80%, 90%, 100%). 
 
 A l’aide de vos connaissances, des scripts déjà utilisés et des données fournies, réaliser une analyse de l'évolution des groupes de contigs en fonction du nombre d'itérations de l'algorithme de Louvain (cf graph ci-dessous)
 

@@ -50,7 +50,7 @@ cat "$bin_data" | LC_NUMERIC="C" awk '$4>10 {print $5}' | awk '{sum+=$1} END {pr
 cat "$bin_data" | LC_NUMERIC="C" awk '{print $5}' | awk '{sum+=$1} END {print sum}' | awk '{print "'$assembly'"-$1}' >> "$out_fold"/temp/MAGs_size.txt
 
 cat "$bin_data" | sed '1d' | awk '{print $1,$2,$3,$4,$5}' | LC_NUMERIC="C" sort -k 3,3 -g -r -k 4,4 -g > "$out_fold"/temp/MAGs_summary.txt
-cat cat "$contig_data" | sed '1d' | grep "MetaTOR" | awk '{print $2,$3,$6,$4,$17,$16}' > "$out_fold"/temp/contig_data.txt
+cat "$contig_data" | sed '1d' | grep "MetaTOR" | awk '{print $2,$3,$6,$4,$17,$16}' > "$out_fold"/temp/contig_data.txt
 
 scripts/./data_binning.r "$out_fold"/temp/MAGs_size.txt "$out_fold"/temp/MAGs_summary.txt "$out_fold"/temp/contig_data.txt "$out_fold"/pie_MAGs_repartition.pdf "$out_fold"/barplot_MAGs_compl_conta.pdf "$out_fold"/boxplot_cov_MAGs.pdf "$out_fold"/boxplot_GC_MAGs.pdf
 

@@ -1,4 +1,4 @@
-session 7 : Analyse et validation des bins obtenus
+# session 6 : Analyse et validation des bins obtenus
 
 Différentes approches permettent de valider les bins obtenus. Nous allons essayer de passer en revue différentes méthodes permettant de valider notre binning.
 

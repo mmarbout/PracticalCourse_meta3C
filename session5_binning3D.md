@@ -127,6 +127,8 @@ ces différents paramètres se contrôle avec les options
 
 Il est ainsi possible d’analyser l’évolutions des différents groupes de contigs en fonction du nombre d’itérations de Louvain (1, 5, 10, 20, 30, 40, 50) et du seuil de regroupement des contigs (70%, 80%, 90%, 100%). 
 
+Qi34 : Comment évolue votre binning au cours des différentes itérations ? Combien d’itérations de louvain faudrait-il faire (justifier ce choix) ?
+
 à vous de jouer ;)
 
 ![louvain_iteration1](docs/images/louvain_it1.png)
@@ -137,6 +139,5 @@ A l’aide de vos connaissances, des scripts déjà utilisés et des données fo
 ![louvain_iteration2](docs/images/louvain_it2.png)
 
 
-Qi34 : Comment évolue votre binning au cours des différentes itérations ? Combien d’itérations de louvain faudrait-il faire (justifier ce choix) ?
 
 

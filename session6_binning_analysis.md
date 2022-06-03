@@ -21,6 +21,22 @@ installation de micomplete
 
 
 
+```sh
+mkdir -p binning
+```
+
+lancement de micomplete
+
+```sh
+mkdir -p binning
+```
+
+analyse des résultats
+
+```sh
+mkdir -p binning
+```
+
 Nous considèrerons un génome complet quand :
 
 o	sa complétude se situe au-delà de 90% (>0.9)
@@ -29,19 +45,29 @@ o	sa contamination se situe en deçà de 10% (<1.1)
 
 Qi35 : Combien de génome(s) reconstruit(s) et complet(s) avez-vous ? Quelle proportion en terme de séquence cela représente t il ?
 
-cf graphique dans le polycopié !!!!
+![outMAG](docs/images/outMAG6.png)
+
+![outMAG](docs/images/outMAG1.png)
+
+![outMAG](docs/images/outMAG8.png)
 
 ##	Couverture et contenu en GC
 
 Une autre façon de vérifier la qualité de nos bins est de regarder l’homogénéité de leur couverture et de leur contenu en GC.
 
 
-Qi36 : graph ci-dessus à reproduire
+Qi36 : graph ci-dessous à reproduire
+
+![outMAG](docs/images/outMAG3.png)
+
+![outMAG](docs/images/outMAG4.png)
 
 
 Il est également possible de générer des « density plot » pour chaque bin afin de vérifier leur homogénéité.
 
+![outMAG](docs/images/outMAG7.png)
 
+pour celui là , je vais vous filer un coup de pouce ... 
 
 lancement du script bin_analysis.sh qui prends 3 arguments en entrée [1-targeted_bin; 2-output_directory; 3-contig_data_file from MetaTOR]
 

@@ -1,9 +1,9 @@
-# session 6 : Analyse et validation des bins obtenus
+# Session 6 : Analyse et validation des bins obtenus
 
 Différentes approches permettent de valider les bins obtenus. Nous allons essayer de passer en revue différentes méthodes permettant de valider notre binning.
 
 
-•	Marqueurs taxonomiques
+##	Marqueurs taxonomiques
 
 Différents programmes existent afin de valider les bins obtenus après partitionnement d'un métagénome (CheckM, Micomplete). Dans notre cas nous utiliserons Micomplete qui est moins complet mais beacoup moins gourmand que CheckM.
 
@@ -27,7 +27,7 @@ Qi35 : Combien de génome(s) reconstruit(s) et complet(s) avez-vous ? Quelle pro
 
 cf graphique dans le polycopié !!!!
 
-•	Couverture et contenu en GC
+##	Couverture et contenu en GC
 
 Une autre façon de vérifier la qualité de nos bins est de regarder l’homogénéité de leur couverture et de leur contenu en GC.
 
@@ -45,7 +45,7 @@ ATTENTION ICI !!!!  ne recopiez pas la ligne de commande betement !! il faut rem
 
 > bash scripts/bin_analysis.sh  targeted_bin  figure/  output_MetaTOR/contig_data_final.txt 
 
-•	Matrices d’interactions
+##	Matrices d’interactions
 
 A partir de n'importe quel réseau ou fichier d’alignement, il est possible de générer une matrice qui est une méthode de visualisation de graphe.
 
@@ -65,42 +65,4 @@ lancement du script :
 
 > bash scripts/bins_matrix_generation.sh  output_MetaTOR/XX_contig_data_jesaispasquoi.txt  network/alignment_sampleXX.txt  figure/  20
 
-
-################## EXTRA #############################
-
-•	Arbres phylogénétiques
-
-Nous avons également la possibilité de construire une phylogénie des MAGs obtenus
-
-https://itol.embl.de/
-
-Vous trouverez un dossier arbre_MAGs/ sur l'espace GAIA, il contient les différents fichiers permettant de générer les arbres phylogénétiques des MAGs correspondants à votre échantillon.Vous y trouverez également différent fichiers permettant d'annoter votre arbre.
-
-voici l'adresse
-
-/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/arbre_MAGs
-
-je vous laisse faire le scp ;)
-
-attention c'est un dossier ... une petite option après le scp sera la bienvenue pour copier l'ensemble du dossier ;)
-
-si vous avez du temps ... allez y jeter un oeil !!! cela permet de faire des figures très jolies !!! 
-
-vous pouvez cliquer dans la barre du haut sur "upload"
-
-vous chargez votre treefile [concat_XX.fa.treefile]
-
-puis Upload 
-
-et la c'est magique !! j'adore !!! 
-
-ensuite vous pouvez directement faire des glisser des fichiers du dossier [itol_files/] .. etc sur la fenetre de votre arbre 
-
-la correspondance couleur - taxo se trouve dans le dossier
-
-Les couleurs sont au format RGB (on les trouve sur internet ;)
-
-vous verrez c'est chouette !!!
-
-on verra cela avec la correction ;)
 

@@ -78,7 +78,7 @@ metator partition -h
 nous devons d'abord indiquer au programme ou se trouve l'algorithme de louvain car il ne fait par parti stricto-senso du programme MetaTOR
 
 ```sh
-export LOUVAIN_PATH=TP_Meta3C/software/gen-louvain/
+export LOUVAIN_PATH=software/gen-louvain/
 ```
 
 ```sh

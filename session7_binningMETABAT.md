@@ -1,4 +1,4 @@
-# Session 6 : Binning des contigs par couverture et fréquence de tétranucléotides (MetaBAT)
+# Session 7 : Binning des contigs par couverture et fréquence de tétranucléotides (MetaBAT)
 
 Nous allons effectuer un "binning" de nos contigs en utilisant metabat2. Metabat2 est une méthode de "binning" de contigs dites hybride  et qui est basée sur la composition des tétranucléotides de l'ADN et la covariation d'abondance. Il est normalement employé pour traiter des échantillons multiples mais cela va permettre d'apprendre à s'en servir.
 

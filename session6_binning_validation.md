@@ -93,7 +93,8 @@ Qi35 : Combien de génome(s) reconstruit(s) et complet(s) avez-vous ? Quelle pro
 
 Qi36 : faites une analyse comparative de votre binning en fonction des différentes itérations
 
-![outMAG](docs/images/outMAG6.png)
+![out_fig_5](docs/images/outMAG5.png)
+
 
 
 

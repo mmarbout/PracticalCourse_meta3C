@@ -91,9 +91,12 @@ Qi35 : Combien de génome(s) reconstruit(s) et complet(s) avez-vous ? Quelle pro
 
 ![outMAG](docs/images/outMAG8.png)
 
+
+vous avez maintenant evaluer la qualité de vos bins en utilisant MiComplete, vous pouvez mainteant répondre à la question 36 !!
+
 Qi36 : faites une analyse comparative de votre binning en fonction des différentes itérations
 
-![out_fig_5](docs/images/outMAG5.png)
+![out_fig](docs/images/outMAG9.png)
 
 
 

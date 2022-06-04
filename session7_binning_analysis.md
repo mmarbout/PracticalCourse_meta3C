@@ -1,12 +1,16 @@
 # session 7 : Analyse des bins obtenus
 
-pour cette session, il va falloir récupérer les données
+pour cette session, il va falloir récupérer les données que nous avons générées avec CheckM et le pipeline complet de MetaTOR (partitionnement itératif et récursif). Nous allons analyser les bins que nous avons obtenus.
+
+```sh
+scp 
+```
 
 ##	Couverture et contenu en GC
 
 Une autre façon de vérifier la qualité de nos bins est de regarder l’homogénéité de leur couverture et de leur contenu en GC.
 
-à l'aide des données du fichier contig_data_partition.txt, générez les graph ci-dessous (boxplot)
+à l'aide des données du fichier contig_data_final.txt, générez les graph ci-dessous (boxplot)
 
 ![outMAG](docs/images/outMAG3.png)
 
@@ -21,7 +25,7 @@ Il est également possible de générer des « density plot » pour chaque bin a
 
 ![outMAG](docs/images/outMAG7.png)
 
-pour celui là , je vais vous filer un coup de pouce ... il y aun dossier scripts/
+pour celui là , je vais vous filer un coup de pouce ... il y a un dossier scripts/
 
 lancement du script bin_analysis.sh qui prends 3 arguments en entrée [1-targeted_bin; 2-output_directory; 3-contig_data_file from MetaTOR]
 
@@ -29,7 +33,7 @@ lancement du script bin_analysis.sh qui prends 3 arguments en entrée [1-targete
 bash scripts/bin_analysis MetaTOR_2_0 figures/ binning/metator_all/contig_data_final.txt
 ```
 
-##	Matrices d’interactions
+## Matrices d’interactions
 
 A partir de n'importe quel réseau ou fichier d’alignement, il est possible de générer une matrice qui est une méthode de visualisation de graphe.
 
@@ -39,4 +43,6 @@ Pour cela, nous allons utiliser une fonction de notre programme MetaTOR qui perm
 metator contactmap -h
 ```
 on peut par exemple, 
+
+## Répartition taxonomique des MAGs (Metagenomic Assembled Genomes)
 

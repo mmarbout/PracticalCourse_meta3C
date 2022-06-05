@@ -15,7 +15,8 @@ il contient notamment 2 fichiers conteant les résultats finaux sur les contigs 
 
 
 **Contig_data_final.txt**
- : These are the files with all the informations from the contigs:
+ : il s'agit du fichier contenant l'ensemble des informations sur les contigs issues de l'assemblage et sur les bins auxquels ils appartiennent.
+ 
 |ID|Name|Size|GC_content|Hit|Shotgun_coverage|Restriction_site|Core_bin_ID|Core_bin_contigs|Core_bin_size|Overlapping_bin_ID|Overlapping_bin_contigs|Overlapping_bin_size|Recursive_bin_ID|Recursive_bin_contigs|Recursive_bin_size|Final_bin|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |1|NODE_1|642311|38.6876450815882|3837|41.1565|2006|1|65|2175226|1|396|6322353|1|52|2158803|MetaTOR_1_1|
@@ -23,7 +24,7 @@ il contient notamment 2 fichiers conteant les résultats finaux sur les contigs 
 |3|NODE_3|540571|42.305266098255366|2188|14.5855|3405|3|127|6409484|3|431|13615480|1|112|6385126|MetaTOR_3_1|
 
 **Bin_summary.txt**
- : This is the summary of the data of the final bins build with all the step of metaTOR. The HiC coverage is the number of contacts (intra and inter contigs) per kilobase in the whole bin. The Shotgun coverage is the mean coverage normalized by the size of the shotgun reads from the depth file.
+ : il s'agit du fichier contenant les informations sur les bins générés avec des données sur toutes les étapes du processus de partitionnement.(The HiC coverage is the number of contacts (intra and inter contigs) per kilobase in the whole bin. The Shotgun coverage is the mean coverage normalized by the size of the shotgun reads from the depth file.)
 
 ||lineage|completness|contamination|size|contigs|N50|longest_contig|GC|coding_density|taxonomy|Coverage|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -36,11 +37,19 @@ Nous allons utiliser ces deux fichiers pour analyser notre communauté.
 
 ## Répartition taxonomique des MAGs (Metagenomic Assembled Genomes)
 
-##	Couverture et contenu en GC
+les bins de grande taille et de bonne qualité sont dénommés des MAGs pour Metagenomic Assembled Genomes. A l'aide du fichier bin_summary.txt, vous allez analyser la répartition taxonomique des MAGs que nous avons recontruit (complétion >= 50% && contamination <= 20%). Pour cela, vous pourrez vous inspirer des graphs présentés ci-dessous.
 
-Une façon d'analyser la diversité de notre communauté microbienne est de regarder la distribution de leur couverture et de leur contenu en GC.
+![outMAG](docs/images/outMAG10.png)
 
-à l'aide des données du fichier contig_data_final.txt, générez les graph ci-dessous (boxplot)
+Refaites la même analyse en prenant en compte l'abondance des MAGs dans la communauté.
+
+![outMAG](docs/images/outMAG11.png)
+
+## Couverture et contenu en GC
+
+Une autre façon d'analyser la diversité de notre communauté microbienne est de regarder la distribution de leur couverture et de leur contenu en GC.
+
+à l'aide des données du fichier contig_data_final.txt, générez des graphs similaires à ceux ci-dessous (il vous faudra utiliser la fonction boxplot de R)
 
 ![outMAG](docs/images/outMAG3.png)
 

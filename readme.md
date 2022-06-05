@@ -35,8 +35,10 @@ Votre cahier de TP informatique comptera dans la note finale !!!
 * 3 - Analyse d’un assemblage de métagénome
 * 4 - Annotation d'un assemblage
 * 5 - Binning des contigs par exploitations des interactions inter-contigs (MetaTOR)
-* 6 - Analyse et validation des bins obtenus
-* 7 - Session en autonomie
+* 6 - Validation des bins obtenus
+* 7 - Analyse de la communauté
+* 8 - Comparaison avec d'autres méthodes de binning (MetaBAT)
+* 9 - Session en autonomie
 
 
 

@@ -47,20 +47,24 @@ Une autre façon d'analyser la diversité de notre communauté microbienne est d
 
 à l'aide des données du fichier contig_data_final.txt, générez des graphs similaires à ceux ci-dessous (il vous faudra utiliser la fonction boxplot de R)
 
+dans la figure ci-dessous, les boxplot sont colorés en fonction de la qualité des MAGs ... si vous arrivez à le faire ... bravo !!
+
 ![outMAG](docs/images/outMAG3.png)
 
 ![outMAG](docs/images/outMAG4.png)
 
 si vous avez un peu de mal ... vous pouvez jeter un oeil au script binning_analysis.sh dans le dossier scripts/.
 
+en explorant le script vous devriez être en mesure de le lancer avec les bons arguments ;)
 
-##	analyse de bin unique
+
+## Analyse de bin unique
 
 Il est également possible de générer des « density plot » pour chaque bin afin de vérifier leur homogénéité ou au contraire voir si il y a différentes populations de contigs.
 
 ![outMAG](docs/images/outMAG7.png)
 
-pour celui là , je vais vous filer un coup de pouce ... il y a un dossier scripts/
+pour celui là , je vais vous filer un coup de pouce ... il va fallor lancer le scripts bin_analysis.sh qui se trouve dans le dossier scripts/
 
 lancement du script bin_analysis.sh qui prends 3 arguments en entrée [1-targeted_bin; 2-output_directory; 3-contig_data_file from MetaTOR]
 

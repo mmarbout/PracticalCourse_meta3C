@@ -81,7 +81,37 @@ Pour cela, nous allons utiliser une fonction de notre programme MetaTOR qui perm
 ```sh
 metator contactmap -h
 ```
-on peut par exemple, 
+on peut ainsi générer des matrices d'interactions pour différents "objets". Nous allons commencer par générer la matrice du MAG MetaTOR_2_0
 
+nous allons commencer par créer un répertoire de sortie
 
+```sh
+mkdir -p matrices/
+```
+
+nous allons ensuite lancer la commande suivante:
+
+```sh
+metator contactmap -t 8 -a assemblage/assembly_all.fa -c binning/metator_final/contig_data_final -e DpnII,HinfI -n "MetaTOR_2_0" -p binning/metator_final/alignment_0.pairs -f -o matrices/MetaTOR_2_0/ -O "final_bin"
+```
+ce script génère uniquement la matrice au format txt qui est ensuite utilisable via le programme hicstuff qui est notre logiciel de traitement des matrices d'interactions.
+
+```sh
+hicstuff -h
+```
+
+nous allons utiliser la fonction "view"
+
+```sh
+hicstuff view -h
+```
+vous pouvez maintenant lancer la commande suivante:
+
+```sh
+hicstuff view -n -b 50kb -f /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_2_0/fragments_list.txt -o /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_2_0/mat_50.pdf /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_2_0/abs_fragments_contacts_weighted.txt
+```
+
+lorsque vous utilisez cette commande, faites bien attention à la taille de vos bins (taille d'un pixel, i.e. l'option -b)
+
+il est également possible de faire cela pour des contigs. En vous servant de l'aide de la fonction "contactmap" et de tout ce que vous avez appris, générez la matrice d'interactions (bin = 5kb) du contig de plus de 100kb le plus couvert de vos données.
 

@@ -37,7 +37,7 @@ prodigal -p meta -a annotations/prodigal/assembly_prot.fa -o annotations/prodiga
 Vous avez le droit à une bonne pause de 20 min le temps que Prodigal finisse son travail !!!
 
 
-Prodigal a créé deux fichiers, le fichier de protéine .faa et le fichier de gène .fna. 
+Prodigal a créé deux fichiers, le fichier de protéine .faa et le fichier de gène .fna
 
 Voici un exemple de sortie de gène :
 

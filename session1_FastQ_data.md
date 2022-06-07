@@ -52,7 +52,7 @@ visualiser vos données fastq
 ```sh
 zcat  fastq/libX_SG_for.fastq.gz  |  head
 zcat  fastq/libX_SG_rev.fastq.gz  |  head
-zcat  fastq/libX_SG_for.fastq.gz  |  head
+zcat  fastq/libX_3C_for.fastq.gz  |  head
 zcat  fastq/libX_3C_rev.fastq.gz  |  head
 ```
 
@@ -70,7 +70,7 @@ Qi5 : Quels "Tags" sont associés à vos librairies ?
 Qi6 : Quelles différences observez-vous entre les Reads SG et les Reads 3C ?
 
 
-1- Contrôle qualité des reads (fichier FastQ)
+## Contrôle qualité des reads (fichier FastQ)
 
 fastQC est un programme qui prend comme entrée un fichier FastQ et exécute une série de tests pour générer un rapport complet sur la qualité des reads et des bases à différentes positions. Le programme s’exécute en ligne de commande avec les options suivantes :
 
@@ -109,7 +109,7 @@ for sens in for rev; do for type in SG 3C; do /Formation_AdG/FastQC/fastqc -t 4 
 
 Qi7 : En analysant et comparant les rapports de qualité, quelles différences observez vous entre vos différentes banques ? Quelle est l’enzyme que vous avez utilisée pour faire votre banque 3C ?
 
-•	Cutadapt : détection et retrait des séquences d’adaptateurs
+## Cutadapt : détection et retrait des séquences d’adaptateurs
 
 cutadapt est un programme permettant de rechercher des séquences d’adaptateurs à l'intérieur des reads brutes afin de les retirer car elles peuvent provoquer des problèmes au moment de l'assemblage. Il permet également de filtrer les reads afin de retirer du jeu de données ceux de mauvaise qualité et/ou trop petits. Le programme s’exécute en ligne de commande avec les options suivantes :
 

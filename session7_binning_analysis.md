@@ -37,13 +37,9 @@ Nous allons utiliser ces deux fichiers pour analyser notre communauté.
 
 ## Répartition taxonomique des MAGs (Metagenomic Assembled Genomes)
 
-les bins de grande taille et de bonne qualité sont dénommés des MAGs pour Metagenomic Assembled Genomes. A l'aide du fichier bin_summary.txt, vous allez analyser la répartition taxonomique des MAGs que nous avons recontruit (complétion >= 50% && contamination <= 20%). Pour cela, vous pourrez vous inspirer des graphs présentés ci-dessous.
+les bins de grande taille et de bonne qualité sont dénommés des MAGs pour Metagenomic Assembled Genomes. A l'aide du fichier bin_summary.txt, vous allez analyser la répartition taxonomique des MAGs que nous avons recontruit (complétion >= 50% && contamination <= 20%). Pour cela, vous pourrez vous inspirer des graphs présentés ci-dessous. Faites la même analyse en prenant en compte l'abondance des MAGs dans la communauté.
 
 ![outMAG](docs/images/outMAG10.png)
-
-Refaites la même analyse en prenant en compte l'abondance des MAGs dans la communauté.
-
-![outMAG](docs/images/outMAG11.png)
 
 ## Couverture et contenu en GC
 

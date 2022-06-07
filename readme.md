@@ -41,4 +41,13 @@ Votre cahier de TP informatique comptera dans la note finale !!!
 * 9 - Session en autonomie
 
 
+## Contact
+
+### Authors
+
+* martial.marbouty@pasteur.fr
+
+### Research lab
+
+[Spatial Regulation of Genomes](https://research.pasteur.fr/en/team/spatial-regulation-of-genomes/) (Institut Pasteur, Paris)
 

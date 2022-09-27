@@ -38,13 +38,13 @@ mkdir -p fastq/
 choisissez au hasard parmi les 10 échantillons et copier les fichiers fastq correspondants (n'oubliez pas de changer le X !!!)
 
 ```sh
-scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/fastq/libX_* fastq/
+scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2022_2023/TP_Meta3C/fastq/libX_* fastq/
 ```
 
 pour cette séance vous aurez également besoin d'un fichier fasta contenant les séquences des adaptateurs illumina. Copier l'ensemble du dossier [database/] sur GAIA qui contient d'autre fichiers dont nous aurons besoin par la suite.
 
 ```sh
-scp -r votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/database/ ./
+scp -r votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2022_2023/TP_Meta3C/database/ ./
 ```
 
 visualiser vos données fastq 

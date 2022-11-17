@@ -161,7 +161,7 @@ Vous trouverez dans le dossier annotations/ les fichiers de sorties de différen
 
 copier les fichiers correspondants sur GAIA
 ```sh
-scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/annotations/*_results_table.txt annotations/
+scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/2022-2023/ANALYSE_DES_GENOMES_2021-2022/TP_Meta3C/annotations/*_results_table.txt annotations/
 ```
 jetez un oeil sur les différents fichier de sortie des 3 programmes ...
 

@@ -64,7 +64,7 @@ Nous avons également généré un assemblage issue d'un grand nombre de reads. 
 Copier l’assemblage dans votre répertoire assemblage/ et refaites l’analyse Quast de cet échantillon.
 
 ```sh
-scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/ANALYSE_DES_GENOMES_2022_2023/TP_Meta3C/assembly/assembly_all.fa assemblage/ 
+scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/2022-2023/ANALYSE_DES_GENOMES_2022_2023/TP_Meta3C/assembly/assembly_all.fa assemblage/ 
 ``` 
 
 créer un répertoire de sortie 

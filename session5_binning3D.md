@@ -40,10 +40,10 @@ créez un répertoire de sortie pour le binning
 ```sh
 mkdir -p binning
 ```
-et maintenant, lancez la ligne de commande permettant de générer le réseau d'interactions.
+et maintenant, lancez la ligne de commande permettant de générer le réseau d'interactions (5 min).
 
 ```sh
-metator network -n -t 4 -1 fastq/libX_filtre_3C_for.fastq.gz -2 fastq/libX_filtre_3C_rev.fastq.gz -a assemblage/assembly_all.fa -o binning/metator/
+metator network -t 4 -1 fastq/libX_filtre_3C_for.fastq.gz -2 fastq/libX_filtre_3C_rev.fastq.gz -a assemblage/assembly_all.fa -o binning/metator/
 ```
 
 en vous servant du fichier log généré par MetaTOR ainsi que du fichier "network" généré, répondez aux questions suivantes:

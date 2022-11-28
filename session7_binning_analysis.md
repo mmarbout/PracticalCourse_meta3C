@@ -108,7 +108,7 @@ hicstuff view -h
 vous pouvez maintenant lancer la commande suivante:
 
 ```sh
-hicstuff view -n -b 10kb -f /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_20_2/fragments_list.txt -o /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_22_2/mat_10kb_norm.pdf /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_22_2/abs_fragments_contacts_weighted.txt
+hicstuff view -n -b 10kb -f matrices/MetaTOR_22_2/MetaTOR_22_2.frags.tsv -o matrices/MetaTOR_22_2/mat_10kb_norm.pdf matrices/MetaTOR_22_2/MetaTOR_22_2.mat.tsv
 ```
 
 lorsque vous utilisez cette commande, faites bien attention à la taille de vos bins (taille d'un pixel, i.e. l'option -b)

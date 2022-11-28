@@ -1,6 +1,6 @@
 # session 7 : Analyse des bins obtenus
 
-pour cette session, il va falloir récupérer les données que nous avons générées avec CheckM et le pipeline complet de MetaTOR (partitionnement itératif et récursif). Nous allons analyser les bins que nous avons obtenus. Pour cela, il va d'abord falloir récupérer ces données sur l'espace GAIA.
+pour cette session, il va falloir récupérer les données que nous avons générées avec CheckM et le pipeline complet de MetaTOR (partitionnement itératif et récursif). Nous allons analyser les bins que nous avons obtenus. Pour cela, il va d'abord falloir récupérer ces données sur l'espace GAIA. Vous savez faire désormais ;)
 
 ```sh
 scp -r metator_final/ binning/

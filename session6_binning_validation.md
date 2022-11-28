@@ -65,7 +65,7 @@ il faut ensuite construire un fichier nécessaire au fonctionnement de micomplet
 find binning/metator/overlapping_bin/ -maxdepth 1 -type f -name "*.fna" | ~/.local/bin/miCompletelist.sh > binning/metator/overlapping_bin/listbins.tab
 ```
 
-on peut ensuite lancer l'analyse:
+on peut ensuite lancer l'analyse (5 - 10 min):
 
 ```sh
 ~/.local/bin/miComplete binning/metator/overlapping_bin/listbins.tab --threads 8 --hmms Bact105 -o binning/metator/miComplete.txt 

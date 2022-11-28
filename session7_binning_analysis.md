@@ -69,7 +69,7 @@ pour celui là , je vais vous filer un coup de pouce ... il va fallor lancer le 
 lancement du script bin_analysis.sh qui prends 3 arguments en entrée [1-targeted_bin; 2-output_directory; 3-contig_data_file from MetaTOR]
 
 ```sh
-bash scripts/bin_analysis MetaTOR_20_2 figures/ binning/metator_final/contig_data_final.txt
+bash scripts/bin_analysis MetaTOR_22_2 figures/ binning/metator_final/contig_data_final.txt
 ```
 
 ## Matrices d’interactions
@@ -81,7 +81,7 @@ Pour cela, nous allons utiliser une fonction de notre programme MetaTOR qui perm
 ```sh
 metator contactmap -h
 ```
-on peut ainsi générer des matrices d'interactions pour différents "objets". Nous allons commencer par générer la matrice du MAG MetaTOR_2_0
+on peut ainsi générer des matrices d'interactions pour différents "objets". Nous allons commencer par générer la matrice du MAG MetaTOR_22_2
 
 nous allons commencer par créer un répertoire de sortie
 
@@ -92,7 +92,7 @@ mkdir -p matrices/
 nous allons ensuite lancer la commande suivante:
 
 ```sh
-metator contactmap -t 8 -a assemblage/assembly_all.fa -c binning/metator_final/contig_data_final -e DpnII,HinfI -n "MetaTOR_20_2" -p binning/metator_final/alignment_0.pairs -f -o matrices/MetaTOR_20_2/ -O "final_bin"
+metator contactmap -t 8 -a assemblage/assembly_all.fa -c binning/metator_final/contig_data_final -e DpnII,HinfI -n "MetaTOR_22_2" -p binning/metator_final/alignment_0.pairs -f -o matrices/MetaTOR_22_2/ -O "final_bin"
 ```
 ce script génère uniquement la matrice au format txt qui est ensuite utilisable via le programme hicstuff qui est notre logiciel de traitement des matrices d'interactions.
 
@@ -108,7 +108,7 @@ hicstuff view -h
 vous pouvez maintenant lancer la commande suivante:
 
 ```sh
-hicstuff view -n -b 10kb -f /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_20_2/fragments_list.txt -o /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_20_2/mat_10kb_norm.pdf /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_20_2/abs_fragments_contacts_weighted.txt
+hicstuff view -n -b 10kb -f /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_20_2/fragments_list.txt -o /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_22_2/mat_10kb_norm.pdf /pasteur/zeus/projets/p02/rsg_fast/Martial/projets/TP_Meta3C/matrices/MetaTOR_22_2/abs_fragments_contacts_weighted.txt
 ```
 
 lorsque vous utilisez cette commande, faites bien attention à la taille de vos bins (taille d'un pixel, i.e. l'option -b)

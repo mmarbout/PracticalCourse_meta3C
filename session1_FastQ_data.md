@@ -46,6 +46,13 @@ pour cette séance vous aurez également besoin d'un fichier fasta contenant les
 ```sh
 scp -r votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/2022-2023/ANALYSE_DES_GENOMES_2022_2023/TP_Meta3C/database/ ./
 ```
+Nous aurons également besoin d'un répertoire plus tard... Copier l'ensemble du dossier [software/] sur GAIA.
+
+```sh
+scp -r votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/2022-2023/ANALYSE_DES_GENOMES_2022_2023/TP_Meta3C/software/ ./
+```
+
+C'est bon, on est prêt à commencer !!!
 
 visualiser vos données fastq 
 

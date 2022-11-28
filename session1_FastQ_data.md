@@ -132,7 +132,7 @@ Petite pause peut être ? c'est un poil long ...
 
 refaire l’analyse FastQC
 ```sh
-~/Bureau/install/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_filtre_SG_for.fastq.gz > log_files/fastqc_filter_SG_for.log 2>&1
+/Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_filtre_SG_for.fastq.gz > log_files/fastqc_filter_SG_for.log 2>&1
 ```
 
 Qi8 : Combien de reads avez-vous gardé après cette étape de filtration ?

@@ -29,7 +29,7 @@ mkdir -p assemblage/
 lancer l’assemblage
 
 ```sh
-/Formation_AdG/MEGAHIT/bin/megahit -t 8 -1 fastq/libX_filtre_SG_for.fastq.gz -2 fastq/libX_filtre_SG_rev.fastq.gz -o assemblage/libX/ > log_files/megahit_libX_log  2>&1
+/Formation_AdG/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -t 8 -1 fastq/libX_filtre_SG_for.fastq.gz -2 fastq/libX_filtre_SG_rev.fastq.gz -o assemblage/libX/ > log_files/megahit_libX_log  2>&1
 ```
 
 

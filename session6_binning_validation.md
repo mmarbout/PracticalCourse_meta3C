@@ -68,7 +68,7 @@ find binning/metator/overlapping_bin/ -maxdepth 1 -type f -name "*.fna" | micomp
 on peut ensuite lancer l'analyse:
 
 ```sh
-micomplete/micomplete.py binning/metator/overlapping_bin/listbins.tab --threads 8 --hmms Bact105 -o binning/metator/miComplete.txt 
+~/.local/bin/miComplete binning/metator/overlapping_bin/listbins.tab --threads 8 --hmms Bact105 -o binning/metator/miComplete.txt 
 ```
 
 et jeter un oeil aux résultats

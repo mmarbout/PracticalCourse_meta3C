@@ -162,7 +162,11 @@ Vous trouverez dans le dossier database/ les fichiers de sorties do programme Ge
 jetez un oeil sur les différents fichier de sortie du programme...
 
 ```sh
-ls -l database/genomad/
+ls -l database/ResFinder_out/
+```
+
+```sh
+ls -l database/genomad_out/
 ```
 
 

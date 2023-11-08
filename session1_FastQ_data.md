@@ -100,8 +100,8 @@ mkdir -p log_files/
 
 lancer le programme FastQC (1 à 3 minutes par fichier)
 ```sh
-/Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_SG_for.fastq.gz > log_files/fastqc_raw_SG_for.log 2>&1
-/Formation_AdG/FastQC/fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_3C_for.fastq.gz > log_files/fastqc_raw_3C_for.log 2>&1
+fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_SG_for.fastq.gz > log_files/fastqc_raw_SG_for.log 2>&1
+fastqc -t 4 --nogroup -o fastq/rapport_qualite/ fastq/libX_3C_for.fastq.gz > log_files/fastqc_raw_3C_for.log 2>&1
 ```
 
 Vous trouverez les données générées par fastQC dans le dossier [fastq/rapport_qualite/sampleX_raw_SG_for_fastqc]. Afin d'avoir accès à différentes statistiques concernant vos reads, ouvrir le fichier [fastqc_report.html] (par double clic). Ne prenez pas en compte la partie "Kmer content" qui est sujette à controverse notamment en ce qui concerne des reads issues d'un métagénome.

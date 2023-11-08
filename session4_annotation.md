@@ -85,7 +85,7 @@ diamond help
 création des index
 
 ```sh
-diamond makedb -d database/Res_aa --in database/Res_aa.fa > log_files/blastdb_diamond.log 2>&1
+diamond makedb -d database/Resfams --in database/Resfams.fa > log_files/blastdb_diamond.log 2>&1
 ```
 
 création des répertoires de sortie
@@ -96,7 +96,7 @@ mkdir -p annotations/blast_output/
 
 faire les blasts 
 ```sh
-diamond blastp -p 8 --db database/Res_diam.dmnd -o annotations/blast_output/prot_vs_AMR.txt --outfmt 6 -q annotations/prodigal/assembly_prot.fa
+diamond blastp -p 8 --db database/Resfams.dmnd -o annotations/blast_output/prot_vs_AMR.txt --outfmt 6 -q annotations/prodigal/assembly_prot.fa
 ```
 
 NB: le format de sortie "outfmt" est un format tabulaire donnant les infos suivantes:
@@ -110,7 +110,7 @@ on estime que l'on a un vrai homologue lorsque l'on a une identité d'au moins 8
 ![outfmt2](docs/images/outfmt2.png)
 
 ```sh
-diamond blastp -p 8 --db database/Res_diam.dmnd -o annotations/blast_output/prot_vs_AMR.txt --outfmt 6 qseqid sseqid pident qcovs  -q annotations/prodigal/assembly_prot.fa
+diamond blastp -p 8 --db database/Resfams.dmnd -o annotations/blast_output/prot_vs_AMR.txt --outfmt 6 qseqid sseqid pident qcovs  -q annotations/prodigal/assembly_prot.fa
 ```
 
 Qi24: combien de vos gènes répondent aux critères définis au dessus ?
@@ -157,13 +157,14 @@ Recherches de phages : GeNomad, VIRSorter, VIBRANT ...
 
 Recherches de plasmides : GeNomad, PlasmidFinder, Plasflow, PlasX ...
 
-Vous trouverez dans le dossier annotations/ les fichiers de sorties do programme GeNomad. Ceprogramme récent permet d'annoter les phages et les plasmides. Jetez y un oeil, vous pourrez en avoir besoin dans la suite du TP ...
+Vous trouverez dans le dossier database/ les fichiers de sorties do programme GeNomad. Ceprogramme récent permet d'annoter les phages et les plasmides. Jetez y un oeil, vous pourrez en avoir besoin dans la suite du TP ...
 
-copier les fichiers correspondants sur GAIA
+jetez un oeil sur les différents fichier de sortie du programme...
+
 ```sh
-scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2023_2024/TP_Meta/annotations/*_results_table.txt annotations/
+ls -l database/genomad/
 ```
-jetez un oeil sur les différents fichier de sortie des 3 programmes ...
+
 
 Qi26 : Combien de gènes candidats le programme Resfinder détecte t il ? faites une comparaison avec les méthodes précédentes.
 

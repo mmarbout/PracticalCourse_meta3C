@@ -64,7 +64,7 @@ Nous avons également généré un assemblage issue d'un grand nombre de reads. 
 Copier l’assemblage dans votre répertoire assemblage/ et refaites l’analyse Quast de cet échantillon.
 
 ```sh
-scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/2022-2023/ANALYSE_DES_GENOMES_2022_2023/TP_Meta3C/assembly/assembly_all.fa assemblage/ 
+scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/2022-2023/ANALYSE_DES_GENOMES_2022_2023/TP_Meta3C/assembly/final.contigs.fa assemblage/ 
 ``` 
 
 créer un répertoire de sortie 
@@ -72,11 +72,14 @@ créer un répertoire de sortie
 mkdir -p assemblage/rapport_assemblage/all_lib
 ```
 
-lancer les statistiques d'assemblage
-```sh
-/Formation_AdG/quast-5.1.0rc1/quast.py assemblage/assembly_all.fa -o assemblage/rapport_assemblage/all_lib > log_files/quast_all.log 2>&1
-```
+lancer les statistiques d'assemblage et autres (vous savez faire).
 
-Désormais vous allez travailler sur cet assemblage.
+
+Désormais vous allez travailler sur cet assemblage mais nous allons prendre un fichier avec des en-têtes renommées.
 
 et rassurez vous ... la pause arrive très bientot !!!
+
+```sh
+scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/2022-2023/ANALYSE_DES_GENOMES_2022_2023/TP_Meta3C/assembly/assembly_all.fa assemblage/ 
+``` 
+

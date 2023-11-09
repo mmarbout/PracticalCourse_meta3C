@@ -82,7 +82,11 @@ Une modularité est une mesure de la qualité d'une partition des sommets (les n
 metator partition -h
 ```
 
-nous devons d'abord indiquer au programme ou se trouve l'algorithme de louvain car il ne fait par parti stricto-senso du programme MetaTOR et il est codé en c++
+nous devons d'abord indiquer au programme ou se trouve l'algorithme de louvain car il ne fait par parti stricto-senso du programme MetaTOR et il est codé en c++. Il faut également lui donner les permissions d'éxécution.
+
+```sh
+chmod +x -R software/gen-louvain/
+```
 
 ```sh
 export LOUVAIN_PATH=software/gen-louvain/
@@ -127,7 +131,7 @@ ces différents paramètres se contrôle avec les options
 
 Il est ainsi possible d’analyser l’évolutions des différents groupes de contigs en fonction du nombre d’itérations de Louvain (1, 5, 10, 20, 30, 40, 50) et du seuil de regroupement des contigs (70%, 80%, 90%, 100%). 
 
-Qi34 : Comment évolue votre binning au cours des différentes itérations ? Combien d’itérations de louvain faudrait-il faire (justifier ce choix) ?
+Qi34 : Comment évolue votre binning au cours des différentes itérations ? Combien d’itérations de louvain faudrait-il faire selon vous (justifier ce choix) ?
 
 à vous de jouer ;)
 
@@ -137,6 +141,7 @@ A l’aide de vos connaissances, des scripts déjà utilisés et des données fo
 
 
 ![louvain_iteration2](docs/images/louvain_it2.png)
+
 
 
 

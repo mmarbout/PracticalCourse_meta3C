@@ -81,22 +81,66 @@ Nous considèrerons un génome complet quand :
 
 o	sa complétude se situe au-delà de 90% (>0.9)
 
+o	sa contamination se situe en deçà de 5% (<1.05)
+
+un génome HQ (high-quality):
+
+o	sa complétude se situe au-delà de 90% (>0.9)
+
 o	sa contamination se situe en deçà de 10% (<1.1)
+
+un génome MQ (medium-quality):
+
+o	sa complétude se situe au-delà de 70% (>0.7)
+
+o	sa contamination se situe en deçà de 10% (<1.1)
+
+un génome LQ (low-quality):
+
+o	sa complétude se situe au-delà de 50% (>0.5)
+
+o	sa contamination se situe en deçà de 10% (<1.1)
+
+un génome PQ (poor-quality):
+
+o	sa complétude se situe en deçà de 50% (<0.5)
+
+o	sa contamination se situe en deçà de 10% (<1.1)
+
+un génome Contaminé:
+
+o	sa contamination se situe au delà de 10% (>1.1)
+
 
 Qi35 : Combien de génome(s) reconstruit(s) et complet(s) avez-vous ? Quelle proportion en terme de séquence cela représente t il ?
 
-![outMAG](docs/images/outMAG6.png)
+![outMAG](docs/images/MAG1.png)
 
-![outMAG](docs/images/outMAG1.png)
+![outMAG](docs/images/MAG2.png)
 
-![outMAG](docs/images/outMAG8.png)
+![outMAG](docs/images/MAG3.png)
 
 
-vous savez maintenant evaluer la qualité de vos bins en utilisant MiComplete... Félicitations, vous pouvez mainteant répondre à la question 36 !!
+vous savez maintenant evaluer la qualité de vos bins en utilisant MiComplete... Félicitations, vous pouvez mainteant passer à la suite !!
 
-Qi36 : faites une analyse comparative de votre binning en fonction des différentes itérations
+il demeure dans votre binning des MAGs très contaminés. avez vous une idée pour décontaminer ces MAGs?
 
-![out_fig](docs/images/outMAG9.png)
+vous trouverez sur l'espace GAIA, le répertoire de sortie de MetaTOR après un cycle complet du programme, copiez le:
+
+```sh
+scp -r votrelogin@ ./
+```
+
+vous pouvez explorer le repertoire de sortie:
+
+```sh
+ls -l binning/metator_final/
+```
+
+refaites tourner miComplete sur cet output et les fichiers FastA des MAGs [final_bin/] afin de répondre à la question 36 ;)
+
+Qi36 : faites une analyse comparative de votre binning avec celui obtenu après l'étape recursive.
+
 
 
 

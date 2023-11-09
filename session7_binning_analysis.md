@@ -51,7 +51,7 @@ dans la figure ci-dessous, les boxplot sont colorés en fonction de la qualité 
 
 ![outMAG](docs/images/outMAG4.png)
 
-si vous avez un peu de mal ... vous pouvez jeter un oeil au script binning_analysis.sh dans le dossier scripts/.
+si vous avez un peu de mal ... vous pouvez jeter un oeil au script GC_cov_analysis dans le dossier scripts/.
 
 en explorant le script vous devriez être en mesure de le lancer avec les bons arguments ;)
 

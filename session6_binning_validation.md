@@ -128,7 +128,7 @@ il demeure dans votre binning des MAGs très contaminés. avez vous une idée po
 vous trouverez sur l'espace GAIA, le répertoire de sortie de MetaTOR après un cycle complet du programme, copiez le:
 
 ```sh
-scp -r votrelogin@ ./
+scp -r votrelogin@@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2023_2024/TP_Meta/metator_final/  binning/
 ```
 
 vous pouvez explorer le repertoire de sortie:

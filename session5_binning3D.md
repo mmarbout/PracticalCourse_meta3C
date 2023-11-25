@@ -23,6 +23,20 @@ if you want more described doc of MetaTOR and the different possibilities offere
 
 le programme MetaTOR offre une solution "end to end" ou "step by step" ... nous allons bien sûr suivre les étapes les unes après les autres ;) 
 
+mais avant il va falloir installer quelques programmes. Pour cela nous allons utilisons Conda qui est un système de gestion de paquets et d'environnement open-source qui fonctionne sous Windows, macOS et Linux. Conda installe, exécute et met à jour rapidement les paquets et leurs dépendances. Conda crée, enregistre, charge et bascule facilement entre les environnements sur votre ordinateur local.
+
+Pour gérer conda nous utiliserons micromamba qui est extremement rapide:
+
+```sh
+"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+```
+
+une fois installé , nous pouvons vérifier que tout se passe bien en faisant un update de micromaba
+
+```sh
+micromamba self-update
+```
+
 ## Step-by-step
 
 ### Génération du réseau d’interactions inter-contig

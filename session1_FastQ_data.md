@@ -35,7 +35,7 @@ créer un répertoire pour y déposer les fichiers fastq
 mkdir -p fastq/
 ```
 
-choisissez au hasard parmi les 10 échantillons et copier les fichiers fastq correspondants (n'oubliez pas de changer le X !!!)
+choisissez au hasard parmi les 10 jeux de données et copier les fichiers fastq correspondants (n'oubliez pas de changer le X !!!)
 
 ```sh
 scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2023_2024/TP_Meta/fastq/libX_* fastq/

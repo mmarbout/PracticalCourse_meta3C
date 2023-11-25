@@ -36,6 +36,25 @@ une fois installé , nous pouvons vérifier que tout se passe bien en faisant un
 ```sh
 micromamba self-update
 ```
+il est alors possible de créer un environnement dédié à notre logiciel MetaTOR à partir d'un fichier YAML qui définit l'environnement.
+
+```sh
+micromamba env create --name metator --file software/metator_binning.yaml
+```
+
+il faut ensuite activer l'envrionnement
+
+```sh
+micromamba activate metator
+```
+
+pour désactiver l'environnement, il suffit de taper la commande suivant 
+
+```sh
+micromamba deactivate
+```
+
+gardez bien en tête qu'il faudra activer l'environnement à chaque fois que 'lon veut utiliser MetaTOR.
 
 ## Step-by-step
 

@@ -36,7 +36,7 @@ find binning/metator/overlapping_bin/ -maxdepth 1 -type f -name "*.fna" | ~/.loc
 on peut ensuite lancer l'analyse (5 - 10 min):
 
 ```sh
-~/.local/bin/miComplete binning/metator/overlapping_bin/listbins.tab --threads 8 --hmms Bact105 -o binning/metator/miComplete.txt 
+miComplete binning/metator/overlapping_bin/listbins.tab --threads 8 --hmms Bact105 -o binning/metator/miComplete.txt 
 ```
 
 et jeter un oeil aux résultats

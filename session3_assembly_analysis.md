@@ -59,12 +59,12 @@ Qi15 : Donnez une définition du N50 ?
 
 Qi16 : Quelle est la valeur théorique du N100 ?
 
-Nous avons également généré un assemblage issue d'un grand nombre de reads. Cet assemblage a été réalisé sur le cluster de calcul de l'Institut Pasteur car le nombre de reads est assez important et, par conséquent, les temps de calcul et les besoins en ressources également.
+Nous avons également généré un assemblage issue d'un grand nombre de reads. Cet assemblage a été réalisé sur le cluster de calcul de l'Institut Pasteur car le nombre de reads est assez important et, par conséquent, les temps de calcul et les besoins en ressources également. Vous trouverez deux fichiers: 1-le fichier de sortie brut de Megahit et 2- le fichier avec des entrées de contigs renomées 
 
-Copier l’assemblage dans votre répertoire assemblage/ et refaites l’analyse Quast de cet échantillon.
+Copier ces deuxfichiers dans votre répertoire assemblage/ et refaites l’analyse Quast de cet échantillon.
 
 ```sh
-scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2023_2024/TP_Meta/assembly/final.contigs.fa assemblage/ 
+scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2023_2024/TP_Meta/assembly/* assemblage/ 
 ``` 
 
 créer un répertoire de sortie 
@@ -72,14 +72,12 @@ créer un répertoire de sortie
 mkdir -p assemblage/rapport_assemblage/all_lib
 ```
 
-lancer les statistiques d'assemblage et autres (vous savez faire).
+lancer les statistiques d'assemblage sur le fichier brut (et autres .. nb de contigs circulaires ??).
 
 
-Désormais vous allez travailler sur cet assemblage mais nous allons prendre un fichier avec des en-têtes renommées.
+Désormais vous allez travailler sur cet assemblage mais nous allons prendre le fichier avec les en-têtes renommées.
 
 et rassurez vous ... la pause arrive très bientot !!!
 
-```sh
-scp votrelogin@sftpcampus.pasteur.fr:/pasteur/gaia/projets/p01/Enseignements/GAIA_ENSEIGNEMENTS/AdG_2023_2024/TP_Meta/assembly/assembly_all.fa assemblage/ 
-``` 
+
 

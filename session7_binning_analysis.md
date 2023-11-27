@@ -60,7 +60,7 @@ en explorant le script vous devriez être en mesure de le lancer avec les bons a
 
 Il est également possible de générer des « density plot » pour chaque bin afin de vérifier leur homogénéité ou au contraire voir si il y a différentes populations de contigs.
 
-![outMAG](docs/images/outMAG7.png)
+![outMAG](docs/images/outMAG8.png)
 
 pour celui là , je vais vous filer un coup de pouce ... il va fallor lancer le scripts bin_analysis.sh qui se trouve dans le dossier scripts/
 
@@ -110,6 +110,11 @@ hicstuff view -n -b 10kb -f matrices/MetaTOR_22_2/MetaTOR_22_2.frags.tsv -o matr
 ```
 
 lorsque vous utilisez cette commande, faites bien attention à la taille de vos bins (taille d'un pixel, i.e. l'option -b)
+
+vous devriez obtenir une figure comme celle ci: 
+
+![outMAG](docs/images/outMAG9.png)
+
 
 il est également possible de faire cela pour des contigs. En vous servant de l'aide de la fonction "contactmap" et de tout ce que vous avez appris, générez la matrice d'interactions (bin = 5kb) du contig de plus de 100kb le plus couvert de vos données.
 

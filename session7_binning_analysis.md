@@ -90,7 +90,7 @@ mkdir -p matrices/
 nous allons ensuite lancer la commande suivante:
 
 ```sh
-metator contactmap -t 8 -a assemblage/assembly_all.fa -c binning/metator_final/contig_data_final.txt -e DpnII,HinfI -n "MetaTOR_22_2" -p binning/metator_final/alignment_0.pairs -f -o matrices/MetaTOR_22_2/ -O "final_bin"
+metator contactmap -t 8 -a assemblage/assembly_all.fa -c binning/metator_final/contig_data_final.txt -e DpnII,HinfI -n "MetaTOR_22_2" -f -o matrices/MetaTOR_22_2/ -O "final_bin" binning/metator_final/alignment_0.pairs
 ```
 ce script génère uniquement la matrice au format txt qui est ensuite utilisable via le programme hicstuff qui est notre logiciel de traitement des matrices d'interactions.
 

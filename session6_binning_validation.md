@@ -30,7 +30,7 @@ for f in binning/metator/overlapping_bin/*.fa ; do mv $f  binning/metator/overla
 il faut ensuite construire un fichier nécessaire au fonctionnement de micomplete
 
 ```sh
-find binning/metator/overlapping_bin/ -maxdepth 1 -type f -name "*.fna" | ~/.local/bin/miCompletelist.sh > binning/metator/overlapping_bin/listbins.tab
+find binning/metator/overlapping_bin/ -maxdepth 1 -type f -name "*.fna" | miCompletelist.sh > binning/metator/overlapping_bin/listbins.tab
 ```
 
 on peut ensuite lancer l'analyse (5 - 10 min):

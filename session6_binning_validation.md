@@ -23,7 +23,7 @@ ii - la contamination (mesure reliée au nombre de marqueurs en plusieurs copies
 pour lancer micomplete, il faut d'abord changer les extensions des bins (.fa --> .fna)
 
 ```sh
-for f in binning/metator/overlapping_bin/*.fa ; do mv $f `basename $f .fa`.fna ;done
+for f in binning/metator/overlapping_bin/*.fa ; do mv $f  binning/metator/overlapping_bin/`basename $f .fa`.fna ;done
 ```
 
 

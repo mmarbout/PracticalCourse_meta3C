@@ -1,4 +1,4 @@
-# Session 1: Contrôle qualité et traitement des séquences brutes issues du séquençage
+# Contrôle qualité et traitement des séquences brutes issues du séquençage
 
 Vous allez travailler avec 4 fichiers de sorties de séquençage : les reads en sens (forward) et en anti-sens (reverse) pour chaque banque construites (ShotGun et 3C). Vos fichiers sont nommés ainsi et se trouve sur l'espace GAIA:
 

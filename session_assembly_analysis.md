@@ -1,4 +1,4 @@
-# Session 3 : Analyse d’un assemblage
+# Analyse d’un assemblage
 
 Différents logiciels permettent d'analyser les résultats d'assemblage. Nous utiliserons le programme quast qui permet d'obtenir différentes statistiques sur un assemblage. Il s’utilise en ligne de commande :
 
